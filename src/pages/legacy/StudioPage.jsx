@@ -5,9 +5,9 @@ import {
   ArrowRight, ArrowUpRight, Award, ShieldAlert, CheckSquare, Flag, 
   Calendar, Layers, FileCheck, Truck, Hammer, Activity, CheckCircle 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import LifecycleInteractive from '../components/LifecycleInteractive';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import LifecycleInteractive from '@/features/process/components/LifecycleInteractive';
+import { companyProfile } from '@/data/company-profile';
 
 const valueIcons = {
   Integrity: ShieldCheck,

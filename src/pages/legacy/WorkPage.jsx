@@ -4,9 +4,9 @@ import {
   Building2, ArrowRight, ArrowUpRight, CheckCircle2, ChevronRight, 
   Info, Layers, Zap, Wind, Droplets, Network, Cpu, Trees, CheckSquare 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import ScopeExplorer from '../components/ScopeExplorer';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import ScopeExplorer from '@/features/projects/components/ScopeExplorer';
+import { companyProfile } from '@/data/company-profile';
 
 export default function WorkPage() {
   const { referenceProject } = companyProfile;

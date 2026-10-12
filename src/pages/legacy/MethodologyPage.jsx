@@ -4,10 +4,10 @@ import {
   Flag, Calendar, Layers, FileCheck, Truck, Hammer, Activity, CheckCircle, 
   ChevronRight, ArrowRight, ShieldCheck, CheckCircle2 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import LifecycleInteractive from '../components/LifecycleInteractive';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import LifecycleInteractive from '@/features/process/components/LifecycleInteractive';
+import { companyProfile } from '@/data/company-profile';
 
 const stageIcons = {
   '01': Flag,

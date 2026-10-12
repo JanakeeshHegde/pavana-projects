@@ -6,11 +6,11 @@ import {
   Building2, HardHat, FileSpreadsheet, Coins, Compass, 
   Activity, CheckSquare, AlertCircle, Info, Send 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import CinematicHero from '../components/CinematicHero';
-import ControlsDashboardInteractive from '../components/ControlsDashboardInteractive';
-import ScopeExplorer from '../components/ScopeExplorer';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import CinematicHero from '@/features/home/components/CinematicHero';
+import ControlsDashboardInteractive from '@/features/process/components/ControlsDashboardInteractive';
+import ScopeExplorer from '@/features/projects/components/ScopeExplorer';
+import { companyProfile } from '@/data/company-profile';
 import confetti from 'canvas-confetti';
 
 export default function HomePage() {
@@ -80,11 +80,11 @@ export default function HomePage() {
             
             {/* Left Narrative (7 Cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
+              {/* <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
                 <span>01 // THE PMC IMPERATIVE</span>
                 <span>•</span>
                 <span>INTRODUCTION</span>
-              </div>
+              </div> */}
 
               {/* Required Statement */}
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#064A32] leading-[1.08]">
@@ -107,19 +107,19 @@ export default function HomePage() {
               {/* The 4 Priorities Line */}
               <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-[#E2DDD0] font-mono-tech text-xs">
                 <div>
-                  <span className="text-[#C69A36] block font-bold">01 / TIME</span>
+                  <span className="text-[#C69A36] block font-bold"> TIME</span>
                   <span className="text-[#5C6E66] text-[11px]">Programme Baseline</span>
                 </div>
                 <div>
-                  <span className="text-[#C69A36] block font-bold">02 / COST</span>
+                  <span className="text-[#C69A36] block font-bold">COST</span>
                   <span className="text-[#5C6E66] text-[11px]">Commercial Control</span>
                 </div>
                 <div>
-                  <span className="text-[#C69A36] block font-bold">03 / QUALITY</span>
+                  <span className="text-[#C69A36] block font-bold"> QUALITY</span>
                   <span className="text-[#5C6E66] text-[11px]">Right-First-Time</span>
                 </div>
                 <div>
-                  <span className="text-[#C69A36] block font-bold">04 / SAFETY</span>
+                  <span className="text-[#C69A36] block font-bold">SAFETY</span>
                   <span className="text-[#5C6E66] text-[11px]">Zero-Incident HSE</span>
                 </div>
               </div>
@@ -169,12 +169,12 @@ export default function HomePage() {
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 border-b border-[#284439] gap-6">
             <div className="max-w-2xl space-y-3">
-              <div className="text-[11px] font-mono-tech text-[#DFBE65] uppercase tracking-widest">
-                02 // SIGNATURE PROJECT PRESENTATION (PDF SECTION 04)
-              </div>
+              {/* <div className="text-[11px] font-mono-tech text-[#DFBE65] uppercase tracking-widest">
+                SIGNATURE PROJECT PRESENTATION
+              </div> */}
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#FFFFFF]">
-                15,00,000 Sq. Ft. <br />
-                <span className="gold-gradient-text">IT Software Park</span>
+                IT Software Park. <br />
+                <span className="gold-gradient-text"></span>
               </h2>
               <p className="text-sm text-[#CBD8D2] leading-relaxed">
                 Proposed PMC Framework integrating design, construction, building services, procurement, quality, safety, and commissioning under a single control architecture.
@@ -190,12 +190,12 @@ export default function HomePage() {
           </div>
 
           {/* Reference Disclaimer Notice */}
-          <div className="my-6 p-4 bg-[#0C1A14] border border-[#213A30] text-xs font-mono-tech text-[#A3B8B0] flex items-start space-x-3">
+          {/* <div className="my-6 p-4 bg-[#0C1A14] border border-[#213A30] text-xs font-mono-tech text-[#A3B8B0] flex items-start space-x-3">
             <Info className="w-4 h-4 text-[#DFBE65] shrink-0 mt-0.5" />
             <p>
               <strong className="text-[#DFBE65]">Framework Designation:</strong> Presented as a professional project profile and proposed PMC capability framework based on the stated 15,00,000 Sq. Ft. requirement. Specifications and packages can be formally tailored upon client appointment.
             </p>
-          </div>
+          </div> */}
 
           {/* Immersive Scope Explorer */}
           <div className="pt-6">
@@ -223,7 +223,7 @@ export default function HomePage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
-              03 // PMC SERVICE PORTFOLIO (PDF SECTION 03)
+              PMC SERVICE PORTFOLIO
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#064A32]">
               Nine Core Consulting Responsibilities
@@ -337,7 +337,7 @@ export default function HomePage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
-              04 // HOW WE MANAGE (PDF SECTION 06)
+               HOW WE MANAGE COMPLEX PROJECTS
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#064A32]">
               Eight-Stage Delivery Lifecycle
@@ -455,7 +455,7 @@ export default function HomePage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
-              05 // FOUNDATION & GOVERNANCE (PDF SECTION 02 & 09)
+              FOUNDATION & GOVERNANCE
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#064A32]">
               Grounded in Six Core Values
@@ -517,7 +517,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-3">
                 <div className="text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
-                  06 // INITIATE CONSULTATION
+                  INITIATE CONSULTATION
                 </div>
                 {/* Required Headline */}
                 <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#064A32] leading-tight">

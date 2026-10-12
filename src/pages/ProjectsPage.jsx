@@ -4,10 +4,10 @@ import {
   Building2, Layers, CheckCircle2, ArrowRight, ShieldCheck, 
   ChevronRight, Info, PlusCircle, MapPin, Sparkles 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import ScopeExplorer from '../components/ScopeExplorer';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import ScopeExplorer from '@/features/projects/components/ScopeExplorer';
+import { companyProfile } from '@/data/company-profile';
 
 export default function ProjectsPage() {
   const { referenceProject } = companyProfile;

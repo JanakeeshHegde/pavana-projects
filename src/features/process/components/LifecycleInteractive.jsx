@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight, ArrowRight, CheckCircle2, Layers, Calendar, Flag, FileCheck, Truck, Hammer, Activity, CheckCircle } from 'lucide-react';
-import { companyProfile } from '../data/companyData';
+import { companyProfile } from '@/data/company-profile';
 
 export default function LifecycleInteractive() {
   const [selectedStageIndex, setSelectedStageIndex] = useState(0);

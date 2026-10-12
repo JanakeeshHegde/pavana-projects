@@ -25,19 +25,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pavanaprojects.com/methodology</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pavanaprojects.com/project-controls</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pavanaprojects.com/quality-safety</loc>
+    <loc>https://pavanaprojects.com/process</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

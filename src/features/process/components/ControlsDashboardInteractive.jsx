@@ -3,7 +3,7 @@ import {
   Clock, DollarSign, PackageCheck, Award, ShieldAlert, BarChart3, 
   TrendingUp, AlertCircle, CheckCircle2, ChevronRight, FileText, ArrowRight 
 } from 'lucide-react';
-import { companyProfile } from '../data/companyData';
+import { companyProfile } from '@/data/company-profile';
 
 const controlTabs = [
   { id: 'programme', label: 'Programme Control', icon: Clock, frequency: 'Weekly / Monthly' },

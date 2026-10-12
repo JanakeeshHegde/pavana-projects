@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle, Building2, User, Mail, Phone, MapPin, Layers } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { companyProfile } from '../data/companyData';
+import { companyProfile } from '@/data/company-profile';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

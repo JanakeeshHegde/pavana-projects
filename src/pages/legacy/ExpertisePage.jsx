@@ -5,9 +5,9 @@ import {
   Cpu, ClipboardCheck, ShieldAlert, CheckSquare, ArrowRight, ArrowUpRight, 
   ChevronRight, CheckCircle2, Clock, DollarSign, PackageCheck, Award, AlertCircle 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import ControlsDashboardInteractive from '../components/ControlsDashboardInteractive';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import ControlsDashboardInteractive from '@/features/process/components/ControlsDashboardInteractive';
+import { companyProfile } from '@/data/company-profile';
 
 export default function ExpertisePage() {
   const { services, deliverablesList, procurementStages, controlAreas } = companyProfile;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Mail, Clock, ArrowUpRight } from 'lucide-react';
-import { companyProfile } from '../data/companyData';
+import { companyProfile } from '@/data/company-profile';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Compass, Shield, Layers, ArrowDown } from 'lucide-react';
-import { companyProfile } from '../data/companyData';
+import { companyProfile } from '@/data/company-profile';
 
 export default function CinematicHero() {
   const containerRef = useRef(null);
@@ -33,7 +33,7 @@ export default function CinematicHero() {
           <div className="lg:col-span-7 space-y-7">
             
             {/* Top Architectural Metadata Badge */}
-            <div className="inline-flex items-center space-x-3 px-3.5 py-1.5 bg-[#064A32]/90 border border-[#C69A36]/60 backdrop-blur-md">
+            {/* <div className="inline-flex items-center space-x-3 px-3.5 py-1.5 bg-[#064A32]/90 border border-[#C69A36]/60 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-[#DFBE65] animate-pulse" />
               <span className="text-[11px] font-mono-tech text-[#DFBE65] uppercase tracking-[0.18em]">
                 PMC DOSSIER // BANGALORE HQ
@@ -42,7 +42,7 @@ export default function CinematicHero() {
               <span className="text-[11px] font-mono-tech text-[#A3B8B0]">
                 15,00,000 SQ. FT. REFERENCE
               </span>
-            </div>
+            </div> */}
 
             {/* Main Headline */}
             <div className="space-y-3">
@@ -113,9 +113,9 @@ export default function CinematicHero() {
                 />
 
                 {/* Technical Drawing Elevation Plate */}
-                <div className="absolute top-3 left-3 bg-[#14251E]/95 text-[#DFBE65] font-mono-tech text-[10px] px-2.5 py-1 border border-[#284439] backdrop-blur-sm">
+                {/* <div className="absolute top-3 left-3 bg-[#14251E]/95 text-[#DFBE65] font-mono-tech text-[10px] px-2.5 py-1 border border-[#284439] backdrop-blur-sm">
                   DWG // 04.2 — ARCHITECTURAL ELEVATION
-                </div>
+                </div> */}
 
                 <div className="absolute bottom-3 left-3 right-3 bg-[#14251E]/95 p-3.5 border border-[#284439] backdrop-blur-sm space-y-1">
                   <div className="flex items-center justify-between text-[10px] font-mono-tech text-[#C69A36]">

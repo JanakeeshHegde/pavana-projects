@@ -5,9 +5,9 @@ import {
   Cpu, ClipboardCheck, ShieldAlert, CheckSquare, CheckCircle2, 
   ArrowRight, ChevronRight, FileText, Download 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import { companyProfile } from '@/data/company-profile';
 
 const serviceIcons = {
   'planning-scheduling': CalendarDays,

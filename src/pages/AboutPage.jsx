@@ -4,9 +4,9 @@ import {
   ShieldCheck, Compass, Network, Sliders, CheckCircle2, Building2, 
   ArrowRight, Users, Target, CheckCircle, ChevronRight, MapPin 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import { companyProfile } from '@/data/company-profile';
 
 const valueIcons = {
   Integrity: ShieldCheck,

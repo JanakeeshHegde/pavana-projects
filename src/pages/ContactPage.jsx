@@ -3,10 +3,10 @@ import {
   MapPin, Mail, Phone, Clock, Building2, ShieldCheck, 
   ArrowRight, ExternalLink, Navigation, Compass, PhoneCall 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import ContactForm from '../components/ContactForm';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import ContactForm from '@/features/contact/components/ContactForm';
+import { companyProfile } from '@/data/company-profile';
 
 export default function ContactPage() {
   const { contact } = companyProfile;

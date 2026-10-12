@@ -3,7 +3,7 @@ import {
   Building, LayoutGrid, Zap, Wind, Droplets, Network, Cpu, Trees, CheckCircle2, 
   ChevronRight, ArrowRight 
 } from 'lucide-react';
-import { companyProfile } from '../data/companyData';
+import { companyProfile } from '@/data/company-profile';
 
 const packageIcons = {
   'civil-structural': Building,
@@ -30,7 +30,7 @@ export default function ScopeExplorer() {
       <div className="bg-[#14251E] text-[#F8F6ED] p-6 sm:p-8 border-b border-[#284439] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block mb-1">
-            05 | IT SOFTWARE PARK INTEGRATED SCOPE
+            IT SOFTWARE PARK INTEGRATED SCOPE
           </span>
           <h3 className="text-2xl sm:text-3xl font-bold text-[#FFFFFF]">
             15,00,000 Sq. Ft. Reference Package Architecture

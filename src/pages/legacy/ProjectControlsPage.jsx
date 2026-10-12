@@ -4,10 +4,10 @@ import {
   Clock, DollarSign, PackageCheck, FileCode, Award, ShieldAlert, 
   AlertTriangle, BarChart3, CheckCircle2, ArrowRight, Info, AlertCircle 
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import ControlsDashboardInteractive from '../components/ControlsDashboardInteractive';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import ControlsDashboardInteractive from '@/features/process/components/ControlsDashboardInteractive';
+import { companyProfile } from '@/data/company-profile';
 
 const controlIcons = {
   'Programme Control': Clock,

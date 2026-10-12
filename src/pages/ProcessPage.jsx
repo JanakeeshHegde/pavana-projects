@@ -5,11 +5,11 @@ import {
   ChevronRight, ArrowRight, ShieldCheck, CheckCircle2, Clock, DollarSign,
   PackageCheck, FileCode, Award, ShieldAlert, AlertTriangle, BarChart3, Info
 } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageHero from '../components/PageHero';
-import LifecycleInteractive from '../components/LifecycleInteractive';
-import ControlsDashboardInteractive from '../components/ControlsDashboardInteractive';
-import { companyProfile } from '../data/companyData';
+import SEOHead from '@/components/shared/SEOHead';
+import PageHero from '@/components/shared/PageHero';
+import LifecycleInteractive from '@/features/process/components/LifecycleInteractive';
+import ControlsDashboardInteractive from '@/features/process/components/ControlsDashboardInteractive';
+import { companyProfile } from '@/data/company-profile';
 
 const stageIcons = {
   '01': Flag,
