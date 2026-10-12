@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Cinzel', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Architectural Brand Palette */
+    --forest: #064A32;
+    --forest-deep: #032519;
+    --forest-light: #0B6B49;
+    --gold: #C69A36;
+    --gold-light: #DFBE65;
+    --gold-dark: #9A7420;
+    --gold-muted: rgba(198, 154, 54, 0.18);
+    --ivory: #F8F6ED;
+    --ivory-vellum: #F3EFE3;
+    --ivory-line: #E2DDD0;
+    --charcoal: #14251E;
+    --charcoal-black: #0B1612;
+    --charcoal-darkroom: #0F1E18;
+    --charcoal-line: #223B30;
+    --slate-ink: #3D4F47;
+    --white: #FFFFFF;
+  }
+}
+
+/* Base Typographic & Architectural Baseline */
+html {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background-color: var(--ivory);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--ivory);
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-arch {
+  font-family: var(--font-serif);
+  letter-spacing: 0.06em;
+}
+
+/* CAD & Drafting Visual Elements */
+.cad-grid-light {
+  background-image: 
+    linear-gradient(to right, rgba(6, 74, 50, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 74, 50, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cad-grid-dark {
+  background-image: 
+    linear-gradient(to right, rgba(198, 154, 54, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 154, 54, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cad-grid-blueprint {
+  background-image: 
+    linear-gradient(to right, rgba(198, 154, 54, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 154, 54, 0.12) 1px, transparent 1px),
+    linear-gradient(to right, rgba(6, 74, 50, 0.04) 5px, transparent 5px),
+    linear-gradient(to bottom, rgba(6, 74, 50, 0.04) 5px, transparent 5px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+}
+
+/* Technical Drafting Hairlines & Crosshairs */
+.hairline-gold {
+  border-color: rgba(198, 154, 54, 0.4);
+}
+
+.hairline-charcoal {
+  border-color: rgba(20, 37, 30, 0.15);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFBE65 0%, #C69A36 50%, #9A7420 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.forest-gradient-text {
+  background: linear-gradient(135deg, #064A32 0%, #032519 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Architectural Crosshair Marker */
+.crosshair-corner {
+  position: relative;
+}
+.crosshair-corner::before {
+  content: "+";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #C69A36;
+  opacity: 0.7;
+}
+
+/* Editorial Rulers */
+.ruler-ticks {
+  background-image: repeating-linear-gradient(
+    to right,
+    #C69A36 0,
+    #C69A36 1px,
+    transparent 1px,
+    transparent 12px
+  );
+  height: 6px;
+}
+
+/* Custom Architectural Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #064A32;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C69A36;
+}
+
+/* Accessibility Focus States */
+*:focus-visible {
+  outline: 2px solid #C69A36;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
