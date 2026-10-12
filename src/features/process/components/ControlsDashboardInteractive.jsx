@@ -26,7 +26,7 @@ export default function ControlsDashboardInteractive() {
       <div className="relative flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#284439] gap-4">
         <div>
           <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase mb-1">
-            <span>07 | CONTROL TOWER</span>
+            <span>CONTROL TOWER</span>
             <span>•</span>
             <span>PROJECT CONTROLS SIMULATION</span>
           </div>

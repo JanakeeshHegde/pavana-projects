@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Three Principal Navigation Columns (PROJECTS, SERVICES, PROCESS & ABOUT) */}
           <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
             <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
-              01 // PROJECTS
+              PROJECTS
             </div>
             <ul className="space-y-2 text-[#CBD8D2]">
               <li>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
             <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
-              02 // SERVICES
+              SERVICES
             </div>
             <ul className="space-y-2 text-[#CBD8D2]">
               <li>
@@ -96,7 +96,7 @@ export default function Footer() {
 
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
             <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
-              03 // PROCESS & ABOUT
+               PROCESS & ABOUT
             </div>
             <div className="space-y-2 text-[#CBD8D2]">
               <div>
@@ -127,9 +127,9 @@ export default function Footer() {
         </div>
 
         {/* Regulatory & Disclaimer Note */}
-        <div className="my-6 p-4 bg-[#0C1A14] border border-[#213A30] text-[11px] font-mono-tech text-[#8EA49A] leading-relaxed">
+        {/* <div className="my-6 p-4 bg-[#0C1A14] border border-[#213A30] text-[11px] font-mono-tech text-[#8EA49A] leading-relaxed">
           <strong className="text-[#DFBE65] uppercase">GOVERNANCE NOTE:</strong> Pavana Projects operates strictly as a professional Project Management Consultancy (PMC). Project references, including the 15,00,000 Sq. Ft. IT Software Park, represent capability profiles and proposed PMC frameworks based on technical specifications.
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono-tech text-[#6F867C] gap-3">
