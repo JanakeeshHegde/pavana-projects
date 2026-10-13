@@ -96,14 +96,14 @@ export default function ExpertisePage() {
             {/* Right Specification Pane (8 Cols) */}
             <div className="lg:col-span-8 bg-[#F8F6ED] border border-[#E2DDD0] p-6 sm:p-10 space-y-8">
               <div className="flex items-center justify-between pb-6 border-b border-[#E2DDD0]">
-                <div>
+                {/* <div>
                   <div className="text-[10px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
                     DISCIPLINE 0{selectedDiscipline + 1} SPECIFICATION
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32] mt-1">
                     {services[selectedDiscipline].title}
                   </h3>
-                </div>
+                </div> */}
 
                 <span className="text-xs font-mono-tech font-bold text-[#064A32] bg-[#FFFFFF] border border-[#E2DDD0] px-3 py-1">
                   PMC CORE

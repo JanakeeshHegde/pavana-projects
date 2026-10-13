@@ -138,7 +138,7 @@ export default function CinematicHero() {
         </div>
 
         {/* Sophisticated Architectural Scroll Indicator */}
-        <div className="mt-12 pt-6 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-[#8EA49A]">
+        {/* <div className="mt-12 pt-6 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-[#8EA49A]">
           <div className="flex items-center space-x-2">
             <ArrowDown className="w-3.5 h-3.5 text-[#C69A36] animate-bounce" />
             <span>[SCROLL TO DISCOVER ARCHITECTURE IN MOTION ↓]</span>
@@ -151,7 +151,7 @@ export default function CinematicHero() {
             <span>•</span>
             <span className="text-[#DFBE65]">“CREATING LANDMARKS, SHAPING FUTURES.”</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

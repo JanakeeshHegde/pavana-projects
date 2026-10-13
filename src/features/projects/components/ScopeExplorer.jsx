@@ -27,7 +27,7 @@ export default function ScopeExplorer() {
   return (
     <div className="bg-[#FFFFFF] border border-[#E5E0CE] shadow-sm overflow-hidden">
       {/* Top Banner */}
-      <div className="bg-[#14251E] text-[#F8F6ED] p-6 sm:p-8 border-b border-[#284439] flex flex-col md:flex-row md:items-center justify-between gap-4">
+      {/* <div className="bg-[#14251E] text-[#F8F6ED] p-6 sm:p-8 border-b border-[#284439] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block mb-1">
             IT SOFTWARE PARK INTEGRATED SCOPE
@@ -48,7 +48,7 @@ export default function ScopeExplorer() {
             Sq. Ft. Reference Scale
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-12">
         {/* Left List of 9 Packages (5 Cols) */}

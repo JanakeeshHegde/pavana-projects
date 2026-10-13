@@ -31,10 +31,10 @@ export default function Footer() {
               Integrated Project Management Consultancy (PMC) for ambitious commercial, IT/ITES and infrastructure developments.
             </p>
 
-            <div className="pt-2 text-[11px] font-mono-tech text-[#8EA49A] space-y-1">
+            {/* <div className="pt-2 text-[11px] font-mono-tech text-[#8EA49A] space-y-1">
               <div>DISCIPLINE: PROJECT MANAGEMENT CONSULTANCY</div>
               <div>COORDINATES: 13°01'58"N / 77°33'18"E // BANGALORE</div>
-            </div>
+            </div> */}
           </div>
 
           {/* Three Principal Navigation Columns (PROJECTS, SERVICES, PROCESS & ABOUT) */}
@@ -118,9 +118,6 @@ export default function Footer() {
                 <Link to="/contact" className="hover:text-[#DFBE65] transition-colors font-semibold text-[#DFBE65]">
                   Discuss a Project ↗
                 </Link>
-              </div>
-              <div className="pt-2 text-[11px] text-[#8EA49A] leading-relaxed">
-                #543, 14th ‘A’ Main, Mathikere, Bangalore – 560054
               </div>
             </div>
           </div>

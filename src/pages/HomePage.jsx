@@ -272,14 +272,14 @@ export default function HomePage() {
             {/* Right Detailed Expandable Panel (8 Cols) */}
             <div className="lg:col-span-8 bg-[#F8F6ED] border border-[#E2DDD0] p-6 sm:p-10 space-y-8 shadow-sm">
               <div className="flex items-center justify-between pb-6 border-b border-[#E2DDD0]">
-                <div>
+                {/* <div>
                   <div className="text-[10px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
                     DISCIPLINE SPECIFICATION // 0{selectedServiceIndex + 1}
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32] mt-1">
                     {activeService.title}
                   </h3>
-                </div>
+                </div> */}
 
                 <span className="text-xs font-mono-tech font-bold text-[#064A32] bg-[#FFFFFF] border border-[#E2DDD0] px-3.5 py-1">
                   PMC CORE
@@ -532,9 +532,10 @@ export default function HomePage() {
               </div>
 
               {/* Exact Address from PDF */}
-              <div className="bg-[#FFFFFF] p-6 border-l-4 border-[#064A32] border-t border-r border-b border-[#E2DDD0] space-y-3">
+              <div className="bg-[#FFFFFF] p-6 border-l-4 border-[#064A32] border-t border-r border-b border-[#E2DDD0] grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+                <div className="space-y-3">
                 <span className="text-xs font-mono-tech uppercase font-bold text-[#064A32] block">
-                  REGISTERED OFFICE (PDF PAGE 14)
+                  REGISTERED OFFICE
                 </span>
                 <address className="not-italic text-xs text-[#2C3E36] leading-relaxed font-mono-tech">
                   #543, 14th ‘A’ Main, <br />
@@ -542,9 +543,15 @@ export default function HomePage() {
                   1st Phase, Mathikere, <br />
                   Bangalore – 560054, Karnataka, India
                 </address>
-                <div className="text-[11px] text-[#C69A36] font-mono-tech pt-1">
-                  TAGLINE: “CREATING LANDMARKS, SHAPING FUTURES.”
                 </div>
+                <iframe
+                  title="Satellite map of the registered office in Mathikere, Bengaluru"
+                  src="https://maps.google.com/maps?q=%23543%2C%2014th%20A%20Main%2C%20HMT%20Layout%2C%20Gokula%201st%20Stage%2C%201st%20Phase%2C%20Mathikere%2C%20Bengaluru%20560054&t=k&z=18&output=embed"
+                  className="w-full h-48 border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
               </div>
             </div>
 

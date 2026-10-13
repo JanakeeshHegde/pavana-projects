@@ -94,9 +94,8 @@ export default function ControlsDashboardInteractive() {
             </div>
 
             <div className="bg-[#0C1A14] p-4 border border-[#213A30]">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#DFBE65] mb-2 flex items-center justify-between">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-[#DFBE65] mb-2 flex items-center justify-center text-center">
                 <span>Key Programme Outputs Under Pavana PMC Framework</span>
-                <span className="text-[11px] text-[#A3B8B0] font-normal">Section 07</span>
               </h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-[#CBD8D2]">
                 <li className="flex items-center space-x-2">
@@ -306,7 +305,7 @@ export default function ControlsDashboardInteractive() {
       </div>
 
       {/* Illustrative Simulation Notice */}
-      <div className="mt-8 pt-4 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#869E93] gap-2">
+      {/* <div className="mt-8 pt-4 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#869E93] gap-2">
         <span className="flex items-center space-x-1.5">
           <AlertCircle className="w-3.5 h-3.5 text-[#C69A36]" />
           <span>Illustrative Interface — Visualizing the PMC Project Control Framework defined in Section 07.</span>
@@ -314,7 +313,7 @@ export default function ControlsDashboardInteractive() {
         <span className="text-[#DFBE65] font-serif-arch">
           Pavana Projects Controls Architecture
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }
