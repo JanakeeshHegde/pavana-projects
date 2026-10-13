@@ -59,11 +59,11 @@ export default function PageHero({
           </div>
 
           {/* Section Numbering from PDF convention (e.g. 01 | COMPANY OVERVIEW) */}
-          <div className="flex items-center space-x-2 text-xs font-serif-arch tracking-widest text-[#C69A36]">
+          {/* <div className="flex items-center space-x-2 text-xs font-serif-arch tracking-widest text-[#C69A36]">
             <span className="font-bold">{sectionNumber}</span>
             <span className="opacity-50">|</span>
             <span className="uppercase">{sectionTitle}</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Hero Title and Badge */}
