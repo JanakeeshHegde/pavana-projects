@@ -44,7 +44,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-                <span>01 | COMPANY OVERVIEW</span>
+                <span>COMPANY OVERVIEW</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
                 Strategic Interface for Complex Developments
@@ -119,7 +119,7 @@ export default function AboutPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-              <span>02 | OUR FOUNDATION</span>
+              <span>OUR FOUNDATION</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
               Vision, Mission & Guiding Principles
@@ -202,7 +202,7 @@ export default function AboutPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-              <span>11 | PEOPLE & ACCOUNTABILITY</span>
+              <span>PEOPLE & ACCOUNTABILITY</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
               Proposed PMC Organisation Structure

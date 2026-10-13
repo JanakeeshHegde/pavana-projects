@@ -210,6 +210,14 @@ export default function ContactPage() {
                   <span>Launch Google Navigation</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
+                <iframe
+                  title="Pavana Projects office location in Google Maps satellite view"
+                  src="https://maps.google.com/maps?q=13.032778,77.555&z=17&t=k&output=embed"
+                  className="w-full h-56 border border-[#254135]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>

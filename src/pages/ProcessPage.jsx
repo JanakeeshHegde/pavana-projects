@@ -62,7 +62,7 @@ export default function ProcessPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
-              <span>01 // SECTION 06 IN PROFILE</span>
+              <span>SECTION 06 IN PROFILE</span>
               <span>•</span>
               <span>EIGHT-STAGE LIFECYCLE</span>
             </div>
@@ -80,7 +80,7 @@ export default function ProcessPage() {
             {/* 8-Stage Progress Step Bar */}
             <div className="pb-8 border-b border-[#E2DDD0]">
               <div className="flex items-center justify-between pb-3 text-xs font-mono-tech text-[#5C6E66]">
-                <span>PROGRESSIVE TIMELINE // 01 INITIATE TO 08 HANDOVER</span>
+                <span>PROGRESSIVE TIMELINE : INITIATE TO HANDOVER</span>
                 <span className="text-[#064A32] font-bold">PHASE {selectedStage.step} / 08</span>
               </div>
 
@@ -212,7 +212,7 @@ export default function ProcessPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#DFBE65] uppercase tracking-[0.2em]">
-              <span>02 // ENGINEERING INTELLIGENCE</span>
+              <span>ENGINEERING INTELLIGENCE</span>
               <span>•</span>
               <span>PROJECT CONTROLS</span>
             </div>
@@ -229,9 +229,9 @@ export default function ProcessPage() {
 
           {/* 8 Controls Breakdown Grid */}
           <div className="mt-16 pt-12 border-t border-[#284439]">
-            <div className="text-xs font-mono-tech text-[#DFBE65] uppercase tracking-wider mb-6">
-              // THE EIGHT CONTROL AREAS & FREQUENCY PROTOCOLS (PDF PAGE 8)
-            </div>
+            {/* <div className="text-xs font-mono-tech text-[#DFBE65] uppercase tracking-wider mb-6">
+              THE EIGHT CONTROL AREAS & FREQUENCY PROTOCOLS
+            </div> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {controlAreas.map((ctrl, idx) => {
@@ -296,9 +296,7 @@ export default function ProcessPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
-              <span>03 // GOVERNANCE PHILOSOPHY</span>
-              <span>•</span>
-              <span>PDF PAGE 7</span>
+              <span>GOVERNANCE PHILOSOPHY</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#064A32]">
               Five Core Governance Tenets

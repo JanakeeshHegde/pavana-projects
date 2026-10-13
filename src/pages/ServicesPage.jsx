@@ -168,7 +168,7 @@ export default function ServicesPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase">
-              <span>12 | DOCUMENTATION & DECISION SUPPORT</span>
+              <span>DOCUMENTATION & DECISION SUPPORT</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#FFFFFF] tracking-tight">
               Standardized Key PMC Deliverables
@@ -215,7 +215,7 @@ export default function ServicesPage() {
           
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-              <span>10 | PROTECTING TIME AND COST</span>
+              <span>PROTECTING TIME AND COST</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
               Procurement & Commercial Management
