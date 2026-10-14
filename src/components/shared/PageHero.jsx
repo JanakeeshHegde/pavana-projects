@@ -10,6 +10,7 @@ export default function PageHero({
   badge = '',
   dark = false,
   image = null,
+  visual = null,
 }) {
   return (
     <section
@@ -40,63 +41,71 @@ export default function PageHero({
         </div>
       )}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb & Editorial Section Number */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div className="flex items-center space-x-2 text-xs font-medium tracking-wider uppercase text-[#C69A36]">
-            <Link
-              to="/"
-              className={`transition-colors ${
-                dark ? 'text-[#8BA49A] hover:text-[#DFBE65]' : 'text-[#5C6E66] hover:text-[#064A32]'
-              }`}
-            >
-              Home
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-[#C69A36]" />
-            <span className={dark ? 'text-[#F8F6ED]' : 'text-[#064A32] font-semibold'}>
-              {title}
-            </span>
-          </div>
-
-          {/* Section Numbering from PDF convention (e.g. 01 | COMPANY OVERVIEW) */}
-          {/* <div className="flex items-center space-x-2 text-xs font-serif-arch tracking-widest text-[#C69A36]">
-            <span className="font-bold">{sectionNumber}</span>
-            <span className="opacity-50">|</span>
-            <span className="uppercase">{sectionTitle}</span>
-          </div> */}
-        </div>
-
-        {/* Hero Title and Badge */}
-        <div className="max-w-3xl space-y-4">
-          {badge && (
-            <div className="inline-flex items-center px-3 py-1 text-[11px] font-semibold uppercase tracking-wider bg-[#C69A36]/15 text-[#C69A36] border border-[#C69A36]/30">
-              {badge}
+      <div className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${visual ? 'grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center' : ''}`}>
+        <div className={visual ? 'lg:col-span-6' : ''}>
+          {/* Breadcrumb & Editorial Section Number */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            <div className="flex items-center space-x-2 text-xs font-medium tracking-wider uppercase text-[#C69A36]">
+              <Link
+                to="/"
+                className={`transition-colors ${
+                  dark ? 'text-[#8BA49A] hover:text-[#DFBE65]' : 'text-[#5C6E66] hover:text-[#064A32]'
+                }`}
+              >
+                Home
+              </Link>
+              <ChevronRight className="w-3.5 h-3.5 text-[#C69A36]" />
+              <span className={dark ? 'text-[#F8F6ED]' : 'text-[#064A32] font-semibold'}>
+                {title}
+              </span>
             </div>
-          )}
 
-          <h1
-            className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] ${
-              dark ? 'text-[#FFFFFF]' : 'text-[#064A32]'
-            }`}
-          >
-            {title}
-          </h1>
+            {/* Section Numbering from PDF convention (e.g. 01 | COMPANY OVERVIEW) */}
+            {/* <div className="flex items-center space-x-2 text-xs font-serif-arch tracking-widest text-[#C69A36]">
+              <span className="font-bold">{sectionNumber}</span>
+              <span className="opacity-50">|</span>
+              <span className="uppercase">{sectionTitle}</span>
+            </div> */}
+          </div>
 
-          {subtitle && (
-            <p
-              className={`text-base sm:text-lg leading-relaxed ${
-                dark ? 'text-[#A3B8B0]' : 'text-[#4A5D54]'
+          {/* Hero Title and Badge */}
+          <div className="max-w-3xl space-y-4">
+            {badge && (
+              <div className="inline-flex items-center px-3 py-1 text-[11px] font-semibold uppercase tracking-wider bg-[#C69A36]/15 text-[#C69A36] border border-[#C69A36]/30">
+                {badge}
+              </div>
+            )}
+
+            <h1
+              className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] ${
+                dark ? 'text-[#FFFFFF]' : 'text-[#064A32]'
               }`}
             >
-              {subtitle}
-            </p>
-          )}
+              {title}
+            </h1>
 
-          {/* Fine gold underline */}
-          <div className="pt-2">
-            <div className="gold-divider-left w-32" />
+            {subtitle && (
+              <p
+                className={`text-base sm:text-lg leading-relaxed ${
+                  dark ? 'text-[#A3B8B0]' : 'text-[#4A5D54]'
+                }`}
+              >
+                {subtitle}
+              </p>
+            )}
+
+            {/* Fine gold underline */}
+            <div className="pt-2">
+              <div className="gold-divider-left w-32" />
+            </div>
           </div>
         </div>
+
+        {visual && (
+          <div className="lg:col-span-6 min-w-0">
+            {visual}
+          </div>
+        )}
       </div>
     </section>
   );

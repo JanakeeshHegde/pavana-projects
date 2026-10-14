@@ -7,6 +7,7 @@ import {
 import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
 import { companyProfile } from '@/data/company-profile';
+import BuildingBlueprint from '@/features/about/components/BuildingBlueprint';
 
 const valueIcons = {
   Integrity: ShieldCheck,
@@ -34,7 +35,7 @@ export default function AboutPage() {
         title="Disciplined Delivery for Built Environments"
         subtitle="Bringing clarity, control, and accountability to complex projects from project initiation through commissioning and handover."
         badge="About Pavana Projects"
-        image="/images/facade-detail.jpg"
+        visual={<BuildingBlueprint />}
       />
 
       {/* 1. COMPANY OVERVIEW */}
