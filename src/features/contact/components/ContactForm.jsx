@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Building2, User, Mail, Phone, MapPin, Layers } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Building2, User, Mail, Phone, MapPin, Layers, RefreshCw } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import CTAButton from '@/components/shared/CTAButton';
 import { companyProfile } from '@/data/company-profile';
 
 export default function ContactForm() {
@@ -101,12 +102,12 @@ export default function ContactForm() {
           <div><strong className="text-[#064A32]">Location of Office:</strong> Mathikere, Bangalore – 560054</div>
         </div>
 
-        <button
+        <CTAButton
           onClick={handleReset}
-          className="inline-flex items-center px-6 py-2.5 bg-[#064A32] text-[#F8F6ED] text-xs font-semibold uppercase tracking-wider hover:bg-[#043624] transition-colors"
+          icon={RefreshCw}
         >
           Submit Another Inquiry
-        </button>
+        </CTAButton>
       </div>
     );
   }
@@ -278,20 +279,15 @@ export default function ContactForm() {
 
       {/* Submit Button */}
       <div className="pt-2">
-        <button
+        <CTAButton
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#064A32] text-[#F8F6ED] hover:bg-[#043624] px-8 py-3.5 text-xs font-bold uppercase tracking-widest border border-[#C69A36]/40 hover:border-[#C69A36] transition-all disabled:opacity-50"
+          loading={isSubmitting}
+          icon={Send}
+          className="w-full sm:w-auto"
         >
-          {isSubmitting ? (
-            <span>Processing Consultation Request...</span>
-          ) : (
-            <>
-              <span>Transmit Project Inquiry</span>
-              <Send className="w-3.5 h-3.5 text-[#DFBE65]" />
-            </>
-          )}
-        </button>
+          {isSubmitting ? 'Processing Consultation Request...' : 'Transmit Project Inquiry'}
+        </CTAButton>
       </div>
     </form>
   );

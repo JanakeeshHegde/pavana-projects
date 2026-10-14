@@ -16,7 +16,7 @@ export default function LifecycleInteractive() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E5E0CE]">
         <div>
           <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase mb-1">
-            <span>06 | HOW WE MANAGE</span>
+            <span>HOW WE MANAGE</span>
             <span>•</span>
             <span>EIGHT-STAGE LIFECYCLE</span>
           </div>

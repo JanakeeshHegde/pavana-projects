@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowDown, Compass, ShieldCheck } from 'lucide-react';
 import { companyProfile } from '@/data/company-profile';
+import CTAButton from '@/components/shared/CTAButton';
 
 export default function ArchitecturalHero() {
   return (
@@ -64,21 +65,13 @@ export default function ArchitecturalHero() {
 
             {/* Action Group */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/work"
-                className="inline-flex items-center space-x-3 bg-[#064A32] text-[#F8F6ED] hover:bg-[#14251E] px-8 py-4 text-xs font-bold uppercase tracking-[0.16em] transition-all border border-[#064A32] shadow-sm hover:shadow-md group"
-              >
-                <span>Explore The Work</span>
-                <span className="text-[#DFBE65] group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
+              <CTAButton to="/projects">
+                Explore Our Projects
+              </CTAButton>
 
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-3 bg-transparent text-[#064A32] hover:text-[#C69A36] px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] border border-[#C69A36]/60 hover:border-[#C69A36] transition-colors"
-              >
-                <span>Initiate Consultation</span>
-                <ArrowUpRight className="w-4 h-4 text-[#C69A36]" />
-              </Link>
+              <CTAButton to="/contact">
+                Initiate Consultation
+              </CTAButton>
             </div>
 
             {/* Technical Drafting Metrics Bar */}
@@ -144,7 +137,7 @@ export default function ArchitecturalHero() {
         <div className="mt-14 pt-6 border-t border-[#E2DDD0] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-[#5C6E66]">
           <div className="flex items-center space-x-2">
             <ArrowDown className="w-3.5 h-3.5 text-[#C69A36] animate-bounce" />
-            <span>[SCROLL TO EXPLORE ARCHITECTURAL DOSSIER // 01-08]</span>
+            <span>[SCROLL TO EXPLORE ARCHITECTURAL DOSSIER]</span>
           </div>
 
           <div className="flex items-center space-x-6 text-[11px]">

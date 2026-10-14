@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ShieldCheck, Compass, Network, Sliders, CheckCircle2, Building2, 
-  ArrowRight, Users, Target, CheckCircle, ChevronRight, MapPin 
+  ArrowRight, Layers, FileCheck, HardHat, Cpu, Truck, Info, CheckSquare,
+  Flag, Calendar, Hammer, Activity, CheckCircle, ChevronRight, Sparkles,
+  Users, DraftingCompass, Wrench, Award, CalendarDays, Coins, ClipboardCheck, ShieldAlert
 } from 'lucide-react';
 import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
+import CTAButton from '@/components/shared/CTAButton';
 import { companyProfile } from '@/data/company-profile';
 import BuildingBlueprint from '@/features/about/components/BuildingBlueprint';
 
@@ -18,20 +21,77 @@ const valueIcons = {
   Delivery: Building2
 };
 
+const stageIcons = {
+  '01': Flag,
+  '02': Calendar,
+  '03': Layers,
+  '04': FileCheck,
+  '05': Truck,
+  '06': Hammer,
+  '07': Activity,
+  '08': CheckCircle,
+};
+
+const stakeholderIconsMap = {
+  'Client / Developer': Users,
+  'Architect / Design Consultants': DraftingCompass,
+  'Structural / MEP Consultants': Cpu,
+  'Main Contractors': HardHat,
+  'Specialist Contractors': Wrench,
+  'Vendors / Suppliers': Truck,
+  'Authorities / Statutory Agencies': FileCheck,
+  'Facility / Operations Team': ShieldCheck,
+};
+
+const roleIconsMap = {
+  'Project Director / PMC Head': Award,
+  'Project Manager': Users,
+  'Planning / Project Controls': CalendarDays,
+  'Civil / Architectural Team': Building2,
+  'MEP Management Team': Cpu,
+  'QA/QC Team': ClipboardCheck,
+  'HSE Team': ShieldAlert,
+  'Contracts / Commercial Team': Coins,
+  'Procurement / Coordination Team': Truck,
+};
+
+const valuePropsIconsMap = {
+  'Integrated Management': Network,
+  'Client-Focused Governance': ShieldCheck,
+  'Project Controls': Sliders,
+  'Multidisciplinary Coordination': Layers,
+  'Execution Discipline': HardHat,
+  'Handover Readiness': CheckCircle2,
+};
+
+// Stage-to-Stage Continuity Connections
+const stageTransitions = {
+  '01': 'Feeds into Stage 02: Approved project charter and stakeholder matrix form the foundation for Work Breakdown Structure (WBS) baseline scheduling.',
+  '02': 'Feeds into Stage 03: Master baseline schedule and procurement packaging strategy guide design deliverable schedules and consultant release dates.',
+  '03': 'Feeds into Stage 04: Coordinated, clash-resolved architectural and engineering drawings form the basis for Bill of Quantities (BOQ) and tender packages.',
+  '04': 'Feeds into Stage 05: Comparative technical-commercial evaluation and contractor awards trigger long-lead procurement and vendor onboarding.',
+  '05': 'Feeds into Stage 06: Verified equipment manufacturing, factory inspections, and logistics milestones align with site work-front readiness.',
+  '06': 'Feeds into Stage 07: Substantial physical completion and signed-off Quality ITPs enable safe start of MEP integrated testing and commissioning.',
+  '07': 'Feeds into Stage 08: Verified system balancing, BMS validation, and punch-list rectification clear the gateway for final statutory handover.',
+  '08': 'Final Project Lifecycle State: Complete as-built dossier, O&M manuals, warranty certificates, and statutory records transferred to facility operations.',
+};
+
 export default function AboutPage() {
-  const { foundation, organisationRoles } = companyProfile;
+  const { foundation, lifecycleStages, organisationRoles, stakeholders, governancePrinciples, valueProps, contact } = companyProfile;
+  const [activeStageTab, setActiveStageTab] = useState(0);
+
+  const selectedStage = lifecycleStages[activeStageTab];
+  const StageIcon = stageIcons[selectedStage.step] || Flag;
 
   return (
     <>
       <SEOHead
         title="About"
-        description="Learn about Pavana Projects, a professional Project Management Consultancy (PMC) founded on integrity, planning, coordination, control, quality, and delivery."
+        description="About Pavana Projects: Professional Project Management Consultancy (PMC) founded on integrity, planning, coordination, control, quality, and delivery."
       />
 
-      {/* Hero */}
+      {/* Page Hero */}
       <PageHero
-        sectionNumber="01 & 02"
-        sectionTitle="OUR FOUNDATION"
         title="About"
         subtitle="Pavana Projects is positioned as a professional Project Management Consultancy (PMC) focused on structured
 planning, multidisciplinary coordination, project controls and delivery management for large-scale built-environment
@@ -42,17 +102,17 @@ from project initiation through commissioning and handover. Bringing clarity, co
         visual={<BuildingBlueprint />}
       />
 
-      {/* 1. COMPANY OVERVIEW */}
-      <section className="py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      {/* 1. COMPANY OVERVIEW & PROFESSIONAL POSITIONING */}
+      <section id="overview" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
+              <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
                 <span>COMPANY OVERVIEW</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
-                Strategic Interface for Complex Developments
+                Strategic Interface for Complex Built Environments
               </h2>
 
               <p className="text-base text-[#2C3E36] leading-relaxed">
@@ -60,7 +120,7 @@ from project initiation through commissioning and handover. Bringing clarity, co
               </p>
 
               <p className="text-sm text-[#4C5D56] leading-relaxed">
-                Our approach is built around one objective: <strong>bringing clarity, control and accountability</strong> to complex projects from project initiation through commissioning and handover.
+                Our approach is built around one clear objective: <strong>bringing clarity, control and accountability</strong> to complex projects from project initiation through commissioning and handover.
               </p>
 
               <p className="text-sm text-[#4C5D56] leading-relaxed">
@@ -76,18 +136,18 @@ from project initiation through commissioning and handover. Bringing clarity, co
               <div className="bg-[#14251E] text-[#F8F6ED] p-8 border border-[#284439] space-y-6 shadow-md relative overflow-hidden">
                 <div className="absolute inset-0 arch-grid-dark opacity-30 pointer-events-none" />
                 <div className="relative">
-                  <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block mb-1">
+                  <span className="text-xs font-mono-tech text-[#DFBE65] tracking-widest uppercase block mb-1">
                     FOUNDATION METRICS
                   </span>
                   <h3 className="text-xl font-bold text-[#FFFFFF]">
-                    Methodology Benchmarks
+                    Capability Benchmarks
                   </h3>
                 </div>
 
                 <div className="space-y-4 relative text-xs">
                   <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
                     <span className="text-[#A3B8B0]">Reference Scale</span>
-                    <span className="text-[#DFBE65] font-bold font-serif-arch text-sm">15,00,000 Sq. Ft.</span>
+                    <span className="text-[#DFBE65] font-bold font-mono-tech text-sm">15,00,000 Sq. Ft.</span>
                   </div>
                   <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
                     <span className="text-[#A3B8B0]">PMC Approach</span>
@@ -104,13 +164,9 @@ from project initiation through commissioning and handover. Bringing clarity, co
                 </div>
 
                 <div className="pt-2">
-                  <Link
-                    to="/contact"
-                    className="w-full inline-flex items-center justify-center space-x-2 bg-[#C69A36] text-[#064A32] hover:bg-[#DFBE65] py-3 text-xs font-bold uppercase tracking-wider transition-colors"
-                  >
-                    <span>Connect With Our Directors</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  <CTAButton to="/contact" variant="gold" className="w-full">
+                    Connect With Our Directors
+                  </CTAButton>
                 </div>
               </div>
             </div>
@@ -118,16 +174,16 @@ from project initiation through commissioning and handover. Bringing clarity, co
         </div>
       </section>
 
-      {/* 2. VISION & MISSION */}
-      <section className="py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      {/* 2. VISION, MISSION & 6 CORE VALUES */}
+      <section id="values" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
-            <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
+            <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>OUR FOUNDATION</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
-              Vision, Mission & Guiding Principles
+              Vision, Mission & Core Values
             </h2>
             <p className="text-base text-[#4C5D56] leading-relaxed">
               Every system and procedure at Pavana Projects is designed to align architectural intent with physical constructability and financial predictability.
@@ -138,7 +194,7 @@ from project initiation through commissioning and handover. Bringing clarity, co
             {/* Vision Card */}
             <div className="group bg-[#FFFFFF] p-8 sm:p-10 border border-[#D5CDBE] border-t-4 border-t-[#C69A36] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-serif-arch font-bold uppercase tracking-widest text-[#C69A36]">
+                <span className="text-xs font-mono-tech font-bold uppercase tracking-widest text-[#C69A36]">
                   OUR VISION
                 </span>
                 <span className="text-[10px] font-mono-tech text-[#5C6E66] uppercase tracking-wider bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
@@ -156,7 +212,7 @@ from project initiation through commissioning and handover. Bringing clarity, co
             {/* Mission Card */}
             <div className="group bg-[#064A32] text-[#F8F6ED] p-8 sm:p-10 border border-[#C69A36]/50 border-t-4 border-t-[#DFBE65] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300 cad-grid-dark">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-serif-arch font-bold uppercase tracking-widest text-[#DFBE65]">
+                <span className="text-xs font-mono-tech font-bold uppercase tracking-widest text-[#DFBE65]">
                   OUR MISSION
                 </span>
                 <span className="text-[10px] font-mono-tech text-[#DFBE65] uppercase tracking-wider bg-[#14251E] px-2 py-0.5 border border-[#284439]">
@@ -172,9 +228,9 @@ from project initiation through commissioning and handover. Bringing clarity, co
             </div>
           </div>
 
-          {/* 6 CORE VALUES FROM PDF PAGE 3 */}
+          {/* 6 CORE VALUES */}
           <div>
-            <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase mb-4">
+            <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase mb-3">
               <span>CORE VALUES & WHAT THEY MEAN</span>
             </div>
             <h3 className="text-2xl font-bold text-[#064A32] mb-8">
@@ -190,13 +246,8 @@ from project initiation through commissioning and handover. Bringing clarity, co
                     className="group relative p-7 bg-[#FFFFFF] border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-4 shadow-sm hover:shadow-xl hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                   >
                     <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
-                      <div className="flex items-center space-x-2.5">
-                        <div className="p-2 bg-[#064A32] text-[#DFBE65] group-hover:scale-105 transition-transform">
-                          <IconComp className="w-4 h-4" />
-                        </div>
-                        <span className="text-xs font-serif-arch font-bold text-[#C69A36]">
-                          0{idx + 1}
-                        </span>
+                      <div className="w-8 h-8 bg-[#064A32] text-[#DFBE65] flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <IconComp className="w-4 h-4" />
                       </div>
                       <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
                         Core Tenet
@@ -218,63 +269,333 @@ from project initiation through commissioning and handover. Bringing clarity, co
         </div>
       </section>
 
-      {/* 3. PROPOSED PMC ORGANISATION STRUCTURE (PAGE 12) */}
-      <section className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      {/* 3. EIGHT-STAGE PROJECT LIFECYCLE */}
+      <section id="lifecycle" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
-            <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
+            <div className="inline-flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
+              <span>DELIVERY METHODOLOGY</span>
+              <span>•</span>
+              <span>SEQUENTIAL FRAMEWORK</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
+              Eight-Stage Project Delivery Lifecycle
+            </h2>
+            <p className="text-base text-[#4C5D56] leading-relaxed">
+              Pavana Projects maintains an unbroken line of sight from strategic developer vision to physical occupancy and auditable commercial closure. Every stage has defined objectives, hold points, and multidisciplinary coordination milestones.
+            </p>
+          </div>
+
+          {/* Interactive Progressive Lifecycle Visual Narrative */}
+          <div className="bg-[#F8F6ED] border border-[#E2DDD0] p-6 sm:p-10 shadow-sm relative">
+            
+            {/* 8-Stage Progress Step Bar */}
+            <div className="pb-8 border-b border-[#E2DDD0]">
+              <div className="flex items-center justify-between pb-3 text-xs font-mono-tech text-[#5C6E66]">
+                <span>PROGRESSIVE TIMELINE : INITIATE TO HANDOVER</span>
+                <span className="text-[#064A32] font-bold">PHASE {selectedStage.step} / 08</span>
+              </div>
+
+              {/* Progress Fill Bar */}
+              <div className="w-full h-1.5 bg-[#E2DDD0] rounded-full overflow-hidden mb-6">
+                <div 
+                  className="h-full bg-gradient-to-r from-[#064A32] via-[#C69A36] to-[#DFBE65] transition-all duration-500 ease-out"
+                  style={{ width: `${((activeStageTab + 1) / 8) * 100}%` }}
+                />
+              </div>
+
+              {/* 8 Clickable Stage Tabs */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
+                {lifecycleStages.map((stg, idx) => {
+                  const isSelected = idx === activeStageTab;
+                  return (
+                    <button
+                      key={stg.step}
+                      onClick={() => setActiveStageTab(idx)}
+                      className={`p-3 text-left transition-all border ${
+                        isSelected
+                          ? 'bg-[#064A32] text-[#F8F6ED] border-[#064A32] shadow-md ring-2 ring-[#C69A36]'
+                          : 'bg-[#FFFFFF] text-[#2C3E36] border-[#E2DDD0] hover:border-[#C69A36]/60 hover:bg-[#F3EFE3]'
+                      }`}
+                    >
+                      <div className={`text-[11px] font-mono-tech font-bold ${isSelected ? 'text-[#DFBE65]' : 'text-[#C69A36]'}`}>
+                        {stg.step}
+                      </div>
+                      <div className="text-xs font-bold uppercase tracking-wider truncate mt-0.5">
+                        {stg.name}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Active Stage Detailed Panel */}
+            <div className="pt-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                {/* Stage Narrative (7 Cols) */}
+                <div className="lg:col-span-7 space-y-5">
+                  <div className="flex items-center space-x-3.5">
+                    <div className="w-12 h-12 bg-[#064A32] text-[#DFBE65] flex items-center justify-center font-mono-tech text-lg font-bold shrink-0 shadow-sm">
+                      {selectedStage.step}
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-mono-tech font-bold uppercase tracking-widest text-[#064A32] block">
+                        FOCUS: {selectedStage.focus}
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-[#14251E]">
+                        {selectedStage.name} STAGE
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-base text-[#3C4E46] leading-relaxed">
+                    {selectedStage.description}
+                  </p>
+
+                  {/* Stage-to-Stage Continuity Box */}
+                  <div className="p-4 bg-[#FFFFFF] border-l-4 border-[#C69A36] text-xs text-[#2C3E36] leading-relaxed shadow-xs">
+                    <strong className="text-[#064A32] uppercase tracking-wide block mb-1">
+                      Sequential Connection to Next Milestone:
+                    </strong>
+                    {stageTransitions[selectedStage.step]}
+                  </div>
+
+                  <div className="p-4 bg-[#FFFFFF] border-l-4 border-[#064A32] text-xs text-[#4C5D56] leading-relaxed shadow-xs">
+                    <strong className="text-[#064A32] uppercase tracking-wide block mb-1">Stage-Gate Control:</strong>
+                    Formal sign-off between developer leadership, PMC Project Director, and lead consultants is required before releasing subsequent package commitments.
+                  </div>
+
+                  {/* Stage Navigation Buttons */}
+                  <div className="flex items-center space-x-3 pt-3">
+                    <button
+                      onClick={() => setActiveStageTab(Math.max(0, activeStageTab - 1))}
+                      disabled={activeStageTab === 0}
+                      className="px-4 py-2 border border-[#E2DDD0] bg-[#FFFFFF] text-xs font-bold uppercase tracking-wider text-[#064A32] disabled:opacity-40 hover:bg-[#F3EFE3] transition-colors"
+                    >
+                      ← Previous Stage
+                    </button>
+                    <button
+                      onClick={() => setActiveStageTab(Math.min(7, activeStageTab + 1))}
+                      disabled={activeStageTab === 7}
+                      className="px-4 py-2 border border-[#064A32] bg-[#064A32] text-xs font-bold uppercase tracking-wider text-[#DFBE65] disabled:opacity-40 hover:bg-[#043624] transition-colors"
+                    >
+                      Next Stage →
+                    </button>
+                  </div>
+                </div>
+
+                {/* Key Activities & Deliverables Box (5 Cols) */}
+                <div className="lg:col-span-5 bg-[#FFFFFF] p-6 border border-[#E2DDD0] space-y-4 shadow-sm">
+                  <div className="flex items-center justify-between pb-3 border-b border-[#E2DDD0]">
+                    <span className="text-xs font-mono-tech text-[#C69A36] uppercase tracking-wider font-bold">
+                      STAGE DELIVERABLES & OUTPUTS
+                    </span>
+                    <span className="text-[10px] font-mono-tech text-[#5C6E66] bg-[#F8F6ED] px-2 py-0.5 border border-[#E2DDD0]">
+                      {(selectedStage.deliverables || []).length} MILESTONES
+                    </span>
+                  </div>
+
+                  <div className="space-y-3">
+                    {(selectedStage.deliverables || []).map((act, aIdx) => (
+                      <div key={aIdx} className="flex items-start space-x-2.5 text-xs text-[#2C3E36]">
+                        <CheckCircle2 className="w-4 h-4 text-[#064A32] shrink-0 mt-0.5" />
+                        <span className="leading-snug">{act}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="pt-4 border-t border-[#E2DDD0]">
+                    <div className="text-[11px] font-mono-tech text-[#5C6E66]">
+                      <strong className="text-[#064A32]">Cross-Discipline Alignment:</strong> Coordinates architects, structural engineers, MEP consultants, contractors, and client representatives.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. STAKEHOLDER COORDINATION & GOVERNANCE */}
+      <section id="governance" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-14 space-y-3">
+            <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
+              <span>INTEGRATED TEAM</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
+              Stakeholder Coordination & Governance
+            </h2>
+            <p className="text-base text-[#4C5D56] leading-relaxed">
+              Large-scale developments succeed when every participant works to one coordinated plan. Pavana Projects provides a structured interface between the client and the complete project ecosystem.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {stakeholders.map((stk) => {
+              const StkIcon = stakeholderIconsMap[stk.stakeholder] || Users;
+              return (
+                <div
+                  key={stk.stakeholder}
+                  className="group p-5 bg-[#FFFFFF] border border-[#E5E0CE] border-t-2 border-t-[#064A32] space-y-3 shadow-xs hover:shadow-md hover:border-[#C69A36] transition-all"
+                >
+                  <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
+                    <div className="w-8 h-8 bg-[#F8F6ED] border border-[#E5E0CE] group-hover:border-[#C69A36] group-hover:bg-[#064A32] flex items-center justify-center transition-all">
+                      <StkIcon className="w-4 h-4 text-[#064A32] group-hover:text-[#DFBE65] transition-colors" />
+                    </div>
+                    <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
+                      {stk.type}
+                    </span>
+                  </div>
+
+                  <h4 className="text-sm font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                    {stk.stakeholder}
+                  </h4>
+
+                  <p className="text-xs text-[#4C5D56] leading-relaxed">
+                    {stk.interfaceRole}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* 5 Core Governance Principles */}
+          <div className="p-6 sm:p-8 bg-[#14251E] text-[#F8F6ED] border border-[#284439] space-y-4 shadow-lg">
+            <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
+              <span className="text-xs font-mono-tech text-[#DFBE65] uppercase tracking-wider font-bold">
+                GOVERNANCE PRINCIPLES
+              </span>
+              <span className="text-[10px] font-mono-tech text-[#A3B8B0]">[ 5 TENETS ]</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 pt-2">
+              {governancePrinciples.map((prin, pIdx) => (
+                <div key={pIdx} className="space-y-2">
+                  <div className="flex items-center space-x-1.5 text-xs font-bold text-[#DFBE65]">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#DFBE65] shrink-0" />
+                    <span className="tracking-wide uppercase text-[10px]">Tenet</span>
+                  </div>
+                  <p className="text-xs text-[#CBD8D2] leading-snug">
+                    {prin}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PROPOSED PMC ORGANISATION STRUCTURE */}
+      <section id="organisation" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-14 space-y-3">
+            <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>PEOPLE & ACCOUNTABILITY</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
               Proposed PMC Organisation Structure
             </h2>
             <p className="text-base text-[#4C5D56] leading-relaxed">
-              The PMC organisation can be scaled to suit project phase, package complexity and site requirements. The following structure provides clear reporting lines and specialist interfaces.
+              The PMC organisation can be scaled to suit project phase, package complexity, and site requirements. The following structure provides clear reporting lines and specialist interfaces.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {organisationRoles.map((role, idx) => (
-              <div
-                key={role.role}
-                className="group relative p-6 bg-[#F8F6ED] border border-[#E5E0CE] border-t-2 border-t-[#064A32] space-y-3 shadow-sm hover:shadow-lg hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <div className="flex items-center justify-between pb-2 border-b border-[#E5E0CE]">
-                  <span className="text-xs font-serif-arch font-bold text-[#C69A36]">
-                    ROLE 0{idx + 1}
-                  </span>
-                  <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#EAE6D6] px-2 py-0.5 border border-[#D5CDBE]">
-                    Accountability
-                  </span>
+            {organisationRoles.map((role) => {
+              const RoleIcon = roleIconsMap[role.role] || Users;
+              return (
+                <div
+                  key={role.role}
+                  className="group relative p-6 bg-[#F8F6ED] border border-[#E5E0CE] border-t-2 border-t-[#064A32] space-y-3 shadow-xs hover:shadow-lg hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
+                    <div className="w-8 h-8 bg-[#FFFFFF] border border-[#E5E0CE] group-hover:border-[#064A32] flex items-center justify-center transition-colors">
+                      <RoleIcon className="w-4 h-4 text-[#064A32]" />
+                    </div>
+                    <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#FFFFFF] px-2 py-0.5 border border-[#E5E0CE]">
+                      Accountability
+                    </span>
+                  </div>
+
+                  <h4 className="text-base font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                    {role.role}
+                  </h4>
+
+                  <p className="text-xs text-[#4C5D56] leading-relaxed">
+                    {role.responsibility}
+                  </p>
                 </div>
-
-                <h4 className="text-base font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
-                  {role.role}
-                </h4>
-
-                <p className="text-xs text-[#4C5D56] leading-relaxed">
-                  {role.responsibility}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          <div className="mt-8 bg-[#F8F6ED] p-6 border border-[#E5E0CE] text-xs text-[#4C5D56] leading-relaxed flex items-start space-x-3">
-            <CheckCircle className="w-5 h-5 text-[#C69A36] shrink-0 mt-0.5" />
+          <div className="mt-8 bg-[#F8F6ED] p-6 border-l-4 border-[#064A32] border border-[#E5E0CE] text-xs text-[#4C5D56] leading-relaxed flex items-start space-x-3.5 shadow-xs">
+            <Info className="w-5 h-5 text-[#064A32] shrink-0 mt-0.5" />
             <div>
-              <strong className="text-[#064A32] block mb-0.5">Phased Deployment Model:</strong>
-              The team can be deployed in phases, allowing the PMC structure to remain lean during planning and mobilization, while expanding to provide specialized full-time site supervision, MEP witnessing, and safety inspectors as work fronts peak.
+              <strong className="text-[#064A32] uppercase tracking-wide block mb-1">
+                Phased Deployment & Scalability Framework:
+              </strong>
+              The structure is proposed and scalable to suit project phase and package intensity. The team is deployed in phases—remaining lean during initial planning and procurement, while mobilizing specialized site engineers, MEP coordinators, and safety supervisors as physical work fronts peak.
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. REGISTERED PRESENCE CALLOUT */}
+      {/* 6. VALUE PROPOSITION */}
+      <section id="value-propositions" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="max-w-3xl mb-14 space-y-3">
+            <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
+              <span>OUR VALUE PROPOSITION</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
+              Why Pavana Projects
+            </h2>
+            <p className="text-base text-[#4C5D56] leading-relaxed">
+              Six core operational pillars that deliver measurable value for commercial, IT/ITES, and infrastructure developments.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {valueProps.map((vp) => {
+              const VpIcon = valuePropsIconsMap[vp.title] || ShieldCheck;
+              return (
+                <div
+                  key={vp.title}
+                  className="group p-6 bg-[#FFFFFF] border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-3 shadow-xs hover:shadow-md transition-all hover:border-[#064A32]"
+                >
+                  <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
+                    <div className="w-8 h-8 bg-[#F8F6ED] border border-[#E5E0CE] group-hover:border-[#C69A36] group-hover:bg-[#064A32] flex items-center justify-center transition-all">
+                      <VpIcon className="w-4 h-4 text-[#064A32] group-hover:text-[#DFBE65] transition-colors" />
+                    </div>
+                  </div>
+
+                  <h4 className="text-base font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                    {vp.title}
+                  </h4>
+
+                  <p className="text-xs text-[#4C5D56] leading-relaxed">
+                    {vp.approach}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. CALL TO ACTION */}
       <section className="py-16 bg-[#14251E] text-[#F8F6ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
-            <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block">
+            <span className="text-xs font-mono-tech text-[#DFBE65] tracking-widest uppercase block">
               HEADQUARTERS & ENGAGEMENT
             </span>
             <h3 className="text-2xl font-bold text-[#FFFFFF]">
@@ -286,13 +607,9 @@ from project initiation through commissioning and handover. Bringing clarity, co
           </div>
 
           <div className="shrink-0 flex items-center space-x-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center space-x-2 bg-[#C69A36] text-[#064A32] hover:bg-[#DFBE65] px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-colors"
-            >
-              <span>Schedule Discussion</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            <CTAButton to="/contact" variant="gold">
+              Schedule Discussion
+            </CTAButton>
           </div>
         </div>
       </section>

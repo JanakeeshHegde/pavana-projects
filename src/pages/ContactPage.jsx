@@ -1,11 +1,13 @@
 import React from 'react';
 import { 
   MapPin, Mail, Phone, Clock, Building2, ShieldCheck, 
-  ArrowRight, ExternalLink, Navigation, Compass, PhoneCall 
+  ArrowRight, ExternalLink, Navigation, Compass, PhoneCall,
+  Plane, Train, Factory, Landmark, Car
 } from 'lucide-react';
 import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
 import ContactForm from '@/features/contact/components/ContactForm';
+import CTAButton from '@/components/shared/CTAButton';
 import { companyProfile } from '@/data/company-profile';
 
 export default function ContactPage() {
@@ -19,14 +21,9 @@ export default function ContactPage() {
       />
 
       <PageHero
-        sectionNumber="14"
-        sectionTitle="ENGAGEMENT & CONSULTATION"
         title="Contact"
         subtitle="We invite developers, corporate occupiers, and infrastructure project owners to initiate confidential discussions on their upcoming capital developments."
         badge="Direct Consultation"
-        image="/images/project-controls-room.jpg"
-        imageTag="BANGALORE HEADQUARTERS"
-        imageCaption="Executive Project Controls & Client Advisory Suite"
       />
 
       {/* 1. MAIN CONTACT SECTION */}
@@ -39,7 +36,7 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-8">
               <div>
                 <span className="text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase block mb-1">
-                  OFFICIAL REGISTERED ADDRESS (PDF PAGE 14)
+                  OFFICIAL REGISTERED ADDRESS
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#064A32] tracking-tight">
                   Pavana Projects
@@ -147,99 +144,214 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 2. VERIFIED LOCATION MAP & DIRECTIONS CARD */}
-      <section className="py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      {/* 2. VERIFIED LOCATION & BANGALORE TRANSIT ACCESSIBILITY */}
+      <section className="py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 gap-4">
-            <div>
-              <span className="text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase block mb-1">
-                LOCATION & ACCESSIBILITY
-              </span>
-              <h3 className="text-2xl font-bold text-[#064A32]">
-                Registered Office in Mathikere, Bangalore
-              </h3>
+          
+          {/* Section Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 border-b border-[#E5E0CE] gap-6">
+            <div className="max-w-3xl space-y-2">
+              <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
+                <span>STRATEGIC CONNECTIVITY & REGISTERED OFFICE</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
+                Location & Accessibility
+              </h2>
+              <p className="text-base text-[#4C5D56] leading-relaxed">
+                Centrally located in Mathikere, North-West Bangalore. Strategically situated between the city’s primary industrial belts, major multimodal transit stations, and the Kempegowda International Airport transit corridor.
+              </p>
             </div>
-            <a
-              href="https://maps.google.com/?q=543+14th+A+Main+Rd+HMT+Layout+Gokula+1st+Stage+Mathikere+Bengaluru+560054"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#064A32] bg-[#F8F6ED] border border-[#E5E0CE] hover:border-[#C69A36] px-4 py-2.5 transition-colors"
-            >
-              <Navigation className="w-4 h-4 text-[#C69A36]" />
-              <span>Get Driving Directions</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#C69A36]" />
-            </a>
+
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <CTAButton
+                href="https://maps.google.com/?q=543+14th+A+Main+Rd+HMT+Layout+Gokula+1st+Stage+Mathikere+Bengaluru+560054"
+                target="_blank"
+                icon={Navigation}
+              >
+                Get Driving Directions
+              </CTAButton>
+            </div>
           </div>
 
-          {/* Architectural Map & Coordinates Card */}
-          <div className="border border-[#E5E0CE] bg-[#14251E] text-[#F8F6ED] p-6 sm:p-8 relative overflow-hidden">
-            <div className="absolute inset-0 arch-grid-dark opacity-40 pointer-events-none" />
-
-            <div className="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-8 space-y-4">
-                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#064A32] border border-[#C69A36]/40 text-[#DFBE65] text-xs font-serif-arch uppercase">
-                  <span>BANGALORE URBAN PMC OFFICE</span>
+          {/* Split Layout: Transit Matrix (Left) & Interactive Map (Right) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-10 items-stretch">
+            
+            {/* Left Column: Bangalore Transit & Connectivity Matrix (5 Cols) */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+              
+              {/* Registered Address Highlight Card */}
+              <div className="bg-[#F8F6ED] border border-[#E5E0CE] border-l-4 border-l-[#C69A36] p-6 space-y-3 shadow-xs">
+                <div className="flex items-center justify-between pb-2 border-b border-[#E5E0CE]">
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="w-4 h-4 text-[#064A32]" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#064A32]">
+                      Registered Head Office
+                    </span>
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-[#C69A36] bg-[#FFFFFF] px-2 py-0.5 border border-[#E5E0CE]">
+                    PIN 560054
+                  </span>
                 </div>
-                <h4 className="text-xl sm:text-2xl font-bold text-[#FFFFFF]">
-                  #543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage, Mathikere
-                </h4>
-                <p className="text-xs text-[#CBD8D2] leading-relaxed max-w-xl">
-                  Centrally located in North-West Bangalore with strategic accessibility to Yeshwanthpur Industrial Corridor, Peenya Industrial Area, Outer Ring Road, and the Kempegowda International Airport transit corridor.
-                </p>
+                <div className="text-sm font-bold text-[#14251E]">
+                  #543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage
+                </div>
+                <div className="text-xs text-[#5C6E66]">
+                  1st Phase, Mathikere, Bangalore, Karnataka, India
+                </div>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
-                  <div className="bg-[#1A2E26] p-3 border border-[#254135]">
-                    <span className="text-[10px] text-[#A3B8B0] uppercase block">Zone</span>
-                    <span className="text-[#FFFFFF] font-bold">Bangalore North-West</span>
+              {/* Transit & Strategic Arteries Matrix */}
+              <div className="space-y-3">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#064A32] flex items-center justify-between">
+                  <span>Bangalore Connectivity & Transit Corridors</span>
+                  <span className="text-[10px] text-[#A3B8B0] font-mono-tech">[ 4 HUBS ]</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {/* Hub 1: Airport */}
+                  <div className="p-4 bg-[#FFFFFF] border border-[#E5E0CE] hover:border-[#C69A36] transition-colors space-y-2 group shadow-xs">
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 bg-[#F8F6ED] border border-[#E5E0CE] group-hover:bg-[#064A32] flex items-center justify-center transition-colors">
+                        <Plane className="w-4 h-4 text-[#064A32] group-hover:text-[#DFBE65] transition-colors" />
+                      </div>
+                      <span className="text-[11px] font-bold text-[#C69A36] font-mono-tech">
+                        ~35 MINS
+                      </span>
+                    </div>
+                    <div className="text-xs font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                      Kempegowda Int'l Airport (BLR)
+                    </div>
+                    <p className="text-[11px] text-[#5C6E66] leading-relaxed">
+                      Direct expressway transit via Bellary Road & Hebbal flyover corridor.
+                    </p>
                   </div>
-                  <div className="bg-[#1A2E26] p-3 border border-[#254135]">
-                    <span className="text-[10px] text-[#A3B8B0] uppercase block">Pin Code</span>
-                    <span className="text-[#DFBE65] font-bold font-serif-arch">560054</span>
+
+                  {/* Hub 2: Yeshwanthpur Metro & Rail */}
+                  <div className="p-4 bg-[#FFFFFF] border border-[#E5E0CE] hover:border-[#C69A36] transition-colors space-y-2 group shadow-xs">
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 bg-[#F8F6ED] border border-[#E5E0CE] group-hover:bg-[#064A32] flex items-center justify-center transition-colors">
+                        <Train className="w-4 h-4 text-[#064A32] group-hover:text-[#DFBE65] transition-colors" />
+                      </div>
+                      <span className="text-[11px] font-bold text-[#C69A36] font-mono-tech">
+                        ~8 MINS (2.5 km)
+                      </span>
+                    </div>
+                    <div className="text-xs font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                      Yeshwanthpur Metro & Junction
+                    </div>
+                    <p className="text-[11px] text-[#5C6E66] leading-relaxed">
+                      Namma Metro Green Line interchange and major intercity rail terminus.
+                    </p>
                   </div>
-                  <div className="bg-[#1A2E26] p-3 border border-[#254135]">
-                    <span className="text-[10px] text-[#A3B8B0] uppercase block">Jurisdiction</span>
-                    <span className="text-[#FFFFFF] font-bold">Karnataka, India</span>
+
+                  {/* Hub 3: Peenya Industrial & ORR */}
+                  <div className="p-4 bg-[#FFFFFF] border border-[#E5E0CE] hover:border-[#C69A36] transition-colors space-y-2 group shadow-xs">
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 bg-[#F8F6ED] border border-[#E5E0CE] group-hover:bg-[#064A32] flex items-center justify-center transition-colors">
+                        <Factory className="w-4 h-4 text-[#064A32] group-hover:text-[#DFBE65] transition-colors" />
+                      </div>
+                      <span className="text-[11px] font-bold text-[#C69A36] font-mono-tech">
+                        ~10 MINS (4 km)
+                      </span>
+                    </div>
+                    <div className="text-xs font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                      Peenya Industrial Area & ORR
+                    </div>
+                    <p className="text-[11px] text-[#5C6E66] leading-relaxed">
+                      Rapid connectivity to manufacturing belt and Outer Ring Road interchange.
+                    </p>
+                  </div>
+
+                  {/* Hub 4: Central Business District */}
+                  <div className="p-4 bg-[#FFFFFF] border border-[#E5E0CE] hover:border-[#C69A36] transition-colors space-y-2 group shadow-xs">
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 bg-[#F8F6ED] border border-[#E5E0CE] group-hover:bg-[#064A32] flex items-center justify-center transition-colors">
+                        <Landmark className="w-4 h-4 text-[#064A32] group-hover:text-[#DFBE65] transition-colors" />
+                      </div>
+                      <span className="text-[11px] font-bold text-[#C69A36] font-mono-tech">
+                        ~25 MINS
+                      </span>
+                    </div>
+                    <div className="text-xs font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                      Central Business District (CBD)
+                    </div>
+                    <p className="text-[11px] text-[#5C6E66] leading-relaxed">
+                      Direct access via Malleshwaram & Sankey Road to corporate towers.
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="md:col-span-4 flex flex-col items-center justify-center space-y-4 bg-[#0C1A14] p-6 border border-[#213A30] text-center">
-                <div className="p-3 bg-[#064A32] text-[#DFBE65] rounded-full">
-                  <Compass className="w-8 h-8 animate-spin-slow" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#FFFFFF]">
-                    Coordinates & Navigation
+              {/* On-Site Advisory & Visitor Facilities */}
+              <div className="bg-[#14251E] text-[#F8F6ED] p-4.5 border border-[#284439] space-y-2">
+                <div className="flex items-center justify-between text-xs font-bold text-[#DFBE65]">
+                  <div className="flex items-center space-x-2">
+                    <Car className="w-4 h-4 text-[#DFBE65]" />
+                    <span>On-Site Visitor Parking & Client Reception</span>
                   </div>
-                  <div className="text-[11px] text-[#A3B8B0] mt-1">
-                    Gokula 1st Stage, 1st Phase, Mathikere
-                  </div>
+                  <span className="text-[10px] font-mono-tech text-[#A3B8B0]">RESERVED</span>
                 </div>
-                <a
-                  href="https://maps.google.com/?q=543+14th+A+Main+Rd+HMT+Layout+Gokula+1st+Stage+Mathikere+Bengaluru+560054"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center space-x-2 bg-[#C69A36] text-[#064A32] hover:bg-[#DFBE65] py-2.5 px-4 text-xs font-bold uppercase tracking-wider transition-colors"
-                >
-                  <span>Launch Google Navigation</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                <p className="text-xs text-[#CBD8D2] leading-relaxed">
+                  Dedicated meeting rooms and digital drawing review setups available for technical consultations. Advance appointment recommended.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Full-Height Interactive Google Map (7 Cols) */}
+            <div className="lg:col-span-7 flex flex-col justify-between border border-[#E5E0CE] bg-[#F8F6ED] overflow-hidden shadow-md">
+              
+              {/* Map Floating Header Banner */}
+              <div className="p-4 bg-[#064A32] text-[#F8F6ED] flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#C69A36]/30">
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#DFBE65] animate-pulse" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#FFFFFF]">
+                    Interactive Map & Location View
+                  </span>
+                </div>
+                <span className="text-[11px] font-mono-tech text-[#DFBE65]">
+                  GPS: 13.0328° N, 77.5550° E
+                </span>
+              </div>
+
+              {/* The Live Interactive Google Map Frame */}
+              <div className="relative w-full h-[400px] lg:h-[480px] bg-[#EAE6D6]">
                 <iframe
-                  title="Pavana Projects office location in Google Maps satellite view"
-                  src="https://maps.google.com/maps?q=13.032778,77.555&z=17&t=k&output=embed"
-                  className="w-full h-56 border border-[#254135]"
+                  title="Pavana Projects Office Location - Mathikere, Bangalore"
+                  src="https://maps.google.com/maps?q=13.032778,77.555000&z=16&output=embed"
+                  className="w-full h-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
                 />
               </div>
+
+              {/* Map Action Footer */}
+              <div className="p-4 bg-[#FFFFFF] border-t border-[#E5E0CE] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="text-xs text-[#5C6E66]">
+                  <strong className="text-[#064A32]">Destination:</strong> Gokula 1st Stage, Mathikere, Bangalore 560054
+                </div>
+
+                <a
+                  href="https://maps.google.com/?q=543+14th+A+Main+Rd+HMT+Layout+Gokula+1st+Stage+Mathikere+Bengaluru+560054"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 text-xs font-bold text-[#064A32] hover:text-[#C69A36] transition-colors"
+                >
+                  <Navigation className="w-3.5 h-3.5 text-[#C69A36]" />
+                  <span>Open Full Screen in Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#C69A36]" />
+                </a>
+              </div>
             </div>
+
           </div>
 
-          <div className="mt-4 text-[11.5px] text-[#5C6E66] flex items-center justify-between">
-            <span>#543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage, Mathikere, Bangalore – 560054</span>
-            <span className="text-[#C69A36] font-semibold">Pavana Projects PMC</span>
+          {/* Bottom Footnote Bar */}
+          <div className="mt-8 pt-4 border-t border-[#E5E0CE] flex flex-col sm:flex-row items-center justify-between text-xs text-[#5C6E66] gap-2">
+            <span>Official Registered Office: #543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage, Mathikere, Bangalore – 560054</span>
+            <span className="text-[#C69A36] font-semibold">Pavana Projects • Project Management Consultancy</span>
           </div>
+
         </div>
       </section>
     </>

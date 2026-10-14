@@ -6,18 +6,17 @@ const ROUTE_PAGE_TITLES = {
   '/about': 'About | Pavana Projects',
   '/services': 'Services | Pavana Projects',
   '/projects': 'Projects | Pavana Projects',
-  '/process': 'Process | Pavana Projects',
   '/contact': 'Contact | Pavana Projects',
-  '/quality-safety': 'Quality & Safety | Pavana Projects',
-  '/project-controls': 'Project Controls | Pavana Projects',
 };
 
 export default function SEOHead({ title, description }) {
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change
-    window.scrollTo(0, 0);
+    // Scroll to top on route change if no anchor hash is present
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
 
     const cleanPath = location.pathname.replace(/\/$/, '') || '/';
 

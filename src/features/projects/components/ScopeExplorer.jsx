@@ -78,8 +78,8 @@ export default function ScopeExplorer({ showPackageStatus = false }) {
                   </div>
                   <div>
                     <div className="flex items-center space-x-2">
-                      <span className={`text-[11px] font-serif-arch ${isSelected ? 'text-[#DFBE65]' : 'text-[#C69A36]'}`}>
-                        PKG 0{idx + 1}
+                      <span className={`text-[10px] uppercase font-bold tracking-wider ${isSelected ? 'text-[#DFBE65]' : 'text-[#C69A36]'}`}>
+                        Scope Package
                       </span>
                     </div>
                     <div className={`text-sm font-bold tracking-tight ${isSelected ? 'text-[#FFFFFF]' : 'text-[#14251E]'}`}>
@@ -125,7 +125,7 @@ export default function ScopeExplorer({ showPackageStatus = false }) {
 
             <div>
               <h5 className="text-xs font-bold uppercase tracking-wider text-[#C69A36] mb-2">
-                Core PMC Interface Scope (From Profile PDF)
+                Core PMC Interface Scope
               </h5>
               <p className="text-base text-[#14251E] font-medium leading-relaxed bg-[#F8F6ED] p-4 border-l-2 border-[#C69A36]">
                 {activePkg.scope}

@@ -9,6 +9,7 @@ import {
 import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
 import ScopeExplorer from '@/features/projects/components/ScopeExplorer';
+import CTAButton from '@/components/shared/CTAButton';
 import { companyProfile } from '@/data/company-profile';
 
 export default function ProjectsPage() {
@@ -22,54 +23,10 @@ export default function ProjectsPage() {
       />
 
       <PageHero
-        sectionNumber="04 & 05"
-        sectionTitle="PROJECT PORTFOLIO & SECTORS"
         title="Projects"
         subtitle="Disciplined project management frameworks engineered for large-scale commercial, IT/ITES, and infrastructure developments."
         badge="Portfolio & Sector Frameworks"
-        image="/images/hero-campus.jpg"
-        imageTag="15,00,000 SQ. FT. REFERENCE"
-        imageCaption="Commercial IT/ITES Software Park Campus Profile"
       />
-
-      {/* QUICK ANCHOR NAVIGATION BAR */}
-      <nav aria-label="Sector navigation" className="sticky top-20 z-20 bg-[#14251E] text-[#F8F6ED] border-b border-[#284439] py-3.5 px-4 shadow-md backdrop-blur-md bg-opacity-95">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto no-scrollbar">
-          <div className="flex items-center space-x-1 sm:space-x-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider shrink-0">
-            <span className="text-[#C69A36] font-mono-tech mr-1">SECTOR JUMP:</span>
-            <a
-              href="#it-software-park"
-              className="px-3 py-1 rounded bg-[#1A2F27] border border-[#284439] text-[#DFBE65] hover:bg-[#064A32] hover:border-[#C69A36] transition-colors"
-            >
-              15L Sq. Ft. IT Park
-            </a>
-            <a
-              href="#nine-packages"
-              className="px-3 py-1 rounded bg-[#1A2F27] border border-[#284439] text-[#DFBE65] hover:bg-[#064A32] hover:border-[#C69A36] transition-colors"
-            >
-              9-Package Framework
-            </a>
-            <a
-              href="#commercial-towers"
-              className="px-3 py-1 rounded bg-[#1A2F27] border border-[#284439] text-[#DFBE65] hover:bg-[#064A32] hover:border-[#C69A36] transition-colors"
-            >
-              Commercial Towers
-            </a>
-            <a
-              href="#it-campuses"
-              className="px-3 py-1 rounded bg-[#1A2F27] border border-[#284439] text-[#DFBE65] hover:bg-[#064A32] hover:border-[#C69A36] transition-colors"
-            >
-              IT/ITES Campuses
-            </a>
-            <a
-              href="#infrastructure-campuses"
-              className="px-3 py-1 rounded bg-[#1A2F27] border border-[#284439] text-[#DFBE65] hover:bg-[#064A32] hover:border-[#C69A36] transition-colors"
-            >
-              Infrastructure & Industrial
-            </a>
-          </div>
-        </div>
-      </nav>
 
       {/* 1. SECTION: 15,00,000 SQ. FT. IT SOFTWARE PARK (ID: it-software-park) */}
       <section id="it-software-park" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
@@ -80,7 +37,7 @@ export default function ProjectsPage() {
             <Info className="w-5 h-5 text-[#C69A36] shrink-0 mt-0.5" />
             <div>
               <strong className="text-[#064A32] uppercase tracking-wide block mb-1">
-                Transparency & Specification Notice (PDF Page 5):
+                Transparency & Specification Notice:
               </strong>
               {referenceProject.disclaimer}
             </div>
@@ -91,7 +48,7 @@ export default function ProjectsPage() {
             {/* Left Narrative (7 Cols) */}
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-                <span>04 | REFERENCE PROJECT PROFILE</span>
+                <span>REFERENCE PROJECT PROFILE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
                 15,00,000 Sq. Ft. IT Software Park
@@ -137,7 +94,7 @@ export default function ProjectsPage() {
             <div className="lg:col-span-5 bg-[#14251E] text-[#F8F6ED] p-6 sm:p-8 border border-[#284439] space-y-6 shadow-xl">
               <div className="border-b border-[#284439] pb-4">
                 <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block mb-1">
-                  PROJECT PARAMETERS (PDF PAGE 5)
+                  PROJECT PARAMETERS & FRAMEWORK
                 </span>
                 <h3 className="text-xl font-bold text-[#FFFFFF]">
                   Proposed PMC Framework
@@ -181,7 +138,7 @@ export default function ProjectsPage() {
           
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-              <span>05 | WORK BREAKDOWN STRUCTURE</span>
+              <span>WORK BREAKDOWN STRUCTURE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
               9-Package Proposed Framework
@@ -221,7 +178,7 @@ export default function ProjectsPage() {
             {/* Content Column */}
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-                <span>SECTOR PROFILE 01</span>
+                <span>SECTOR PROFILE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
                 Commercial Office Towers
@@ -277,13 +234,9 @@ export default function ProjectsPage() {
               </div>
 
               <div className="pt-2">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center space-x-2 text-xs font-bold text-[#064A32] hover:text-[#C69A36] uppercase tracking-wider transition-colors"
-                >
-                  <span>Inquire for Upcoming Commercial Tower Mandate</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <CTAButton to="/contact">
+                  Inquire for Commercial Mandate
+                </CTAButton>
               </div>
             </div>
           </div>
@@ -298,7 +251,7 @@ export default function ProjectsPage() {
             {/* Content Column */}
             <div className="lg:col-span-7 space-y-6 order-2 lg:order-1">
               <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-                <span>SECTOR PROFILE 02</span>
+                <span>SECTOR PROFILE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
                 IT / ITES Campuses
@@ -354,13 +307,9 @@ export default function ProjectsPage() {
               </div>
 
               <div className="pt-2">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center space-x-2 text-xs font-bold text-[#064A32] hover:text-[#C69A36] uppercase tracking-wider transition-colors"
-                >
-                  <span>Inquire for Tech Campus Master Plan Mandate</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <CTAButton to="/contact">
+                  Inquire for Tech Campus Mandate
+                </CTAButton>
               </div>
             </div>
 
@@ -368,7 +317,7 @@ export default function ProjectsPage() {
             <div className="lg:col-span-5 space-y-4 order-1 lg:order-2">
               <div className="relative group border-2 border-[#064A32] p-2 bg-[#FFFFFF] shadow-xl overflow-hidden">
                 <img
-                  src="/images/hero-campus.jpg"
+                  src="/images/tech-campus.jpg"
                   alt="IT / ITES Campus PMC Coordination"
                   className="w-full h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
@@ -409,7 +358,7 @@ export default function ProjectsPage() {
             {/* Content Column */}
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase">
-                <span>SECTOR PROFILE 03</span>
+                <span>SECTOR PROFILE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#064A32] tracking-tight">
                 Infrastructure & Industrial Campuses
@@ -465,13 +414,9 @@ export default function ProjectsPage() {
               </div>
 
               <div className="pt-2">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center space-x-2 text-xs font-bold text-[#064A32] hover:text-[#C69A36] uppercase tracking-wider transition-colors"
-                >
-                  <span>Inquire for Industrial & Infrastructure Mandate</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <CTAButton to="/contact">
+                  Inquire for Industrial Mandate
+                </CTAButton>
               </div>
             </div>
           </div>
@@ -493,13 +438,9 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <Link
-            to="/contact"
-            className="shrink-0 inline-flex items-center space-x-2 bg-[#C69A36] text-[#064A32] hover:bg-[#DFBE65] px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-colors shadow-md hover:shadow-lg"
-          >
-            <span>Initiate Project Consultation</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          <CTAButton to="/contact" variant="gold" className="shrink-0">
+            Initiate Project Consultation
+          </CTAButton>
         </div>
       </section>
     </>

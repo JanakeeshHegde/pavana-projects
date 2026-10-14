@@ -26,6 +26,7 @@ export default function Footer() {
             <p className="text-xs text-[#CBD8D2] leading-relaxed max-w-sm">
               Integrated Project Management Consultancy (PMC) for ambitious commercial, IT/ITES and infrastructure developments.
             </p>
+
           </div>
 
           {/* Three Principal Navigation Columns (PROJECTS, SERVICES, PROCESS & ABOUT) */}
@@ -70,53 +71,71 @@ export default function Footer() {
               to="/services"
               className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
             >
-              SERVICES
+              SERVICES & CONTROLS
             </Link>
             <ul className="space-y-2 text-[#CBD8D2]">
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
+                <Link to="/services#nine-disciplines" className="hover:text-[#DFBE65] transition-colors block">
                   Nine Disciplines
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
-                  Responsibility Matrix
+                <Link to="/services#project-controls" className="hover:text-[#DFBE65] transition-colors block">
+                  Project Controls Tower
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
-                  14 Key Deliverables
+                <Link to="/services#quality-safety" className="hover:text-[#DFBE65] transition-colors block">
+                  Quality & Safety
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
+                <Link to="/services#commercial" className="hover:text-[#DFBE65] transition-colors block">
                   Commercial Controls
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#deliverables" className="hover:text-[#DFBE65] transition-colors block">
+                  14 Key Deliverables
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
-            <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
-              PROCESS & ABOUT
-            </div>
+            <Link
+              to="/about"
+              className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
+            >
+              ABOUT & METHODOLOGY
+            </Link>
             <div className="space-y-2 text-[#CBD8D2]">
               <div>
-                <Link to="/process" className="hover:text-[#DFBE65] transition-colors block">
-                  8-Stage Lifecycle
+                <Link to="/about#overview" className="hover:text-[#DFBE65] transition-colors block">
+                  Company Overview
                 </Link>
               </div>
               <div>
-                <Link to="/process" className="hover:text-[#DFBE65] transition-colors block">
-                  Project Controls Console
+                <Link to="/about#values" className="hover:text-[#DFBE65] transition-colors block">
+                  Vision, Mission & 6 Values
                 </Link>
               </div>
               <div>
-                <Link to="/about" className="hover:text-[#DFBE65] transition-colors block">
-                  Foundation & 6 Values
+                <Link to="/about#lifecycle" className="hover:text-[#DFBE65] transition-colors block">
+                  8-Stage Delivery Lifecycle
                 </Link>
               </div>
               <div>
+                <Link to="/about#governance" className="hover:text-[#DFBE65] transition-colors block">
+                  Stakeholder Governance
+                </Link>
+              </div>
+              <div>
+                <Link to="/about#organisation" className="hover:text-[#DFBE65] transition-colors block">
+                  Proposed PMC Structure
+                </Link>
+              </div>
+              <div className="pt-1">
                 <Link to="/contact" className="hover:text-[#DFBE65] transition-colors font-semibold text-[#DFBE65] block">
                   Discuss a Project ↗
                 </Link>

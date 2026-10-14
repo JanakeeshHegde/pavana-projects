@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Projects', path: '/projects' },
-  { name: 'Process', path: '/process' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -43,30 +42,30 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between relative">
             
             {/* 1. BRAND LOGO (LEFT) */}
             <Link
               to="/"
-              className="flex items-center group shrink-0"
+              className="flex items-center group shrink-0 z-10"
               aria-label="Pavana Projects Homepage"
             >
               <img
                 src="/logo-white.png"
                 alt="Pavana Projects — Creating Landmarks, Shaping Futures"
-                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-11 sm:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
-            {/* 2. REFINED NAVIGATION IN THE CENTRE */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+            {/* 2. NAVIGATION MENU BUTTONS (EXACT MIDDLE / CENTER) */}
+            <nav className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 space-x-1 xl:space-x-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`relative px-4 py-2 text-[13px] font-medium tracking-[0.08em] uppercase transition-colors duration-200 group ${
+                    className={`relative px-4 xl:px-5 py-2 text-[12.5px] xl:text-[13px] font-medium tracking-[0.08em] uppercase transition-colors duration-200 group ${
                       isActive
                         ? 'text-[#DFBE65] font-semibold'
                         : 'text-[#E5E0CE]/90 hover:text-[#FFFFFF]'
@@ -76,25 +75,36 @@ export default function Navbar() {
 
                     {/* Subtle animated gold underline for active item */}
                     {isActive ? (
-                      <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-[#C69A36] rounded-full shadow-[0_0_8px_rgba(198,154,54,0.6)]" />
+                      <span className="absolute bottom-0 left-4 right-4 xl:left-5 xl:right-5 h-[2px] bg-[#C69A36] rounded-full shadow-[0_0_8px_rgba(198,154,54,0.6)]" />
                     ) : (
-                      <span className="absolute bottom-0 left-4 right-4 h-[1.5px] bg-[#C69A36]/60 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                      <span className="absolute bottom-0 left-4 right-4 xl:left-5 xl:right-5 h-[1.5px] bg-[#C69A36]/60 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                     )}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Mobile Menu Toggle */}
-            <div className="flex items-center lg:hidden">
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-[#DFBE65] hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#C69A36]"
-                aria-label="Toggle navigation menu"
-                aria-expanded={mobileMenuOpen}
+            {/* 3. RIGHT ACTION: ENQUIRE CTA (DESKTOP) + MOBILE MENU TOGGLE */}
+            <div className="flex items-center space-x-3 z-10">
+              <Link
+                to="/contact"
+                className="hidden lg:inline-flex items-center justify-center space-x-2 h-10 px-5 bg-[#064A32] hover:bg-[#14251E] active:bg-[#0B3B28] text-[#FFFFFF] text-xs font-bold uppercase tracking-[0.14em] rounded-[4px] border border-[#064A32] hover:border-[#C69A36]/60 shadow-sm transition-all duration-300 group"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+                <span>Enquire</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#C69A36] group-hover:text-[#DFBE65] group-hover:translate-x-0.5 transition-transform duration-300" />
+              </Link>
+
+              {/* Mobile Menu Toggle */}
+              <div className="flex items-center lg:hidden">
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="p-2 text-[#DFBE65] hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#C69A36]"
+                  aria-label="Toggle navigation menu"
+                  aria-expanded={mobileMenuOpen}
+                >
+                  {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -123,7 +133,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links */}
-          <div className="py-10 space-y-6">
+          <div className="py-8 space-y-6">
             <div className="space-y-4">
               {navItems.map((item, idx) => {
                 const isActive = location.pathname === item.path;
@@ -146,6 +156,17 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+            </div>
+
+            <div className="pt-4">
+              <Link
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center space-x-2 w-full h-12 bg-[#064A32] hover:bg-[#14251E] text-[#FFFFFF] text-xs font-bold uppercase tracking-[0.14em] rounded-[4px] border border-[#C69A36]/60 shadow-sm"
+              >
+                <span>Enquire Now</span>
+                <ArrowRight className="w-4 h-4 text-[#C69A36]" />
+              </Link>
             </div>
           </div>
 
