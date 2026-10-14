@@ -39,7 +39,7 @@ export default function PageHero({
 
   return (
     <section
-      className={`relative overflow-hidden py-14 lg:py-20 border-b ${
+      className={`relative overflow-hidden ${isHomePage ? 'py-14 lg:py-20' : 'pt-24 pb-14 lg:pt-28 lg:pb-20'} border-b ${
         dark
           ? 'bg-[#14251E] text-[#F8F6ED] border-[#284439]'
           : 'bg-[#F8F6ED] text-[#14251E] border-[#E5E0CE]'
@@ -71,7 +71,7 @@ export default function PageHero({
         <div className={hasSideVisual ? 'lg:col-span-7 xl:col-span-7' : ''}>
           {/* Breadcrumb: Only Home > <PageName> */}
           {!isHomePage && (
-            <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-medium tracking-wider uppercase mb-5">
+            <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-medium tracking-wider mb-5">
               <Link
                 to="/"
                 className={`transition-colors ${
