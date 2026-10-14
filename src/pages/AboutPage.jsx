@@ -93,7 +93,11 @@ export default function AboutPage() {
       {/* Page Hero */}
       <PageHero
         title="About"
-        subtitle="Bringing clarity, control, and accountability to complex projects from project initiation through commissioning and handover."
+        subtitle="Pavana Projects is positioned as a professional Project Management Consultancy (PMC) focused on structured
+planning, multidisciplinary coordination, project controls and delivery management for large-scale built-environment
+projects.
+Our approach is built around one objective: bringing clarity, control and accountability to complex projects
+from project initiation through commissioning and handover. Bringing clarity, control, and accountability to complex projects from project initiation through commissioning and handover. "
         badge="About Pavana Projects"
         visual={<BuildingBlueprint />}
       />

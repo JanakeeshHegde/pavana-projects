@@ -122,8 +122,10 @@ export default function PageHero({
 
         {/* Custom 3D or dynamic interactive visual (e.g. AboutPage) */}
         {visual && (
-          <div className="lg:col-span-5 xl:col-span-5 min-w-0">
-            {visual}
+          <div className="lg:col-span-5 xl:col-span-5 min-w-0 flex items-center justify-center">
+            <div className="w-full h-full max-w-lg max-h-[500px]">
+              {visual}
+            </div>
           </div>
         )}
 
