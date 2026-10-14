@@ -11,6 +11,7 @@ import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
 import CTAButton from '@/components/shared/CTAButton';
 import ControlsDashboardInteractive from '@/features/process/components/ControlsDashboardInteractive';
+import BuildingBlueprint from '@/features/about/components/BuildingBlueprint';
 import { companyProfile } from '@/data/company-profile';
 
 const serviceIcons = {
@@ -114,36 +115,40 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Nav List (4 Cols) */}
-            <div className="lg:col-span-4 bg-[#F8F6ED] border border-[#E5E0CE] divide-y divide-[#E5E0CE]">
-              {services.map((svc, idx) => {
-                const isSelected = svc.id === selectedServiceId;
-                const IconComp = serviceIcons[svc.id] || CalendarDays;
-                return (
-                  <button
-                    key={svc.id}
-                    onClick={() => setSelectedServiceId(svc.id)}
-                    className={`w-full text-left p-4 sm:p-4.5 transition-all flex items-center justify-between group ${
-                      isSelected
-                        ? 'bg-[#064A32] text-[#F8F6ED]'
-                        : 'hover:bg-[#EAE6D6]/70 text-[#2C3E36]'
-                    }`}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <IconComp className={`w-4 h-4 shrink-0 ${isSelected ? 'text-[#DFBE65]' : 'text-[#064A32]'}`} />
-                      <span className="text-xs font-bold uppercase tracking-wide">
-                        {svc.title}
-                      </span>
-                    </div>
-
-                    <ChevronRight
-                      className={`w-4 h-4 shrink-0 transition-transform ${
-                        isSelected ? 'text-[#DFBE65] translate-x-1' : 'text-[#A3B8B0] group-hover:text-[#064A32]'
+            {/* Left Nav List and 3D Model (4 Cols) */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="bg-[#F8F6ED] border border-[#E5E0CE] divide-y divide-[#E5E0CE]">
+                {services.map((svc) => {
+                  const isSelected = svc.id === selectedServiceId;
+                  const IconComp = serviceIcons[svc.id] || CalendarDays;
+                  return (
+                    <button
+                      key={svc.id}
+                      onClick={() => setSelectedServiceId(svc.id)}
+                      className={`w-full text-left p-4 sm:p-4.5 transition-all flex items-center justify-between group ${
+                        isSelected
+                          ? 'bg-[#064A32] text-[#F8F6ED]'
+                          : 'hover:bg-[#EAE6D6]/70 text-[#2C3E36]'
                       }`}
-                    />
-                  </button>
-                );
-              })}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <IconComp className={`w-4 h-4 shrink-0 ${isSelected ? 'text-[#DFBE65]' : 'text-[#064A32]'}`} />
+                        <span className="text-xs font-bold uppercase tracking-wide">
+                          {svc.title}
+                        </span>
+                      </div>
+
+                      <ChevronRight
+                        className={`w-4 h-4 shrink-0 transition-transform ${
+                          isSelected ? 'text-[#DFBE65] translate-x-1' : 'text-[#A3B8B0] group-hover:text-[#064A32]'
+                        }`}
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+
+              <BuildingBlueprint />
             </div>
 
             {/* Right Interactive Detail Card (8 Cols) */}
