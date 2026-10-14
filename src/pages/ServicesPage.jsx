@@ -99,7 +99,7 @@ export default function ServicesPage() {
       />
 
       {/* 1. EDITORIAL SERVICE SHOWCASE WITH DYNAMIC SELECTOR */}
-      <section id="nine-disciplines" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="nine-disciplines" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -156,11 +156,6 @@ export default function ServicesPage() {
               {/* Header with Title and Content-Specific Image */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pb-6 border-b border-[#E5E0CE]">
                 <div className="md:col-span-7 space-y-2">
-                  <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-wider uppercase">
-                    <span>DISCIPLINE DETAIL</span>
-                    <span>•</span>
-                    <span className="text-[#064A32] font-bold bg-[#EAE6D6] px-2 py-0.5">PAVANA PMC SCOPE</span>
-                  </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32]">
                     {activeService.title}
                   </h3>
@@ -249,7 +244,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. PROJECT CONTROLS TOWER & MANAGEMENT REPORTING */}
-      <section id="project-controls" className="scroll-mt-36 py-20 lg:py-24 bg-[#14251E] text-[#F8F6ED] cad-grid-dark border-b border-[#284439] relative overflow-hidden">
+      <section id="project-controls" className="scroll-mt-36 py-12 lg:py-16 bg-[#14251E] text-[#F8F6ED] cad-grid-dark border-b border-[#284439] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -365,7 +360,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. QUALITY ASSURANCE & SAFETY MANAGEMENT */}
-      <section id="quality-safety" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="quality-safety" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -526,7 +521,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. PROCUREMENT & COMMERCIAL MANAGEMENT */}
-      <section id="commercial" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      <section id="commercial" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -575,7 +570,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 5. 14 KEY PMC DELIVERABLES */}
-      <section id="deliverables" className="scroll-mt-36 py-20 lg:py-24 bg-[#14251E] text-[#F8F6ED] border-b border-[#284439] relative overflow-hidden">
+      <section id="deliverables" className="scroll-mt-36 py-12 lg:py-16 bg-[#14251E] text-[#F8F6ED] border-b border-[#284439] relative overflow-hidden">
         <div className="absolute inset-0 arch-grid-dark opacity-35 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -624,7 +619,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 6. CALL TO ACTION */}
-      <section className="py-16 bg-[#064A32] text-[#F8F6ED]">
+      <section className="py-12 bg-[#064A32] text-[#F8F6ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block">

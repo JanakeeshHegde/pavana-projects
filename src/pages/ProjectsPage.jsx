@@ -29,7 +29,7 @@ export default function ProjectsPage() {
       />
 
       {/* 1. SECTION: 15,00,000 SQ. FT. IT SOFTWARE PARK (ID: it-software-park) */}
-      <section id="it-software-park" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="it-software-park" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Transparency Disclaimer Notice Banner */}
@@ -133,7 +133,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* 2. SECTION: 9-PACKAGE PROPOSED FRAMEWORK (ID: nine-packages) */}
-      <section id="nine-packages" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      <section id="nine-packages" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-12 space-y-3">
@@ -154,7 +154,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* 3. SECTION: COMMERCIAL OFFICE TOWERS (ID: commercial-towers) */}
-      <section id="commercial-towers" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="commercial-towers" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -244,7 +244,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* 4. SECTION: IT / ITES CAMPUSES (ID: it-campuses) */}
-      <section id="it-campuses" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      <section id="it-campuses" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -334,7 +334,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* 5. SECTION: INFRASTRUCTURE & INDUSTRIAL CAMPUSES (ID: infrastructure-campuses) */}
-      <section id="infrastructure-campuses" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="infrastructure-campuses" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -424,7 +424,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* 6. CALL TO ACTION */}
-      <section className="py-16 bg-[#14251E] text-[#F8F6ED]">
+      <section className="py-12 bg-[#14251E] text-[#F8F6ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <span className="text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase block">

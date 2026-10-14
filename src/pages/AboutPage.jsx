@@ -97,7 +97,7 @@ export default function AboutPage() {
       />
 
       {/* 1. COMPANY OVERVIEW & PROFESSIONAL POSITIONING */}
-      <section id="overview" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="overview" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -169,7 +169,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. VISION, MISSION & 6 CORE VALUES */}
-      <section id="values" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      <section id="values" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -264,7 +264,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. EIGHT-STAGE PROJECT LIFECYCLE */}
-      <section id="lifecycle" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="lifecycle" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -414,7 +414,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. STAKEHOLDER COORDINATION & GOVERNANCE */}
-      <section id="governance" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      <section id="governance" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -485,7 +485,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. PROPOSED PMC ORGANISATION STRUCTURE */}
-      <section id="organisation" className="scroll-mt-36 py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#E5E0CE]">
+      <section id="organisation" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -542,7 +542,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. VALUE PROPOSITION */}
-      <section id="value-propositions" className="scroll-mt-36 py-20 lg:py-24 bg-[#F8F6ED] border-b border-[#E5E0CE]">
+      <section id="value-propositions" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-14 space-y-3">
@@ -586,7 +586,7 @@ export default function AboutPage() {
       </section>
 
       {/* 7. CALL TO ACTION */}
-      <section className="py-16 bg-[#14251E] text-[#F8F6ED]">
+      <section className="py-12 bg-[#14251E] text-[#F8F6ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <span className="text-xs font-mono-tech text-[#DFBE65] tracking-widest uppercase block">

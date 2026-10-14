@@ -46,7 +46,7 @@ export default function HomePage() {
       <CinematicHero />
 
       {/* 2. COMPANY OVERVIEW & 4 CORE PRIORITIES */}
-      <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-20 lg:py-28 relative overflow-hidden">
+      <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-12 lg:py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -152,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. VISUAL HIGHLIGHT: 15,00,000 SQ. FT. REFERENCE PROJECT PROFILE */}
-      <section className="bg-[#14251E] text-[#F8F6ED] cad-grid-dark border-b border-[#284439] py-20 lg:py-28 relative overflow-hidden">
+      <section className="bg-[#14251E] text-[#F8F6ED] cad-grid-dark border-b border-[#284439] py-12 lg:py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -229,7 +229,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. BRIEF SERVICE HIGHLIGHTS (9 DISCIPLINES) */}
-      <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-20 lg:py-28">
+      <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
@@ -291,7 +291,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. COMPACT EIGHT-STAGE LIFECYCLE PREVIEW */}
-      <section className="bg-[#F8F6ED] border-b border-[#E2DDD0] py-20 lg:py-28 relative overflow-hidden">
+      <section className="bg-[#F8F6ED] border-b border-[#E2DDD0] py-12 lg:py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mb-12 space-y-3">
@@ -338,7 +338,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. SHORT PROJECT-CONTROLS SUMMARY */}
-      <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-20 lg:py-28">
+      <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
@@ -398,7 +398,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. ENQUIRY CALL TO ACTION */}
-      <section className="py-20 bg-[#064A32] text-[#F8F6ED] relative overflow-hidden">
+      <section className="py-12 bg-[#064A32] text-[#F8F6ED] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">

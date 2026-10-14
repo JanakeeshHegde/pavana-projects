@@ -39,7 +39,7 @@ export default function PageHero({
 
   return (
     <section
-      className={`relative overflow-hidden ${isHomePage ? 'py-14 lg:py-20' : 'pt-24 pb-14 lg:pt-28 lg:pb-20'} border-b ${
+      className={`relative overflow-hidden ${isHomePage ? 'py-14 lg:py-20' : 'pt-20 pb-10 lg:pt-24 lg:pb-12'} border-b ${
         dark
           ? 'bg-[#14251E] text-[#F8F6ED] border-[#284439]'
           : 'bg-[#F8F6ED] text-[#14251E] border-[#E5E0CE]'
