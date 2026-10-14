@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Compass, Shield, Layers, ArrowDown } from 'lucide-react';
 import { companyProfile } from '@/data/company-profile';
+import CTAButton from '@/components/shared/CTAButton';
 
 export default function CinematicHero() {
   const containerRef = useRef(null);
@@ -60,21 +61,9 @@ export default function CinematicHero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#C69A36] to-[#DFBE65] hover:from-[#DFBE65] hover:to-[#C69A36] text-[#064A32] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 group"
-              >
-                <span>Explore Our Expertise</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#064A32] group-hover:translate-x-1 transition-transform" />
-              </Link>
-
-              <Link
-                to="/projects"
-                className="inline-flex items-center justify-center space-x-2 bg-[#1A2F27]/80 hover:bg-[#1A2F27] text-[#F8F6ED] px-6 py-3 text-xs font-bold uppercase tracking-[0.14em] border border-[#C69A36]/50 hover:border-[#DFBE65] backdrop-blur-md transition-all duration-300 group"
-              >
-                <span>View Our Project</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#DFBE65] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
+              <CTAButton to="/services" variant="gold">
+                Explore Our Services
+              </CTAButton>
             </div>
 
             {/* Gold Hairline Divider & Value Pillars */}

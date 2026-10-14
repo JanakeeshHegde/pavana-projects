@@ -263,7 +263,7 @@ export default function ControlsDashboardInteractive() {
             <div className="bg-[#1A2E26] p-5 border border-[#254135]">
               <div className="flex items-center justify-between border-b border-[#254135] pb-3 mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#DFBE65]">
-                  Monthly Executive Dashboard — Headline Indicators (PDF Page 8)
+                  Monthly Executive Dashboard — Headline Indicators
                 </span>
                 <span className="text-[11px] text-[#A3B8B0]">Client Leadership Pack</span>
               </div>
@@ -303,17 +303,6 @@ export default function ControlsDashboardInteractive() {
           </div>
         )}
       </div>
-
-      {/* Illustrative Simulation Notice */}
-      {/* <div className="mt-8 pt-4 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#869E93] gap-2">
-        <span className="flex items-center space-x-1.5">
-          <AlertCircle className="w-3.5 h-3.5 text-[#C69A36]" />
-          <span>Illustrative Interface — Visualizing the PMC Project Control Framework defined in Section 07.</span>
-        </span>
-        <span className="text-[#DFBE65] font-serif-arch">
-          Pavana Projects Controls Architecture
-        </span>
-      </div> */}
     </div>
   );
 }
