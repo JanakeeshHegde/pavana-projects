@@ -169,23 +169,13 @@ export default function HomePage() {
           
           <div className="flex flex-col lg:flex-row lg:items-end justify-between pb-10 border-b border-[#284439] gap-6">
             <div className="max-w-2xl space-y-3">
-              {/* <div className="text-[11px] font-mono-tech text-[#DFBE65] uppercase tracking-widest">
-                SIGNATURE PROJECT PRESENTATION
-              </div> */}
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#FFFFFF]">
-                IT Software Park. <br />
+                Proposed Framework <br />
                 <span className="gold-gradient-text"></span>
               </h2>
               <p className="text-sm text-[#CBD8D2] leading-relaxed">
                 Proposed PMC Framework integrating design, construction, building services, procurement, quality, safety, and commissioning under a single control architecture.
               </p>
-            </div>
-
-            <div className="text-right shrink-0 font-mono-tech">
-              <div className="text-3xl font-bold text-[#DFBE65]">15,00,000</div>
-              <div className="text-[10px] text-[#8EA49A] uppercase tracking-wider">
-                SQ. FT. REFERENCE SCALE
-              </div>
             </div>
           </div>
 

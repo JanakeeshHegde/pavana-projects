@@ -136,9 +136,6 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <div className="py-10 space-y-6">
-            <span className="text-[10px] font-mono-tech uppercase tracking-[0.2em] text-[#DFBE65] block">
-              // SITE NAVIGATION
-            </span>
             <div className="space-y-4">
               {navItems.map((item, idx) => {
                 const isActive = location.pathname === item.path;
@@ -149,9 +146,6 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex items-baseline space-x-4 group"
                   >
-                    <span className="font-mono-tech text-xs text-[#C69A36]">
-                      0{idx + 1}
-                    </span>
                     <span
                       className={`text-2xl sm:text-3xl font-bold tracking-tight transition-colors ${
                         isActive
@@ -179,7 +173,6 @@ export default function Navbar() {
             </Link>
 
             <div className="text-[11px] font-mono-tech text-[#8EA49A] flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-              <span>#543, 14th ‘A’ Main, Mathikere, Bangalore – 560054</span>
               <span className="text-[#DFBE65]">“CREATING LANDMARKS, SHAPING FUTURES.”</span>
             </div>
           </div>

@@ -81,19 +81,18 @@ export default function CinematicHero() {
             <div className="pt-4 border-t border-[#284439] max-w-xl">
               <div className="grid grid-cols-3 gap-4 font-mono-tech text-xs">
                 <div>
-                  <span className="text-[10px] text-[#8EA49A] uppercase block">SCALE PROFILE</span>
-                  <span className="text-base font-bold text-[#DFBE65]">1.5M SQ. FT.</span>
-                  <span className="text-[10px] text-[#A3B8B0] block">IT Software Park</span>
+                 
+                  <span className="text-base font-bold text-[#DFBE65]">Ambitious Vision</span>
+                  <span className="text-[10px] text-[#A3B8B0] block"> Turning complex commercial, IT/ITES, and infrastructure concepts into future-proof, high-value realities.</span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-[#8EA49A] uppercase block">INTEGRATION</span>
-                  <span className="text-base font-bold text-[#FFFFFF]">360° PMC</span>
-                  <span className="text-[10px] text-[#A3B8B0] block">End-to-End Delivery</span>
+                  <span className="text-base font-bold text-[#DFBE65]">Precision Execution</span>
+                  <span className="text-[10px] text-[#A3B8B0] block">Driving every phase with rigorous control, strict timelines, and meticulous attention to detail.</span>
                 </div>
                 <div>
-                  <span className="text-[10px] text-[#8EA49A] uppercase block">DELIVERY CORE</span>
-                  <span className="text-base font-bold text-[#DFBE65]">TIME & COST</span>
-                  <span className="text-[10px] text-[#A3B8B0] block">Zero-Defect Quality</span>
+
+                  <span className="text-base font-bold text-[#DFBE65]">Seamless Integration</span>
+                  <span className="text-[10px] text-[#A3B8B0] block">Unifying workflows, teams, and technology into one cohesive project management ecosystem.</span>
                 </div>
               </div>
             </div>
