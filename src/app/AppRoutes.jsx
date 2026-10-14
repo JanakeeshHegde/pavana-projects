@@ -5,6 +5,8 @@ import HomePage from '@/pages/HomePage';
 import ProcessPage from '@/pages/ProcessPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import ServicesPage from '@/pages/ServicesPage';
+import ProjectControlsPage from '@/pages/ProjectControlsPage';
+import QualitySafetyPage from '@/pages/QualitySafetyPage';
 
 export default function AppRoutes() {
   return (
@@ -15,14 +17,14 @@ export default function AppRoutes() {
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/process" element={<ProcessPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/project-controls" element={<ProjectControlsPage />} />
+      <Route path="/quality-safety" element={<QualitySafetyPage />} />
 
       {/* Keep the previous URLs working for existing links and search results. */}
       <Route path="/work" element={<Navigate to="/projects" replace />} />
       <Route path="/expertise" element={<Navigate to="/services" replace />} />
       <Route path="/studio" element={<Navigate to="/about" replace />} />
       <Route path="/methodology" element={<Navigate to="/process" replace />} />
-      <Route path="/project-controls" element={<Navigate to="/process" replace />} />
-      <Route path="/quality-safety" element={<Navigate to="/about" replace />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

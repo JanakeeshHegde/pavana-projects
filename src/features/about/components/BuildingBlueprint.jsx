@@ -271,8 +271,7 @@ export default function BuildingBlueprint() {
       <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_52%_45%,rgba(0,168,255,0.12),transparent_65%)]" />
       <div className="relative z-20 flex items-center justify-between border-b border-cyan-200/15 bg-[#02070B]/75 px-4 py-3 sm:px-5">
         <div>
-          <p className="font-mono-tech text-[9px] tracking-[0.2em] text-cyan-200">PAVANA / BIM STUDY 01</p>
-          <p className="mt-1 text-[10px] font-medium tracking-[0.12em] text-slate-300">CONTEMPORARY VILLA · 03 LEVELS</p>
+          <p className="text-[10px] font-medium tracking-[0.12em] text-slate-300">CONTEMPORARY VILLA · 03 LEVELS</p>
         </div>
         <div className="flex items-center gap-2 font-mono-tech text-[8px] uppercase tracking-[0.15em] text-cyan-100/75">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-300 shadow-[0_0_10px_#53F2FF]" />

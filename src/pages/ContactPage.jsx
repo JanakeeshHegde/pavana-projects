@@ -14,17 +14,19 @@ export default function ContactPage() {
   return (
     <>
       <SEOHead
-        title="Contact Pavana Projects — Registered Office Bangalore"
+        title="Contact"
         description="Connect with Pavana Projects Project Management Consultancy (PMC) at our registered office: #543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage, Mathikere, Bangalore – 560054."
       />
 
       <PageHero
         sectionNumber="14"
         sectionTitle="ENGAGEMENT & CONSULTATION"
-        title="Connect With Our PMC Leadership"
+        title="Contact"
         subtitle="We invite developers, corporate occupiers, and infrastructure project owners to initiate confidential discussions on their upcoming capital developments."
         badge="Direct Consultation"
         image="/images/project-controls-room.jpg"
+        imageTag="BANGALORE HEADQUARTERS"
+        imageCaption="Executive Project Controls & Client Advisory Suite"
       />
 
       {/* 1. MAIN CONTACT SECTION */}
@@ -48,13 +50,18 @@ export default function ContactPage() {
               </div>
 
               {/* Exact Address Card */}
-              <div className="bg-[#FFFFFF] p-6 border-l-4 border-[#064A32] border-t border-r border-b border-[#E5E0CE] space-y-4 shadow-sm">
+              <div className="bg-[#FFFFFF] p-6 border-l-4 border-l-[#064A32] border-t-2 border-t-[#C69A36] border-r border-b border-[#E5E0CE] space-y-4 shadow-sm hover:shadow-md transition-shadow relative group">
                 <div className="flex items-start space-x-3.5">
-                  <MapPin className="w-5 h-5 text-[#C69A36] shrink-0 mt-1" />
+                  <div className="w-8 h-8 bg-[#064A32] text-[#DFBE65] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                    <MapPin className="w-4 h-4" />
+                  </div>
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#14251E] block mb-1">
-                      Registered Office
-                    </span>
+                    <div className="flex items-center space-x-2 mb-1">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#14251E]">
+                        Registered Office
+                      </span>
+                      <span className="text-[10px] font-mono-tech text-[#C69A36]">[ BLR-HQ ]</span>
+                    </div>
                     <address className="not-italic text-sm text-[#3C4E46] leading-relaxed">
                       #543, 14th ‘A’ Main, <br />
                       HMT Layout, Gokula 1st Stage, <br />
@@ -64,13 +71,13 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="pt-2 border-t border-[#E5E0CE] flex items-center justify-between text-xs text-[#064A32] font-semibold">
-                  <span>Postal Code: 560054</span>
+                <div className="pt-3 border-t border-[#E5E0CE] flex items-center justify-between text-xs text-[#064A32] font-semibold">
+                  <span className="font-mono-tech">PIN: 560054</span>
                   <a
                     href="https://maps.google.com/?q=543+14th+A+Main+Rd+HMT+Layout+Gokula+1st+Stage+Mathikere+Bengaluru+560054"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1 text-[#C69A36] hover:text-[#064A32]"
+                    className="inline-flex items-center space-x-1.5 text-[#C69A36] hover:text-[#064A32] font-bold group-hover:underline"
                   >
                     <span>Open in Google Maps</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -79,11 +86,13 @@ export default function ContactPage() {
               </div>
 
               {/* Verified Contact Details */}
-              <div className="bg-[#FFFFFF] p-6 border border-[#E5E0CE] space-y-4 shadow-sm">
+              <div className="bg-[#FFFFFF] p-6 border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-4 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center space-x-3.5">
-                  <Mail className="w-5 h-5 text-[#C69A36] shrink-0" />
+                  <div className="w-8 h-8 bg-[#F8F6ED] text-[#064A32] border border-[#E5E0CE] flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-[#C69A36]" />
+                  </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#5C6E66] block">
+                    <span className="text-[11px] font-mono-tech font-bold uppercase tracking-wider text-[#5C6E66] block">
                       Official Inquiries
                     </span>
                     <a
@@ -96,12 +105,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center space-x-3.5 pt-3 border-t border-[#E5E0CE]">
-                  <Clock className="w-5 h-5 text-[#C69A36] shrink-0" />
+                  <div className="w-8 h-8 bg-[#F8F6ED] text-[#064A32] border border-[#E5E0CE] flex items-center justify-center shrink-0">
+                    <Clock className="w-4 h-4 text-[#C69A36]" />
+                  </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#5C6E66] block">
+                    <span className="text-[11px] font-mono-tech font-bold uppercase tracking-wider text-[#5C6E66] block">
                       Consultation Hours
                     </span>
-                    <span className="text-xs text-[#3C4E46]">
+                    <span className="text-xs text-[#3C4E46] font-medium">
                       {contact.workingHours}
                     </span>
                   </div>
@@ -109,18 +120,21 @@ export default function ContactPage() {
               </div>
 
               {/* Engagement Protocol */}
-              <div className="bg-[#14251E] text-[#F8F6ED] p-6 border border-[#284439] space-y-3">
-                <div className="text-xs font-serif-arch text-[#DFBE65] uppercase tracking-wider">
-                  PMC APPOINTMENT PROTOCOL
+              <div className="bg-gradient-to-br from-[#1A2E26] to-[#14251E] text-[#F8F6ED] p-6 border border-[#284439] border-t-2 border-t-[#C69A36] space-y-4 shadow-lg">
+                <div className="flex items-center justify-between pb-2 border-b border-[#284439]">
+                  <div className="text-xs font-mono-tech text-[#DFBE65] uppercase tracking-wider font-bold">
+                    PMC APPOINTMENT PROTOCOL
+                  </div>
+                  <span className="text-[10px] font-mono-tech text-[#A3B8B0]">[ 4 STAGES ]</span>
                 </div>
                 <h4 className="text-sm font-bold text-[#FFFFFF]">
                   Structured Engagement Process
                 </h4>
-                <ol className="text-xs text-[#CBD8D2] space-y-2 list-decimal list-inside leading-relaxed">
-                  <li>Submission of Preliminary Development Brief</li>
-                  <li>Initial Technical Consultation with PMC Director</li>
-                  <li>Formulation of Customized Packaging Strategy & WBS</li>
-                  <li>Commercial & Milestone Fee Proposal Transmittal</li>
+                <ol className="text-xs text-[#CBD8D2] space-y-2.5 list-decimal list-inside leading-relaxed">
+                  <li><strong className="text-[#DFBE65]">Brief:</strong> Submission of Preliminary Development Brief</li>
+                  <li><strong className="text-[#DFBE65]">Consultation:</strong> Initial Technical Consultation with PMC Director</li>
+                  <li><strong className="text-[#DFBE65]">Strategy:</strong> Formulation of Customized Packaging Strategy & WBS</li>
+                  <li><strong className="text-[#DFBE65]">Commercials:</strong> Commercial & Milestone Fee Proposal Transmittal</li>
                 </ol>
               </div>
             </div>

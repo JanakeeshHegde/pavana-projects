@@ -25,7 +25,7 @@ export default function ArchitecturalHero() {
             {/* Technical Header Meta Bar */}
             <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono-tech uppercase tracking-wider text-[#064A32]">
               <span className="px-2.5 py-1 bg-[#EAE5D6] border border-[#D5CDBE] font-bold text-[#064A32]">
-                DOSSIER // PMC-2026
+                DOSSIER // PMC-{new Date().getFullYear()}
               </span>
               <span className="text-[#C69A36]">|</span>
               <span className="text-[#3D4F47]">

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Menu, X, MapPin } from 'lucide-react';
-import { companyProfile } from '@/data/company-profile';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
-  // { name: 'Projects', path: '/projects' },
+  { name: 'Projects', path: '/projects' },
   { name: 'Process', path: '/process' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -49,13 +48,13 @@ export default function Navbar() {
             {/* 1. BRAND LOGO (LEFT) */}
             <Link
               to="/"
-              className="flex items-center space-x-3 group shrink-0"
+              className="flex items-center group shrink-0"
               aria-label="Pavana Projects Homepage"
             >
               <img
                 src="/logo-white.png"
-                alt="Pavana Projects Logo"
-                className="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                alt="Pavana Projects — Creating Landmarks, Shaping Futures"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -86,22 +85,11 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* 3. PREMIUM SEPARATE CTA BUTTON (RIGHT) */}
-            <div className="flex items-center space-x-4">
-              <Link
-                to="/contact"
-                className="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-[#C69A36] to-[#DFBE65] hover:from-[#DFBE65] hover:to-[#C69A36] text-[#064A32] px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-[0.14em] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group shrink-0"
-              >
-                <span>Discuss a Project</span>
-                <span className="text-sm font-semibold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">
-                  ↗
-                </span>
-              </Link>
-
-              {/* Accessible Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle */}
+            <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-[#DFBE65] hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#C69A36]"
+                className="p-2 text-[#DFBE65] hover:text-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#C69A36]"
                 aria-label="Toggle navigation menu"
                 aria-expanded={mobileMenuOpen}
               >
@@ -161,18 +149,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Footer & CTA */}
-          <div className="pt-6 border-t border-[#284439] space-y-4">
-            <Link
-              to="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-[#C69A36] to-[#DFBE65] text-[#064A32] py-4 text-xs font-bold uppercase tracking-widest shadow-md"
-            >
-              <span>Discuss a Project</span>
-              <span>↗</span>
-            </Link>
-
-            <div className="text-[11px] font-mono-tech text-[#8EA49A] flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+          {/* Mobile Footer */}
+          <div className="pt-6 border-t border-[#284439]">
+            <div className="text-[11px] font-mono-tech text-[#8EA49A] text-center">
               <span className="text-[#DFBE65]">“CREATING LANDMARKS, SHAPING FUTURES.”</span>
             </div>
           </div>

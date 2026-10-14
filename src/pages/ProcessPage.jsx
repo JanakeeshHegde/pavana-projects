@@ -43,17 +43,19 @@ export default function ProcessPage() {
   return (
     <>
       <SEOHead
-        title="Project Process & Controls — Eight-Stage Lifecycle & Engineering Intelligence"
-        description="Explore Pavana Projects' Eight-Stage Delivery Lifecycle (01 Initiate to 08 Handover) and 8 Project Controls Pillars. Structured governance for complex developments."
+        title="Process"
+        description="Explore Pavana Projects' Eight-Stage Delivery Lifecycle (01 Initiate to 08 Handover) and structured delivery governance for complex developments."
       />
 
       <PageHero
         sectionNumber="05"
-        sectionTitle="PROCESS & PROJECT CONTROLS"
-        title="The Eight-Stage Lifecycle & Control Tower"
+        sectionTitle="PROCESS & METHODOLOGY"
+        title="Process"
         subtitle="Maintaining an unbroken line of sight from strategic developer vision to physical occupancy and auditable commercial closure."
         badge="Governance & Methodology"
         image="/images/site-execution.jpg"
+        imageTag="8-STAGE DELIVERY MODEL"
+        imageCaption="On-Site Quality, Safety & Programme Oversight"
       />
 
       {/* 1. SECTION 8: THE EIGHT-STAGE LIFECYCLE (DESKTOP PROGRESSIVE TIMELINE & STORYTELLING) */}
@@ -177,26 +179,26 @@ export default function ProcessPage() {
                 </div>
 
                 {/* Mandated Stage Deliverables (5 Cols) */}
-                <div className="lg:col-span-5 bg-[#FFFFFF] p-6 sm:p-7 border border-[#E2DDD0] space-y-4 shadow-sm">
+                <div className="lg:col-span-5 bg-[#FFFFFF] p-6 sm:p-7 border border-[#E2DDD0] border-t-2 border-t-[#064A32] space-y-4 shadow-md relative">
                   <div className="flex items-center justify-between pb-3 border-b border-[#E2DDD0]">
                     <span className="text-xs font-mono-tech font-bold uppercase tracking-wider text-[#064A32]">
                       STAGE DELIVERABLES & ARTIFACTS
                     </span>
-                    <span className="text-[11px] font-mono-tech text-[#C69A36]">
+                    <span className="text-[11px] font-mono-tech font-bold text-[#C69A36] bg-[#F8F6ED] px-2 py-0.5 border border-[#E2DDD0]">
                       {selectedStage.deliverables.length} OUTPUTS
                     </span>
                   </div>
 
                   <ul className="space-y-3">
                     {selectedStage.deliverables.map((del, dIdx) => (
-                      <li key={dIdx} className="flex items-start space-x-2.5 text-xs text-[#2C3E36]">
+                      <li key={dIdx} className="flex items-start space-x-2.5 text-xs text-[#2C3E36] p-2 hover:bg-[#F8F6ED] transition-colors border-l-2 border-transparent hover:border-[#C69A36]">
                         <CheckCircle2 className="w-4 h-4 text-[#C69A36] shrink-0 mt-0.5" />
                         <span className="leading-snug font-medium">{del}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="pt-3 border-t border-[#E2DDD0] text-[11px] text-[#5C6E66]">
+                  <div className="pt-3 border-t border-[#E2DDD0] text-[11px] font-mono-tech text-[#5C6E66]">
                     Mandated in the Pavana Projects Master Quality & Handover Plan.
                   </div>
                 </div>
@@ -229,45 +231,43 @@ export default function ProcessPage() {
 
           {/* 8 Controls Breakdown Grid */}
           <div className="mt-16 pt-12 border-t border-[#284439]">
-            {/* <div className="text-xs font-mono-tech text-[#DFBE65] uppercase tracking-wider mb-6">
-              THE EIGHT CONTROL AREAS & FREQUENCY PROTOCOLS
-            </div> */}
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
               {controlAreas.map((ctrl, idx) => {
                 const IconComp = controlIcons[ctrl.area] || Clock;
                 return (
                   <div
                     key={ctrl.area}
-                    className="bg-[#1A2E26] p-5 border border-[#254135] hover:border-[#DFBE65] transition-all flex flex-col justify-between"
+                    className="bg-gradient-to-br from-[#1A2E26] to-[#14251E] p-5 border border-[#254135] border-t-2 border-t-[#C69A36] hover:border-[#DFBE65] transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-1 group"
                   >
                     <div>
                       <div className="flex items-center justify-between pb-2.5 border-b border-[#254135]">
                         <span className="text-[11px] font-mono-tech text-[#DFBE65] font-bold">
-                          0{idx + 1}
+                          CTRL-0{idx + 1}
                         </span>
-                        <span className="text-[10px] font-mono-tech uppercase text-[#CBD8D2] bg-[#14251E] px-2 py-0.5 border border-[#284439]">
+                        <span className="text-[10px] font-mono-tech uppercase text-[#CBD8D2] bg-[#064A32] px-2 py-0.5 border border-[#284439]">
                           {ctrl.frequency}
                         </span>
                       </div>
 
-                      <div className="flex items-center space-x-2 mt-3">
-                        <IconComp className="w-4 h-4 text-[#DFBE65] shrink-0" />
-                        <h4 className="text-sm font-bold text-[#FFFFFF]">
+                      <div className="flex items-center space-x-2.5 mt-3">
+                        <div className="w-7 h-7 bg-[#064A32] text-[#DFBE65] border border-[#C69A36]/40 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                          <IconComp className="w-3.5 h-3.5" />
+                        </div>
+                        <h4 className="text-sm font-bold text-[#FFFFFF] group-hover:text-[#DFBE65] transition-colors">
                           {ctrl.area}
                         </h4>
                       </div>
 
-                      <p className="text-xs text-[#A3B8B0] mt-2.5 leading-relaxed">
+                      <p className="text-xs text-[#CBD8D2] mt-2.5 leading-relaxed">
                         {ctrl.summary}
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-[#254135] mt-4">
-                      <span className="text-[10px] font-mono-tech text-[#DFBE65] uppercase block mb-0.5">
-                        Outputs:
+                    <div className="pt-3 border-t border-[#254135] mt-4 bg-[#0E1B15]/80 -mx-5 -mb-5 p-3.5">
+                      <span className="text-[10px] font-mono-tech text-[#DFBE65] uppercase block mb-0.5 font-bold">
+                        Mandated Outputs:
                       </span>
-                      <p className="text-[11px] text-[#E5E0CE] font-mono-tech leading-snug">
+                      <p className="text-[11px] text-[#A3B8B0] font-mono-tech leading-snug">
                         {ctrl.outputs}
                       </p>
                     </div>
@@ -310,13 +310,16 @@ export default function ProcessPage() {
             {governancePrinciples.map((gp, idx) => (
               <div
                 key={idx}
-                className="bg-[#FFFFFF] p-6 border border-[#E2DDD0] hover:border-[#064A32] transition-colors flex flex-col justify-between shadow-sm"
+                className="bg-[#FFFFFF] p-6 border border-[#E2DDD0] border-t-2 border-t-[#C69A36] hover:border-t-[#064A32] hover:border-[#064A32] transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-1 group relative"
               >
                 <div>
-                  <div className="text-xs font-mono-tech text-[#C69A36] font-bold">
-                    TENET 0{idx + 1}
+                  <div className="flex items-center justify-between pb-2 border-b border-[#E2DDD0]">
+                    <span className="text-xs font-mono-tech text-[#C69A36] font-bold">
+                      TENET 0{idx + 1}
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#064A32] group-hover:bg-[#C69A36] transition-colors" />
                   </div>
-                  <p className="text-sm font-bold text-[#14251E] mt-3 leading-snug">
+                  <p className="text-sm font-bold text-[#14251E] mt-3 leading-snug group-hover:text-[#064A32] transition-colors">
                     {gp}
                   </p>
                 </div>

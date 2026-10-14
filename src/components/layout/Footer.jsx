@@ -13,81 +13,83 @@ export default function Footer() {
         {/* Top Header Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#284439]">
           
-          {/* Brand Info (5 Cols) */}
-          <div className="lg:col-span-5 space-y-5">
-            <Link to="/" aria-label="Pavana Projects Homepage">
+          {/* Brand Info (4 Cols) */}
+          <div className="lg:col-span-4 space-y-5">
+            <Link to="/" aria-label="Pavana Projects Homepage" className="inline-block group">
               <img
                 src="/logo-white.png"
-                alt="Pavana Projects"
-                className="h-14 w-auto object-contain"
+                alt="Pavana Projects — Creating Landmarks, Shaping Futures"
+                className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
-
-            <div className="text-xs font-mono-tech text-[#DFBE65] tracking-widest uppercase">
-              “CREATING LANDMARKS, SHAPING FUTURES.”
-            </div>
 
             <p className="text-xs text-[#CBD8D2] leading-relaxed max-w-sm">
               Integrated Project Management Consultancy (PMC) for ambitious commercial, IT/ITES and infrastructure developments.
             </p>
-
-            {/* <div className="pt-2 text-[11px] font-mono-tech text-[#8EA49A] space-y-1">
-              <div>DISCIPLINE: PROJECT MANAGEMENT CONSULTANCY</div>
-              <div>COORDINATES: 13°01'58"N / 77°33'18"E // BANGALORE</div>
-            </div> */}
           </div>
 
           {/* Three Principal Navigation Columns (PROJECTS, SERVICES, PROCESS & ABOUT) */}
-          <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
-            <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
+          <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
+            <Link
+              to="/projects"
+              className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
+            >
               PROJECTS
-            </div>
+            </Link>
             <ul className="space-y-2 text-[#CBD8D2]">
               <li>
-                <Link to="/projects" className="hover:text-[#DFBE65] transition-colors">
-                  Signature Framework
+                <Link to="/projects#it-software-park" className="hover:text-[#DFBE65] transition-colors block">
+                  15,00,000 Sq. Ft. IT Software Park
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-[#DFBE65] transition-colors">
-                  15L Sq. Ft. IT Campus
+                <Link to="/projects#commercial-towers" className="hover:text-[#DFBE65] transition-colors block">
+                  Commercial Office Towers
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-[#DFBE65] transition-colors">
-                  9-Package Scope
+                <Link to="/projects#it-campuses" className="hover:text-[#DFBE65] transition-colors block">
+                  IT / ITES Campuses
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="hover:text-[#DFBE65] transition-colors">
-                  Portfolio Scalability
+                <Link to="/projects#infrastructure-campuses" className="hover:text-[#DFBE65] transition-colors block">
+                  Infrastructure & Industrial Campuses
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects#nine-packages" className="hover:text-[#DFBE65] transition-colors block text-[#DFBE65]/90">
+                  9-Package Proposed Framework ↗
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
-            <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
+            <Link
+              to="/services"
+              className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
+            >
               SERVICES
-            </div>
+            </Link>
             <ul className="space-y-2 text-[#CBD8D2]">
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
                   Nine Disciplines
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
                   Responsibility Matrix
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
                   14 Key Deliverables
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/services" className="hover:text-[#DFBE65] transition-colors block">
                   Commercial Controls
                 </Link>
               </li>
@@ -96,26 +98,26 @@ export default function Footer() {
 
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
             <div className="text-[10px] text-[#DFBE65] uppercase tracking-widest pb-1 border-b border-[#284439]">
-               PROCESS & ABOUT
+              PROCESS & ABOUT
             </div>
             <div className="space-y-2 text-[#CBD8D2]">
               <div>
-                <Link to="/process" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/process" className="hover:text-[#DFBE65] transition-colors block">
                   8-Stage Lifecycle
                 </Link>
               </div>
               <div>
-                <Link to="/process" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/process" className="hover:text-[#DFBE65] transition-colors block">
                   Project Controls Console
                 </Link>
               </div>
               <div>
-                <Link to="/about" className="hover:text-[#DFBE65] transition-colors">
+                <Link to="/about" className="hover:text-[#DFBE65] transition-colors block">
                   Foundation & 6 Values
                 </Link>
               </div>
               <div>
-                <Link to="/contact" className="hover:text-[#DFBE65] transition-colors font-semibold text-[#DFBE65]">
+                <Link to="/contact" className="hover:text-[#DFBE65] transition-colors font-semibold text-[#DFBE65] block">
                   Discuss a Project ↗
                 </Link>
               </div>
@@ -131,7 +133,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono-tech text-[#6F867C] gap-3">
           <div>
-            © {currentYear} Pavana Projects. All rights reserved.
+            © {new Date().getFullYear()} Pavana Projects. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
             <span>PMC BANGALORE</span>

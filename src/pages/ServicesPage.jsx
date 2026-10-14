@@ -21,6 +21,18 @@ const serviceIcons = {
   'testing-commissioning': CheckSquare,
 };
 
+const serviceImagesMap = {
+  'planning-scheduling': '/images/service-planning.jpg',
+  'design-management': '/images/control tower architecture.png',
+  'tender-procurement': '/images/project-controls-room.jpg',
+  'construction-management': '/images/site-execution.jpg',
+  'cost-commercial': '/images/commercial-tower.jpg',
+  'mep-coordination': '/images/mep-engineering.jpg',
+  'qa-qc-management': '/images/service-qa.jpg',
+  'hse-coordination': '/images/site-execution.jpg',
+  'testing-commissioning': '/images/mep-engineering.jpg',
+};
+
 export default function ServicesPage() {
   const { services, deliverablesList } = companyProfile;
   const [selectedServiceId, setSelectedServiceId] = useState(services[0].id);
@@ -31,17 +43,19 @@ export default function ServicesPage() {
   return (
     <>
       <SEOHead
-        title="PMC Service Portfolio — 9 Integrated Disciplines"
+        title="Services"
         description="Explore the complete Project Management Consultancy service portfolio of Pavana Projects: Planning, Design, Procurement, Construction, Cost, MEP, QA/QC, HSE, and Commissioning."
       />
 
       <PageHero
         sectionNumber="03"
         sectionTitle="SERVICE PORTFOLIO"
-        title="End-to-End PMC Service Portfolio"
+        title="Services"
         subtitle="A multidisciplinary coordination framework bringing engineering rigor and structured governance to every stage of the project lifecycle."
         badge="Scope of Services"
         image="/images/mep-engineering.jpg"
+        imageTag="9 CORE DISCIPLINES"
+        imageCaption="MEP & Multidisciplinary Engineering Coordination"
       />
 
       {/* 1. EDITORIAL SERVICE SHOWCASE WITH DYNAMIC SELECTOR */}
@@ -95,22 +109,38 @@ export default function ServicesPage() {
               })}
             </div>
 
-            {/* Right Interactive Detail Card (8 Cols) */}
-            <div className="lg:col-span-8 bg-[#F8F6ED] border border-[#E5E0CE] p-6 sm:p-8 lg:p-10 space-y-8 shadow-sm">
-              <div className="flex items-start justify-between pb-6 border-b border-[#E5E0CE]">
-                <div className="space-y-1">
+            {/* Right Interactive Detail Card (8 Cols) - Editorial Architectural Dossier */}
+            <div className="lg:col-span-8 bg-[#F8F6ED] border border-[#E5E0CE] p-6 sm:p-8 lg:p-10 space-y-6 shadow-md relative overflow-hidden">
+              {/* Header with Title and Content-Specific Image */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pb-6 border-b border-[#E5E0CE]">
+                <div className="md:col-span-7 space-y-2">
                   <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-wider uppercase">
                     <span>DISCIPLINE DETAIL</span>
                     <span>•</span>
-                    <span>PAVANA PMC SCOPE</span>
+                    <span className="text-[#064A32] font-bold bg-[#EAE6D6] px-2 py-0.5">PAVANA PMC SCOPE</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32]">
                     {activeService.title}
                   </h3>
+                  <p className="text-xs text-[#5C6E66] font-medium leading-relaxed">
+                    Multidisciplinary coordination, technical verification, and executive control.
+                  </p>
                 </div>
 
-                <div className="p-3 bg-[#064A32] text-[#DFBE65]">
-                  <ActiveIcon className="w-6 h-6" />
+                <div className="md:col-span-5">
+                  <div className="relative group overflow-hidden border-2 border-[#064A32] p-1 bg-[#FFFFFF] shadow-lg">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#14251E]">
+                      <img
+                        src={serviceImagesMap[activeService.id] || '/images/hero-campus.jpg'}
+                        alt={activeService.title}
+                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#14251E]/80 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute bottom-2 left-2 right-2 text-[10px] font-mono-tech text-[#DFBE65] font-bold uppercase tracking-wider truncate">
+                        {activeService.title}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -119,7 +149,7 @@ export default function ServicesPage() {
                 <h4 className="text-xs font-bold uppercase tracking-widest text-[#C69A36] mb-2">
                   PMC Responsibility Description
                 </h4>
-                <p className="text-base text-[#14251E] font-medium leading-relaxed bg-[#FFFFFF] p-5 border-l-4 border-[#064A32]">
+                <p className="text-sm sm:text-base text-[#14251E] font-medium leading-relaxed bg-[#FFFFFF] p-5 border-l-4 border-[#064A32] shadow-sm">
                   {activeService.fullDesc}
                 </p>
               </div>
@@ -133,7 +163,7 @@ export default function ServicesPage() {
                   {activeService.deliverables.map((deliv, dIdx) => (
                     <div
                       key={dIdx}
-                      className="flex items-start space-x-2.5 p-3 bg-[#FFFFFF] border border-[#E5E0CE] text-xs text-[#2C3E36]"
+                      className="flex items-start space-x-2.5 p-3.5 bg-[#FFFFFF] border border-[#E5E0CE] text-xs text-[#2C3E36] shadow-sm hover:border-[#C69A36] transition-colors"
                     >
                       <CheckCircle2 className="w-4 h-4 text-[#C69A36] shrink-0 mt-0.5" />
                       <span className="font-medium leading-snug">{deliv}</span>
@@ -149,7 +179,7 @@ export default function ServicesPage() {
                 </span>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center space-x-2 bg-[#064A32] text-[#F8F6ED] hover:bg-[#043624] px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors"
+                  className="inline-flex items-center space-x-2 bg-[#064A32] text-[#F8F6ED] hover:bg-[#043624] px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                 >
                   <span>Inquire for This Scope</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#DFBE65]" />
@@ -182,12 +212,13 @@ export default function ServicesPage() {
             {deliverablesList.map((del, idx) => (
               <div
                 key={idx}
-                className="p-4 bg-[#1A2E26] border border-[#254135] flex items-start space-x-3 hover:border-[#C69A36] transition-colors"
+                className="group relative p-4.5 bg-[#1A2E26] border border-[#254135] hover:border-[#C69A36] transition-all duration-300 shadow-sm hover:shadow-lg flex items-start space-x-3.5 overflow-hidden"
               >
-                <div className="text-xs font-serif-arch text-[#DFBE65] font-bold shrink-0 mt-0.5">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#C69A36] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="text-xs font-mono-tech text-[#DFBE65] font-bold shrink-0 mt-0.5 px-2 py-0.5 bg-[#0E1A15] border border-[#284439]">
                   #{idx < 9 ? `0${idx + 1}` : idx + 1}
                 </div>
-                <div className="text-xs text-[#E5E0CE] leading-relaxed">
+                <div className="text-xs text-[#E5E0CE] font-medium leading-relaxed group-hover:text-[#FFFFFF] transition-colors">
                   {del}
                 </div>
               </div>
@@ -229,18 +260,19 @@ export default function ServicesPage() {
             {companyProfile.procurementStages.map((stg, idx) => (
               <div
                 key={stg.stage}
-                className="bg-[#FFFFFF] p-6 border border-[#E5E0CE] space-y-3 hover:border-[#064A32] transition-colors"
+                className="group relative bg-[#FFFFFF] p-6 border border-[#E5E0CE] hover:border-[#C69A36] space-y-3 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
+                <div className="absolute top-0 left-0 right-0 h-1 bg-[#C69A36] opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex items-center justify-between text-xs pb-2 border-b border-[#E5E0CE]">
-                  <span className="text-xs font-serif-arch text-[#C69A36] font-bold">
+                  <span className="text-xs font-mono-tech text-[#C69A36] font-bold">
                     STAGE 0{idx + 1}
                   </span>
-                  <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#F8F6ED] px-2 py-0.5">
+                  <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
                     Commercial Focus
                   </span>
                 </div>
 
-                <h4 className="text-base font-bold text-[#14251E]">
+                <h4 className="text-base font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
                   {stg.stage}
                 </h4>
 

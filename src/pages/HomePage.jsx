@@ -13,6 +13,27 @@ import ScopeExplorer from '@/features/projects/components/ScopeExplorer';
 import { companyProfile } from '@/data/company-profile';
 import confetti from 'canvas-confetti';
 
+const serviceImagesMap = {
+  'planning-scheduling': '/images/service-planning.jpg',
+  'design-management': '/images/control tower architecture.png',
+  'tender-procurement': '/images/project-controls-room.jpg',
+  'construction-management': '/images/site-execution.jpg',
+  'cost-commercial': '/images/commercial-tower.jpg',
+  'mep-coordination': '/images/mep-engineering.jpg',
+  'qa-qc-management': '/images/service-qa.jpg',
+  'hse-coordination': '/images/site-execution.jpg',
+  'testing-commissioning': '/images/mep-engineering.jpg',
+};
+
+const valueIcons = {
+  Integrity: ShieldCheck,
+  Planning: Compass,
+  Coordination: Layers,
+  Control: Award,
+  Quality: CheckCircle2,
+  Delivery: Building2
+};
+
 export default function HomePage() {
   const [selectedServiceIndex, setSelectedServiceIndex] = useState(0);
   const [processStageIndex, setProcessStageIndex] = useState(0);
@@ -65,7 +86,7 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="Built on Vision. Driven by Precision."
+        title="Home"
         description="Pavana Projects — Integrated Project Management Consultancy (PMC) for ambitious commercial, IT/ITES and infrastructure developments. Bangalore, India."
       />
 
@@ -87,10 +108,10 @@ export default function HomePage() {
               </div> */}
 
               {/* Required Statement */}
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#064A32] leading-[1.08]">
-                “Complex projects demand more than coordination. <br />
-                <span className="text-[#14251E] font-serif-arch font-medium italic">
-                  They demand control.”
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#064A32] leading-[1.15]">
+                Complex projects demand more than coordination. <br className="hidden sm:inline" />
+                <span className="text-[#14251E] italic font-semibold">
+                  They demand control.
                 </span>
               </h2>
 
@@ -104,23 +125,38 @@ export default function HomePage() {
                 Our approach is built around one clear objective: <strong>bringing clarity, control, and accountability</strong> to complex projects from project initiation through commissioning and handover. We serve as the client’s project-management interface across consultants, contractors, vendors, statutory stakeholders, and specialist agencies.
               </p>
 
-              {/* The 4 Priorities Line */}
-              <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-[#E2DDD0] font-mono-tech text-xs">
-                <div>
-                  <span className="text-[#C69A36] block font-bold"> TIME</span>
-                  <span className="text-[#5C6E66] text-[11px]">Programme Baseline</span>
+              {/* The 4 Priorities Line - Premium Architectural Micro-Cards */}
+              <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="p-3.5 bg-[#F8F6ED] border border-[#E2DDD0] border-t-2 border-t-[#C69A36] space-y-1 shadow-sm hover:shadow-md hover:border-[#C69A36]/60 transition-all group">
+                  <div className="flex items-center space-x-1.5 text-[#C69A36] font-bold text-xs uppercase tracking-wider">
+                    <Clock className="w-3.5 h-3.5 text-[#C69A36] group-hover:scale-110 transition-transform" />
+                    <span>TIME</span>
+                  </div>
+                  <span className="text-[#3D4F47] text-[11px] font-medium block leading-tight">Programme Baseline</span>
                 </div>
-                <div>
-                  <span className="text-[#C69A36] block font-bold">COST</span>
-                  <span className="text-[#5C6E66] text-[11px]">Commercial Control</span>
+
+                <div className="p-3.5 bg-[#F8F6ED] border border-[#E2DDD0] border-t-2 border-t-[#C69A36] space-y-1 shadow-sm hover:shadow-md hover:border-[#C69A36]/60 transition-all group">
+                  <div className="flex items-center space-x-1.5 text-[#C69A36] font-bold text-xs uppercase tracking-wider">
+                    <Coins className="w-3.5 h-3.5 text-[#C69A36] group-hover:scale-110 transition-transform" />
+                    <span>COST</span>
+                  </div>
+                  <span className="text-[#3D4F47] text-[11px] font-medium block leading-tight">Commercial Control</span>
                 </div>
-                <div>
-                  <span className="text-[#C69A36] block font-bold"> QUALITY</span>
-                  <span className="text-[#5C6E66] text-[11px]">Right-First-Time</span>
+
+                <div className="p-3.5 bg-[#F8F6ED] border border-[#E2DDD0] border-t-2 border-t-[#C69A36] space-y-1 shadow-sm hover:shadow-md hover:border-[#C69A36]/60 transition-all group">
+                  <div className="flex items-center space-x-1.5 text-[#C69A36] font-bold text-xs uppercase tracking-wider">
+                    <Award className="w-3.5 h-3.5 text-[#C69A36] group-hover:scale-110 transition-transform" />
+                    <span>QUALITY</span>
+                  </div>
+                  <span className="text-[#3D4F47] text-[11px] font-medium block leading-tight">Right-First-Time</span>
                 </div>
-                <div>
-                  <span className="text-[#C69A36] block font-bold">SAFETY</span>
-                  <span className="text-[#5C6E66] text-[11px]">Zero-Incident HSE</span>
+
+                <div className="p-3.5 bg-[#F8F6ED] border border-[#E2DDD0] border-t-2 border-t-[#C69A36] space-y-1 shadow-sm hover:shadow-md hover:border-[#C69A36]/60 transition-all group">
+                  <div className="flex items-center space-x-1.5 text-[#C69A36] font-bold text-xs uppercase tracking-wider">
+                    <ShieldAlert className="w-3.5 h-3.5 text-[#C69A36] group-hover:scale-110 transition-transform" />
+                    <span>SAFETY</span>
+                  </div>
+                  <span className="text-[#3D4F47] text-[11px] font-medium block leading-tight">Zero-Incident HSE</span>
                 </div>
               </div>
 
@@ -140,8 +176,8 @@ export default function HomePage() {
               <div className="relative border border-[#D5CDBE] bg-[#F8F6ED] p-3 shadow-2xl">
                 <div className="relative overflow-hidden aspect-[4/5] bg-[#14251E]">
                   <img
-                    src="/images/project-controls-room.jpg"
-                    alt="Pavana Projects Executive Project Control Center"
+                    src="/images/control%20tower%20architecture.png"
+                    alt="Control tower architecture"
                     className="w-full h-full object-cover object-center filter contrast-[1.08] hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-3 left-3 bg-[#14251E]/95 text-[#DFBE65] font-mono-tech text-[10px] px-2.5 py-1 border border-[#284439]">
@@ -189,7 +225,7 @@ export default function HomePage() {
 
           {/* Immersive Scope Explorer */}
           <div className="pt-6">
-            <ScopeExplorer />
+            <ScopeExplorer showPackageStatus />
           </div>
 
           <div className="mt-8 pt-6 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -259,43 +295,61 @@ export default function HomePage() {
               })}
             </div>
 
-            {/* Right Detailed Expandable Panel (8 Cols) */}
-            <div className="lg:col-span-8 bg-[#F8F6ED] border border-[#E2DDD0] p-6 sm:p-10 space-y-8 shadow-sm">
-              <div className="flex items-center justify-between pb-6 border-b border-[#E2DDD0]">
-                {/* <div>
-                  <div className="text-[10px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
-                    DISCIPLINE SPECIFICATION // 0{selectedServiceIndex + 1}
+            {/* Right Detailed Expandable Panel (8 Cols) - Editorial Architectural Card */}
+            <div className="lg:col-span-8 bg-[#F8F6ED] border border-[#E2DDD0] p-6 sm:p-8 lg:p-10 space-y-6 shadow-md relative overflow-hidden">
+              {/* Header with Title and Content-Specific Image */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pb-6 border-b border-[#E2DDD0]">
+                <div className="md:col-span-7 space-y-2">
+                  <div className="flex items-center space-x-2 text-[10px] font-mono-tech text-[#C69A36] uppercase tracking-widest">
+                    <span>DISCIPLINE 0{selectedServiceIndex + 1}</span>
+                    <span>•</span>
+                    <span className="text-[#064A32] font-bold bg-[#EAE5D6] px-2 py-0.5">PMC CORE</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32] mt-1">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32]">
                     {activeService.title}
                   </h3>
-                </div> */}
+                  <p className="text-xs text-[#5C6E66] font-medium leading-relaxed">
+                    Standardized multidisciplinary interface management, technical verification, and executive control.
+                  </p>
+                </div>
 
-                <span className="text-xs font-mono-tech font-bold text-[#064A32] bg-[#FFFFFF] border border-[#E2DDD0] px-3.5 py-1">
-                  PMC CORE
-                </span>
+                <div className="md:col-span-5">
+                  <div className="relative group overflow-hidden border-2 border-[#064A32] p-1 bg-[#FFFFFF] shadow-lg">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#14251E]">
+                      <img
+                        src={serviceImagesMap[activeService.id] || '/images/hero-campus.jpg'}
+                        alt={activeService.title}
+                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#14251E]/80 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute bottom-2 left-2 right-2 text-[10px] font-mono-tech text-[#DFBE65] font-bold uppercase tracking-wider truncate">
+                        {activeService.title}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Responsibility Overview */}
               <div className="space-y-2">
-                <span className="text-[11px] font-mono-tech text-[#7A8C84] uppercase block">
+                <span className="text-[11px] font-mono-tech text-[#7A8C84] uppercase tracking-wider block">
                   PMC RESPONSIBILITY SUMMARY
                 </span>
-                <p className="text-base text-[#14251E] font-medium leading-relaxed bg-[#FFFFFF] p-5 border-l-4 border-[#064A32]">
+                <p className="text-sm sm:text-base text-[#14251E] font-medium leading-relaxed bg-[#FFFFFF] p-5 border-l-4 border-[#064A32] shadow-sm">
                   {activeService.fullDesc}
                 </p>
               </div>
 
               {/* Key Deliverables for this Service */}
               <div className="space-y-3">
-                <span className="text-[11px] font-mono-tech text-[#7A8C84] uppercase block">
+                <span className="text-[11px] font-mono-tech text-[#7A8C84] uppercase tracking-wider block">
                   MANDATED AUDITABLE DELIVERABLES
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {activeService.deliverables.map((del, dIdx) => (
                     <div
                       key={dIdx}
-                      className="p-3 bg-[#FFFFFF] border border-[#E2DDD0] text-xs font-medium text-[#2C3E36] flex items-center space-x-2"
+                      className="p-3 bg-[#FFFFFF] border border-[#E2DDD0] text-xs font-medium text-[#2C3E36] flex items-center space-x-2.5 shadow-sm hover:border-[#C69A36] transition-colors"
                     >
                       <CheckCircle2 className="w-4 h-4 text-[#C69A36] shrink-0" />
                       <span>{del}</span>
@@ -304,7 +358,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#E2DDD0] flex items-center justify-between">
+              <div className="pt-4 border-t border-[#E2DDD0] flex flex-col sm:flex-row items-center justify-between gap-4">
                 <span className="text-xs text-[#5C6E66]">
                   Standardized in Pavana Projects Project Execution Plan (PEP).
                 </span>
@@ -312,7 +366,7 @@ export default function HomePage() {
                   to="/services"
                   className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-[0.16em] text-[#064A32] hover:text-[#C69A36] transition-colors"
                 >
-                  <span>Explore All Services</span>
+                  <span>Explore All 9 Disciplines</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -455,20 +509,49 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
-            {foundation.values.map((val, idx) => (
-              <div
-                key={val.name}
-                className="p-6 bg-[#F8F6ED] border border-[#E2DDD0] space-y-3 hover:border-[#064A32] transition-colors"
-              >
-                <div className="flex items-center justify-between text-xs font-mono-tech pb-2 border-b border-[#E2DDD0]">
-                  <span className="text-[#C69A36] font-bold">VALUE 0{idx + 1}</span>
-                  <span className="text-[#064A32] font-semibold">TENET</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {foundation.values.map((val, idx) => {
+              const IconComp = valueIcons[val.name] || ShieldCheck;
+              return (
+                <div
+                  key={val.name}
+                  className="group relative p-7 bg-[#FFFFFF] border border-[#E2DDD0] space-y-4 shadow-sm hover:shadow-xl hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                >
+                  {/* Top Animated Gold Line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C69A36] via-[#DFBE65] to-[#C69A36] opacity-40 group-hover:opacity-100 transition-opacity" />
+
+                  <div className="flex items-center justify-between pb-3 border-b border-[#E2DDD0]">
+                    <div className="flex items-center space-x-2.5">
+                      <div className="p-2 bg-[#064A32] text-[#DFBE65] rounded-none shadow-inner group-hover:scale-105 transition-transform">
+                        <IconComp className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-mono-tech font-bold text-[#C69A36]">
+                        TENET 0{idx + 1}
+                      </span>
+                    </div>
+
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#064A32] bg-[#F8F6ED] px-2 py-0.5 border border-[#E2DDD0]">
+                      Standard
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
+                    {val.name}
+                  </h3>
+
+                  <p className="text-xs text-[#4C5D56] leading-relaxed">
+                    {val.meaning}
+                  </p>
+
+                  {/* Corner Accent Line */}
+                  <div className="pt-2 flex justify-end">
+                    <span className="text-[11px] font-mono-tech text-[#C69A36]/60 group-hover:text-[#C69A36] transition-colors">
+                      + PMC DISCIPLINE
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-[#14251E] pt-1">{val.name}</h3>
-                <p className="text-xs text-[#4C5D56] leading-relaxed">{val.meaning}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Quality & Safety Highlight Banner */}
@@ -510,9 +593,9 @@ export default function HomePage() {
                   INITIATE CONSULTATION
                 </div>
                 {/* Required Headline */}
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#064A32] leading-tight">
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#064A32] leading-tight">
                   Have a Landmark <br />
-                  <span className="text-[#14251E] font-serif-arch font-medium italic">
+                  <span className="text-[#14251E] italic font-semibold">
                     in Mind?
                   </span>
                 </h2>
@@ -522,7 +605,7 @@ export default function HomePage() {
               </div>
 
               {/* Exact Address from PDF */}
-              <div className="bg-[#FFFFFF] p-6 border-l-4 border-[#064A32] border-t border-r border-b border-[#E2DDD0] grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+              <div className="bg-[#FFFFFF] p-6 border-l-4 border-[#064A32] border-t border-r border-b border-[#E2DDD0]">
                 <div className="space-y-3">
                 <span className="text-xs font-mono-tech uppercase font-bold text-[#064A32] block">
                   REGISTERED OFFICE
@@ -534,14 +617,6 @@ export default function HomePage() {
                   Bangalore – 560054, Karnataka, India
                 </address>
                 </div>
-                <iframe
-                  title="Satellite map of the registered office in Mathikere, Bengaluru"
-                  src="https://maps.google.com/maps?q=%23543%2C%2014th%20A%20Main%2C%20HMT%20Layout%2C%20Gokula%201st%20Stage%2C%201st%20Phase%2C%20Mathikere%2C%20Bengaluru%20560054&t=k&z=18&output=embed"
-                  className="w-full h-48 border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                />
               </div>
             </div>
 

@@ -24,7 +24,7 @@ export default function AboutPage() {
   return (
     <>
       <SEOHead
-        title="About Pavana Projects — Our Foundation & Organisation"
+        title="About"
         description="Learn about Pavana Projects, a professional Project Management Consultancy (PMC) founded on integrity, planning, coordination, control, quality, and delivery."
       />
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
       <PageHero
         sectionNumber="01 & 02"
         sectionTitle="OUR FOUNDATION"
-        title="Disciplined Delivery for Built Environments"
+        title="About"
         subtitle="Bringing clarity, control, and accountability to complex projects from project initiation through commissioning and handover."
         badge="About Pavana Projects"
         visual={<BuildingBlueprint />}
@@ -132,27 +132,37 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Vision Card */}
-            <div className="bg-[#FFFFFF] p-8 sm:p-10 border border-[#E5E0CE] space-y-4 relative shadow-sm">
-              <div className="text-xs font-serif-arch font-bold uppercase tracking-widest text-[#C69A36]">
-                OUR VISION
+            <div className="group bg-[#FFFFFF] p-8 sm:p-10 border border-[#D5CDBE] border-t-4 border-t-[#C69A36] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-serif-arch font-bold uppercase tracking-widest text-[#C69A36]">
+                  OUR VISION
+                </span>
+                <span className="text-[10px] font-mono-tech text-[#5C6E66] uppercase tracking-wider bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
+                  STRATEGIC DIRECTION
+                </span>
               </div>
               <h3 className="text-2xl font-bold text-[#14251E]">
                 A Trusted Partner for Landmark Developments
               </h3>
-              <p className="text-base text-[#3C4E46] leading-relaxed">
+              <p className="text-base text-[#3C4E46] leading-relaxed italic">
                 “{foundation.vision}”
               </p>
             </div>
 
             {/* Mission Card */}
-            <div className="bg-[#064A32] text-[#F8F6ED] p-8 sm:p-10 border border-[#C69A36]/40 space-y-4 relative shadow-sm">
-              <div className="text-xs font-serif-arch font-bold uppercase tracking-widest text-[#DFBE65]">
-                OUR MISSION
+            <div className="group bg-[#064A32] text-[#F8F6ED] p-8 sm:p-10 border border-[#C69A36]/50 border-t-4 border-t-[#DFBE65] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300 cad-grid-dark">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-serif-arch font-bold uppercase tracking-widest text-[#DFBE65]">
+                  OUR MISSION
+                </span>
+                <span className="text-[10px] font-mono-tech text-[#DFBE65] uppercase tracking-wider bg-[#14251E] px-2 py-0.5 border border-[#284439]">
+                  EXECUTION CHARTER
+                </span>
               </div>
               <h3 className="text-2xl font-bold text-[#FFFFFF]">
                 Professional Systems Aligning Project Execution
               </h3>
-              <p className="text-base text-[#CBD8D2] leading-relaxed">
+              <p className="text-base text-[#CBD8D2] leading-relaxed italic">
                 “{foundation.mission}”
               </p>
             </div>
@@ -173,16 +183,23 @@ export default function AboutPage() {
                 return (
                   <div
                     key={val.name}
-                    className="bg-[#FFFFFF] p-6 border border-[#E5E0CE] hover:border-[#C69A36] transition-all space-y-3"
+                    className="group relative p-7 bg-[#FFFFFF] border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-4 shadow-sm hover:shadow-xl hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                   >
-                    <div className="flex items-center justify-between pb-2 border-b border-[#E5E0CE]">
-                      <span className="text-xs font-serif-arch font-bold text-[#C69A36]">
-                        VALUE 0{idx + 1}
+                    <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
+                      <div className="flex items-center space-x-2.5">
+                        <div className="p-2 bg-[#064A32] text-[#DFBE65] group-hover:scale-105 transition-transform">
+                          <IconComp className="w-4 h-4" />
+                        </div>
+                        <span className="text-xs font-serif-arch font-bold text-[#C69A36]">
+                          0{idx + 1}
+                        </span>
+                      </div>
+                      <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
+                        Core Tenet
                       </span>
-                      <IconComp className="w-4 h-4 text-[#064A32]" />
                     </div>
 
-                    <h4 className="text-xl font-bold text-[#14251E]">
+                    <h4 className="text-xl font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
                       {val.name}
                     </h4>
 
@@ -217,18 +234,18 @@ export default function AboutPage() {
             {organisationRoles.map((role, idx) => (
               <div
                 key={role.role}
-                className="p-6 bg-[#F8F6ED] border border-[#E5E0CE] space-y-3 hover:border-[#064A32] transition-colors"
+                className="group relative p-6 bg-[#F8F6ED] border border-[#E5E0CE] border-t-2 border-t-[#064A32] space-y-3 shadow-sm hover:shadow-lg hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-0.5"
               >
                 <div className="flex items-center justify-between pb-2 border-b border-[#E5E0CE]">
                   <span className="text-xs font-serif-arch font-bold text-[#C69A36]">
                     ROLE 0{idx + 1}
                   </span>
-                  <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#EAE6D6] px-2 py-0.5">
+                  <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#EAE6D6] px-2 py-0.5 border border-[#D5CDBE]">
                     Accountability
                   </span>
                 </div>
 
-                <h4 className="text-base font-bold text-[#14251E]">
+                <h4 className="text-base font-bold text-[#14251E] group-hover:text-[#064A32] transition-colors">
                   {role.role}
                 </h4>
 

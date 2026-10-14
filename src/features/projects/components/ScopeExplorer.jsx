@@ -17,7 +17,7 @@ const packageIcons = {
   'testing-commissioning-pkg': CheckCircle2
 };
 
-export default function ScopeExplorer() {
+export default function ScopeExplorer({ showPackageStatus = false }) {
   const { referenceProject } = companyProfile;
   const [activePkgId, setActivePkgId] = useState(referenceProject.packages[0].id);
 
@@ -116,9 +116,11 @@ export default function ScopeExplorer() {
                 </div>
               </div>
 
-              <span className="text-[11px] font-semibold text-[#064A32] bg-[#F8F6ED] px-3 py-1 border border-[#E5E0CE]">
-                {activePkg.status}
-              </span>
+              {showPackageStatus && (
+                <span className="text-[11px] font-semibold text-[#064A32] bg-[#F8F6ED] px-3 py-1 border border-[#E5E0CE]">
+                  {activePkg.status}
+                </span>
+              )}
             </div>
 
             <div>
