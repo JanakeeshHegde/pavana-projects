@@ -5,16 +5,10 @@ import { ChevronRight } from 'lucide-react';
 const ROUTE_BREADCRUMBS = {
   '/about': 'About',
   '/services': 'Services',
-  '/projects': 'Projects',
-  '/process': 'Process',
   '/contact': 'Contact',
-  '/quality-safety': 'Quality & Safety',
-  '/project-controls': 'Project Controls',
 };
 
 export default function PageHero({
-  sectionNumber = '01',
-  sectionTitle = 'COMPANY OVERVIEW',
   title = '',
   subtitle = '',
   badge = '',
@@ -24,168 +18,145 @@ export default function PageHero({
   imageTag = '',
   imageCaption = '',
   visual = null,
+  technicalNote = '',
 }) {
   const location = useLocation();
-  const hasSideVisual = Boolean(visual || image);
-
-  // Compute clean breadcrumb page name
   const cleanPath = location.pathname.replace(/\/$/, '') || '/';
+  const isHomePage = cleanPath === '/';
+
+  // Compute clean breadcrumb: Home > <PageName>
   const currentBreadcrumb =
     breadcrumbName ||
     ROUTE_BREADCRUMBS[cleanPath] ||
     title;
 
-  const isHomePage = cleanPath === '/';
+  // All inner pages use the dark premium architectural blueprint design by default
+  const isDarkTheme = dark || !isHomePage;
 
   return (
     <section
-      className={`relative overflow-hidden ${isHomePage ? 'py-14 lg:py-20' : 'pt-20 pb-10 lg:pt-24 lg:pb-12'} border-b ${
-        dark
+      className={`relative overflow-hidden pt-20 pb-6 sm:pt-22 sm:pb-7 lg:pt-24 lg:pb-8 border-b ${
+        isDarkTheme
           ? 'bg-[#14251E] text-[#F8F6ED] border-[#284439]'
           : 'bg-[#F8F6ED] text-[#14251E] border-[#E5E0CE]'
       }`}
     >
-      {/* Background Grid Pattern */}
-      <div
-        className={`absolute inset-0 pointer-events-none opacity-30 ${
-          dark ? 'arch-grid-dark' : 'arch-grid-bg'
-        }`}
-      />
+      {/* 1. ARCHITECTURAL DRAFTING BLUEPRINT BACKGROUND (IMAGE-FREE) */}
+      {isDarkTheme ? (
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+          {/* Subtle Ambient Brand Glow */}
+          <div className="absolute -top-32 -right-32 w-80 h-80 bg-[#C69A36]/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-[#064A32]/30 rounded-full blur-3xl" />
 
-      {/* Subtle ambient architectural background glow when image is present */}
-      {image && (
-        <div
-          className={`absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none blur-3xl opacity-20 -mr-20 -mt-20 ${
-            dark ? 'bg-[#C69A36]' : 'bg-[#064A32]'
-          }`}
-        />
-      )}
+          {/* Precision CAD Grid Lines */}
+          <div className="absolute inset-0 cad-grid-dark opacity-30" />
 
-      <div
-        className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${
-          hasSideVisual
-            ? 'grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center'
-            : ''
-        }`}
-      >
-        <div className={hasSideVisual ? 'lg:col-span-7 xl:col-span-7' : ''}>
-          {/* Breadcrumb: Only Home > <PageName> */}
-          {!isHomePage && (
-            <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs font-medium tracking-wider mb-5">
-              <Link
-                to="/"
-                className={`transition-colors ${
-                  dark ? 'text-[#8BA49A] hover:text-[#DFBE65]' : 'text-[#5C6E66] hover:text-[#064A32]'
-                }`}
-              >
-                Home
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-[#C69A36]" />
-              <span className={dark ? 'text-[#DFBE65] font-semibold' : 'text-[#064A32] font-semibold'}>
-                {currentBreadcrumb}
-              </span>
-            </nav>
-          )}
+          {/* Blueprint SVG Linework: Structural Elevation & Geometry */}
+          <svg
+            className="absolute inset-0 w-full h-full opacity-20 stroke-[#C69A36]"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+          >
+            <defs>
+              <pattern id="archGrid" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M 100 0 L 0 0 0 100" fill="none" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.4" />
+                <circle cx="0" cy="0" r="1.5" fill="currentColor" fillOpacity="0.6" />
+                <circle cx="100" cy="100" r="1.5" fill="currentColor" fillOpacity="0.6" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#archGrid)" />
 
-          {/* Hero Title and Badge */}
-          <div className="max-w-3xl space-y-4">
-            {badge && (
-              <div className="inline-flex items-center px-3 py-1 text-[11px] font-semibold uppercase tracking-wider bg-[#C69A36]/15 text-[#C69A36] border border-[#C69A36]/30">
-                {badge}
-              </div>
-            )}
+            {/* Architectural concentric radial drafting rings */}
+            <circle cx="85%" cy="50%" r="130" stroke="currentColor" strokeWidth="0.75" strokeDasharray="4 6" opacity="0.4" />
+            <circle cx="85%" cy="50%" r="210" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 8" opacity="0.3" />
+            <circle cx="85%" cy="50%" r="290" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
 
-            <h1
-              className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] ${
-                dark ? 'text-[#FFFFFF]' : 'text-[#064A32]'
-              }`}
-            >
-              {title}
-            </h1>
+            {/* Diagonal perspective drafting guidelines */}
+            <line x1="60%" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 6" opacity="0.3" />
+            <line x1="75%" y1="0" x2="100%" y2="60%" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+          </svg>
 
-            {subtitle && (
-              <p
-                className={`text-base sm:text-lg leading-relaxed ${
-                  dark ? 'text-[#CBD8D2]' : 'text-[#4A5D54]'
-                }`}
-              >
-                {subtitle}
-              </p>
-            )}
-
-            {/* Fine gold underline */}
-            <div className="pt-2">
-              <div className="gold-divider-left w-32" />
-            </div>
+          {/* Corner Crosshair Drafting Markers */}
+          <div className="absolute top-3 left-6 text-[#C69A36]/40 font-mono-tech text-[10px] pointer-events-none">
+            + 13.03° N // 77.55° E
+          </div>
+          <div className="absolute top-3 right-6 text-[#C69A36]/40 font-mono-tech text-[10px] pointer-events-none hidden sm:block">
+            + BANGALORE // 560054
+          </div>
+          <div className="absolute bottom-2 right-6 text-[#C69A36]/30 font-mono-tech text-[9px] pointer-events-none hidden md:block">
+            SPEC // CAD-GEO-REV-04
           </div>
         </div>
+      ) : (
+        /* Preserved Light Hero Background Pattern */
+        <div className="absolute inset-0 pointer-events-none opacity-30 arch-grid-bg" aria-hidden="true" />
+      )}
 
-        {/* Custom 3D or dynamic interactive visual (e.g. AboutPage) */}
-        {visual && (
-          <div className="lg:col-span-5 xl:col-span-5 min-w-0 flex items-center justify-center">
-            <div className="w-full h-full max-w-lg max-h-[500px]">
-              {visual}
-            </div>
-          </div>
+      {/* 2. MAIN CONTENT CONTAINER */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Simple Breadcrumb: Only Home > <PageName> */}
+        {!isHomePage && (
+          <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-[11px] sm:text-xs font-medium tracking-wider mb-2 sm:mb-2.5">
+            <Link
+              to="/"
+              className={`transition-colors ${
+                isDarkTheme ? 'text-[#8BA49A] hover:text-[#DFBE65]' : 'text-[#5C6E66] hover:text-[#064A32]'
+              }`}
+            >
+              Home
+            </Link>
+            <ChevronRight className="w-3 h-3 text-[#C69A36]" />
+            <span className={isDarkTheme ? 'text-[#DFBE65] font-semibold' : 'text-[#064A32] font-semibold'}>
+              {currentBreadcrumb}
+            </span>
+          </nav>
         )}
 
-        {/* High-Resolution Framed Architectural Hero Image */}
-        {!visual && image && (
-          <div className="lg:col-span-5 xl:col-span-5 min-w-0">
-            <div className="relative group">
-              {/* Subtle outer decorative glow */}
-              <div
-                className={`absolute -inset-1.5 rounded-sm -z-10 blur-[2px] transition-opacity duration-500 opacity-60 group-hover:opacity-100 ${
-                  dark
-                    ? 'bg-gradient-to-tr from-[#C69A36]/30 via-transparent to-[#064A32]/40'
-                    : 'bg-gradient-to-tr from-[#C69A36]/25 via-transparent to-[#064A32]/20'
-                }`}
-              />
-
-              <div
-                className={`relative border p-2.5 sm:p-3 shadow-xl transition-all duration-500 hover:shadow-2xl ${
-                  dark
-                    ? 'bg-[#1A2F27] border-[#284439] hover:border-[#C69A36]/70'
-                    : 'bg-[#FFFFFF] border-[#D5CDBE] hover:border-[#C69A36]/70'
-                }`}
-              >
-                {/* Image display container */}
-                <div className="relative overflow-hidden aspect-[16/10] bg-[#14251E] shadow-inner">
-                  <img
-                    src={image}
-                    alt={title || 'Pavana Projects'}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  {/* Gradient scrim for caption clarity */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1612]/80 via-transparent to-[#0B1612]/30 pointer-events-none" />
-
-                  {/* Precision Architectural Crosshair Accents */}
-                  <div className="absolute top-2.5 left-2.5 w-3 h-3 border-t-2 border-l-2 border-[#DFBE65]/90 pointer-events-none" />
-                  <div className="absolute top-2.5 right-2.5 w-3 h-3 border-t-2 border-r-2 border-[#DFBE65]/90 pointer-events-none" />
-                  <div className="absolute bottom-2.5 left-2.5 w-3 h-3 border-b-2 border-l-2 border-[#DFBE65]/90 pointer-events-none" />
-                  <div className="absolute bottom-2.5 right-2.5 w-3 h-3 border-b-2 border-r-2 border-[#DFBE65]/90 pointer-events-none" />
-
-                  {/* Top Tag Badge */}
-                  {(imageTag || badge) && (
-                    <div className="absolute top-3 left-3 bg-[#14251E]/95 text-[#DFBE65] font-mono-tech text-[10px] font-bold px-2.5 py-1 border border-[#C69A36]/50 uppercase tracking-wider backdrop-blur-md shadow-md">
-                      {imageTag || badge}
-                    </div>
-                  )}
-
-                  {/* Bottom Caption Overlay */}
-                  {imageCaption && (
-                    <div className="absolute bottom-3 left-3.5 right-3.5 text-left pointer-events-none">
-                      <span className="text-xs sm:text-sm font-semibold text-[#FFFFFF] tracking-wide block drop-shadow-md">
-                        {imageCaption}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
+        {/* Hero Title & Information Hierarchy */}
+        <div className="max-w-3xl space-y-2 sm:space-y-2.5">
+          
+          {/* Architectural Badge */}
+          {badge && (
+            <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold font-mono-tech uppercase tracking-[0.14em] bg-[#C69A36]/15 text-[#DFBE65] border border-[#C69A36]/40 backdrop-blur-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#DFBE65] animate-pulse" />
+              <span>{badge}</span>
             </div>
+          )}
+
+          {/* Heading */}
+          <h1
+            className={`text-2xl sm:text-3xl lg:text-[2rem] font-bold tracking-tight leading-tight ${
+              isDarkTheme ? 'text-[#FFFFFF]' : 'text-[#064A32]'
+            }`}
+          >
+            {title}
+          </h1>
+
+          {/* Subtitle */}
+          {subtitle && (
+            <p
+              className={`text-xs sm:text-sm leading-relaxed max-w-2xl ${
+                isDarkTheme ? 'text-[#CBD8D2]' : 'text-[#4A5D54]'
+              }`}
+            >
+              {subtitle}
+            </p>
+          )}
+
+          {/* Fine gold divider accent */}
+          <div className="pt-1 flex items-center space-x-3">
+            <div className="w-16 h-0.5 bg-gradient-to-r from-[#DFBE65] to-transparent" />
+            <div className="w-1 h-1 rotate-45 bg-[#C69A36]" />
+            {technicalNote && (
+              <span className="text-[10px] sm:text-[11px] font-mono-tech text-[#8BA49A]">
+                {technicalNote}
+              </span>
+            )}
           </div>
-        )}
+
+        </div>
+
       </div>
     </section>
   );

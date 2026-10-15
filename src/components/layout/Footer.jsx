@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, ArrowUpRight, ArrowUp } from 'lucide-react';
 import { companyProfile } from '@/data/company-profile';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { contact } = companyProfile;
 
   return (
     <footer className="bg-[#14251E] text-[#F8F6ED] border-t border-[#284439] cad-grid-dark relative overflow-hidden">
@@ -18,90 +19,82 @@ export default function Footer() {
             <Link to="/" aria-label="Pavana Projects Homepage" className="inline-block group">
               <img
                 src="/logo-white.png"
-                alt="Pavana Projects — Creating Landmarks, Shaping Futures"
-                className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                alt="Pavana Projects logo"
+                className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
             <p className="text-xs text-[#CBD8D2] leading-relaxed max-w-sm">
-              Integrated Project Management Consultancy (PMC) for ambitious commercial, IT/ITES and infrastructure developments.
+              Integrated real estate solutions, construction coordination, Joint Venture partnerships, and Project Management Consultancy (PMC) for built-environment developments.
             </p>
 
+            <div className="pt-2 text-xs text-[#A3B8B0] space-y-2">
+              <div className="flex items-start space-x-2">
+                <MapPin className="w-3.5 h-3.5 text-[#DFBE65] shrink-0 mt-0.5" />
+                <span className="leading-snug">{contact.address}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-3.5 h-3.5 text-[#DFBE65] shrink-0" />
+                <a href={`mailto:${contact.email}`} className="hover:text-[#DFBE65] transition-colors">
+                  {contact.email}
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Three Principal Navigation Columns (PROJECTS, SERVICES, PROCESS & ABOUT) */}
+          {/* Column 1: SERVICES (3 Cols) */}
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
-            <Link
-              to="/projects"
-              className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
-            >
-              PROJECTS
-            </Link>
-            <ul className="space-y-2 text-[#CBD8D2]">
-              <li>
-                <Link to="/projects#it-software-park" className="hover:text-[#DFBE65] transition-colors block">
-                  15,00,000 Sq. Ft. IT Software Park
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects#commercial-towers" className="hover:text-[#DFBE65] transition-colors block">
-                  Commercial Office Towers
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects#it-campuses" className="hover:text-[#DFBE65] transition-colors block">
-                  IT / ITES Campuses
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects#infrastructure-campuses" className="hover:text-[#DFBE65] transition-colors block">
-                  Infrastructure & Industrial Campuses
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects#nine-packages" className="hover:text-[#DFBE65] transition-colors block text-[#DFBE65]/90">
-                  9-Package Proposed Framework ↗
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
             <Link
               to="/services"
               className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
             >
-              SERVICES & CONTROLS
+              SERVICES & SOLUTIONS
             </Link>
             <ul className="space-y-2 text-[#CBD8D2]">
               <li>
-                <Link to="/services#nine-disciplines" className="hover:text-[#DFBE65] transition-colors block">
-                  Nine Disciplines
+                <Link to="/services#construction-solutions" className="hover:text-[#DFBE65] transition-colors block">
+                  Construction Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/services#project-controls" className="hover:text-[#DFBE65] transition-colors block">
-                  Project Controls Tower
+                <Link to="/services#interior-solutions" className="hover:text-[#DFBE65] transition-colors block">
+                  Interior Design & Space Planning
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#turnkey-projects" className="hover:text-[#DFBE65] transition-colors block">
+                  Turnkey Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#pmc-services" className="hover:text-[#DFBE65] transition-colors block">
+                  Project Management Consultancy (PMC)
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#procurement-commercial" className="hover:text-[#DFBE65] transition-colors block">
+                  Procurement & Commercial Monitoring
                 </Link>
               </li>
               <li>
                 <Link to="/services#quality-safety" className="hover:text-[#DFBE65] transition-colors block">
-                  Quality & Safety
+                  Quality Assurance & Site Safety
                 </Link>
               </li>
               <li>
-                <Link to="/services#commercial" className="hover:text-[#DFBE65] transition-colors block">
-                  Commercial Controls
+                <Link to="/services#real-estate-solutions" className="hover:text-[#DFBE65] transition-colors block">
+                  Real Estate Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/services#deliverables" className="hover:text-[#DFBE65] transition-colors block">
-                  14 Key Deliverables
+                <Link to="/services#joint-venture" className="hover:text-[#DFBE65] transition-colors block text-[#DFBE65] font-semibold">
+                  Joint Venture & Partnerships ↗
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Column 2: ABOUT & METHODOLOGY (3 Cols) */}
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
             <Link
               to="/about"
@@ -135,29 +128,57 @@ export default function Footer() {
                   Proposed PMC Structure
                 </Link>
               </div>
-              <div className="pt-1">
-                <Link to="/contact" className="hover:text-[#DFBE65] transition-colors font-semibold text-[#DFBE65] block">
-                  Discuss a Project ↗
+              <div>
+                <Link to="/about#value-propositions" className="hover:text-[#DFBE65] transition-colors block">
+                  Value Propositions
                 </Link>
               </div>
             </div>
           </div>
+
+          {/* Column 3: QUICK CONSULTATION (2 Cols) */}
+          <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
+            <Link
+              to="/contact"
+              className="text-[10px] text-[#DFBE65] hover:text-[#FFFFFF] uppercase tracking-widest pb-1 border-b border-[#284439] block transition-colors"
+            >
+              ENGAGEMENT
+            </Link>
+            <div className="space-y-3 text-[#CBD8D2]">
+              <p className="text-[11px] leading-relaxed text-[#A3B8B0]">
+                Initiate a discussion on construction, real estate solutions, PMC, or Joint Venture opportunities.
+              </p>
+              <div className="pt-1">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center space-x-1.5 px-3 py-2 bg-[#064A32] hover:bg-[#0B3B28] text-[#FFFFFF] text-[11px] font-bold uppercase tracking-wider rounded border border-[#064A32] hover:border-[#C69A36]/60 transition-colors"
+                >
+                  <span>Enquire Now</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#DFBE65]" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        {/* Regulatory & Disclaimer Note */}
-        {/* <div className="my-6 p-4 bg-[#0C1A14] border border-[#213A30] text-[11px] font-mono-tech text-[#8EA49A] leading-relaxed">
-          <strong className="text-[#DFBE65] uppercase">GOVERNANCE NOTE:</strong> Pavana Projects operates strictly as a professional Project Management Consultancy (PMC). Project references, including the 15,00,000 Sq. Ft. IT Software Park, represent capability profiles and proposed PMC frameworks based on technical specifications.
-        </div> */}
-
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono-tech text-[#6F867C] gap-3">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono-tech text-[#6F867C] gap-3">
           <div>
-            © {new Date().getFullYear()} Pavana Projects. All rights reserved.
+            © {currentYear} Pavana Projects. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
-            <span>PMC BANGALORE</span>
-            <span>•</span>
-            <span className="text-[#DFBE65]">“WE BRING ORDER TO COMPLEXITY.”</span>
+            <span className="text-[#DFBE65]">“CREATING LANDMARKS, SHAPING FUTURES.”</span>
+            <span className="text-[#284439]">•</span>
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-flex items-center space-x-1.5 text-[#A3B8B0] hover:text-[#DFBE65] transition-colors cursor-pointer group"
+              aria-label="Scroll back to top"
+            >
+              <span>Back to Top</span>
+              <ArrowUp className="w-3.5 h-3.5 text-[#C69A36] group-hover:-translate-y-0.5 transition-transform" />
+            </button>
           </div>
         </div>
       </div>

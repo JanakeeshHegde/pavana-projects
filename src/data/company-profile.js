@@ -1,60 +1,61 @@
 /**
- * PAVANA PROJECTS — Project Management Consultancy (PMC)
- * Verified Company & Capability Data extracted directly from the official Company Profile PDF.
- * Reference Project Profile: 15,00,000 Sq. Ft. IT Software Park Proposed PMC Framework.
+ * PAVANA PROJECTS — Company Profile & Capability Data
+ * Sourced directly from verified company documentation (PMC Company Profile)
+ * and expanded to encompass comprehensive Real Estate Solutions, Construction Services,
+ * Turnkey Project Coordination, and Joint Venture & Development Partnerships.
  */
 
 export const companyProfile = {
   name: "Pavana Projects",
   tagline: "CREATING LANDMARKS, SHAPING FUTURES.",
-  category: "Project Management Consultancy (PMC)",
-  subCategory: "Commercial, IT/ITES, and Infrastructure Developments",
+  category: "Real Estate Solutions, Construction & Project Management Consultancy (PMC)",
+  subCategory: "Commercial, Residential, Industrial & Built-Environment Developments",
   missionStatement: "Bringing clarity, control, and accountability to complex projects from project initiation through commissioning and handover.",
-  
+
   contact: {
     address: "#543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage, 1st Phase, Mathikere, Bangalore – 560054",
     city: "Bangalore",
     state: "Karnataka",
     pinCode: "560054",
     country: "India",
-    email: "contact@pavanaprojects.com", // verified placeholder for inquiries
-    phone: "+91 80 2337 5400", // easily editable
+    email: "contact@pavanaprojects.com",
+    phone: "+91 80 2337 5400",
     workingHours: "Monday – Saturday: 9:00 AM – 6:30 PM IST",
     mapQuery: "543, 14th A Main Rd, HMT Layout, Gokula 1st Stage, Mathikere, Bengaluru, Karnataka 560054"
   },
 
   foundation: {
-    vision: "To be a trusted project management partner for high-quality commercial, IT/ITES and infrastructure developments, creating measurable value through disciplined project delivery.",
+    vision: "To be a trusted project management and real estate solutions partner for high-quality commercial, residential, and infrastructure developments, creating measurable value through disciplined project delivery.",
     mission: "To plan, coordinate, monitor and manage projects with professional systems that align design intent, construction execution, cost, schedule, quality, safety and stakeholder expectations.",
     values: [
       {
         name: "Integrity",
-        meaning: "Transparent communication, documented decisions and professional accountability.",
+        meaning: "Transparent communication, documented decisions and professional accountability across all stakeholder engagements.",
         icon: "ShieldCheck"
       },
       {
         name: "Planning",
-        meaning: "A structured plan before execution, with clear milestones and ownership.",
+        meaning: "A structured plan before execution, with clear milestones, resource mapping, and defined ownership.",
         icon: "Compass"
       },
       {
         name: "Coordination",
-        meaning: "One integrated view across design, procurement, construction and commissioning.",
+        meaning: "One integrated view across design, procurement, construction, services, and commissioning.",
         icon: "Network"
       },
       {
         name: "Control",
-        meaning: "Timely information, dashboards, reporting and escalation to support decisions.",
+        meaning: "Timely information, auditable dashboards, disciplined reporting, and proactive escalation to support critical decisions.",
         icon: "Sliders"
       },
       {
         name: "Quality",
-        meaning: "Right-first-time execution supported by inspections, testing and documentation.",
+        meaning: "Right-first-time execution supported by systematic inspections, testing benchmarks, and comprehensive documentation.",
         icon: "CheckCircle2"
       },
       {
         name: "Delivery",
-        meaning: "A practical focus on milestones, readiness, handover and operational outcomes.",
+        meaning: "A practical, unwavering focus on milestones, site readiness, snag closure, and seamless operational handover.",
         icon: "Building2"
       }
     ]
@@ -64,33 +65,171 @@ export const companyProfile = {
     {
       title: "Time",
       tagline: "Structured programme management",
-      description: "Critical-path monitoring, schedule baseline adherence, and milestone recovery planning to protect delivery dates.",
+      description: "Critical-path monitoring, schedule baseline adherence, look-ahead planning, and milestone recovery frameworks to safeguard target completion dates.",
       color: "#C69A36",
       metric: "Schedule Integrity"
     },
     {
       title: "Cost",
-      tagline: "Budget visibility & control",
-      description: "Comprehensive budget tracking, procurement commitments, variation control, and disciplined commercial forecasting.",
+      tagline: "Budget visibility & commercial control",
+      description: "Comprehensive budget tracking, procurement commitments, variation control, and disciplined commercial forecasting across all trade packages.",
       color: "#064A32",
       metric: "Commercial Discipline"
     },
     {
       title: "Quality",
       tagline: "Right-first-time execution",
-      description: "Proactive inspection planning, material approval systems, testing protocols, and compliance-oriented execution.",
+      description: "Proactive inspection planning, material approval systems, laboratory testing protocols, and compliance-oriented execution benchmarks.",
       color: "#14251E",
       metric: "Zero-Defect Standards"
     },
     {
       title: "Safety & Risk",
-      tagline: "Proactive mitigation",
-      description: "Early hazard identification, site HSE enforcement, risk register governance, and structured escalation protocols.",
+      tagline: "Proactive mitigation & HSE governance",
+      description: "Early hazard identification, site HSE enforcement, high-risk permit-to-work protocols, and structured escalation pathways.",
       color: "#C69A36",
       metric: "Zero-Incident Culture"
     }
   ],
 
+  // A. Construction Solutions
+  constructionSolutions: [
+    {
+      id: "residential-construction",
+      title: "Residential Construction",
+      tagline: "High-standard living spaces engineered with precision",
+      description: "General construction management and coordination for premium residences, multi-unit housing, and residential communities, focusing on structural durability, fine finishes, and efficient space utilization.",
+      capabilities: [
+        "RCC structural frame coordination and execution",
+        "Fine masonry, plastering, and waterproofing systems",
+        "External facade, fenestration, and architectural finishes",
+        "Residential MEP integration (electrical, plumbing, sanitation)"
+      ],
+      icon: "Building2"
+    },
+    {
+      id: "commercial-construction",
+      title: "Commercial Construction",
+      tagline: "Modern business environments built for performance",
+      description: "Execution oversight for office buildings, institutional campuses, retail spaces, and mixed-use commercial developments designed for long-term operational excellence.",
+      capabilities: [
+        "Substructure, deep basement, and super-structure coordination",
+        "Core-and-shell execution and tenant boundary demarcation",
+        "Commercial facade and curtain wall installation coordination",
+        "Heavy-duty service floor and utility shaft sequencing"
+      ],
+      icon: "Building"
+    },
+    {
+      id: "civil-works",
+      title: "Civil Works",
+      tagline: "Foundational structural engineering and infrastructure",
+      description: "Comprehensive civil contracting oversight including earthwork, deep foundation systems, reinforced concrete structures, retaining frameworks, and structural steel works.",
+      capabilities: [
+        "Site excavation, shoring, and piling management",
+        "Reinforced cement concrete (RCC) structural elements",
+        "Structural steel fabrication and erection coordination",
+        "Engineered waterproofing, expansion joints, and protection coats"
+      ],
+      icon: "HardHat"
+    },
+    {
+      id: "site-development",
+      title: "Site Development",
+      tagline: "End-to-end plot infrastructure and external works",
+      description: "Turnkey site readiness encompassing perimeter security, internal roadways, storm water drainage, external utilities routing, landscaping civil works, and peripheral development.",
+      capabilities: [
+        "Internal road network, paving, and curb development",
+        "Stormwater drainage, rainwater harvesting, and recharge pits",
+        "External water supply, sewage networks, and utility ducts",
+        "Perimeter compound wall, security booths, and gate architecture"
+      ],
+      icon: "Layers"
+    }
+  ],
+
+  // B. Interior Design & Space Planning
+  interiorSolutions: [
+    {
+      id: "interior-design",
+      title: "Interior Design",
+      tagline: "Aesthetic conceptualization and spatial harmony",
+      description: "Coordinating tailored interior design solutions that reflect client identity, functional lifestyle requirements, and contemporary architectural sensibilities.",
+      capabilities: [
+        "Design brief formulation and mood board conceptualization",
+        "Material, texture, color palette, and finish selection",
+        "Custom joinery, cabinetry, and bespoke millwork planning",
+        "Architectural decorative and ambient lighting coordination"
+      ],
+      icon: "DraftingCompass"
+    },
+    {
+      id: "space-planning",
+      title: "Space Planning",
+      tagline: "Ergonomic layouts maximizing utility and flow",
+      description: "Meticulous space optimization ensuring seamless circulation, effective natural light penetration, ergonomic workstation or residential zoning, and modular adaptability.",
+      capabilities: [
+        "Functional zoning and departmental flow mapping",
+        "Furniture layouts and ergonomic workspace allocations",
+        "Acoustic zoning and privacy partitioning strategies",
+        "Compliance with emergency egress and circulation codes"
+      ],
+      icon: "Compass"
+    },
+    {
+      id: "interior-development",
+      title: "Interior Development",
+      tagline: "Flawless site fit-out coordination and execution",
+      description: "Directing the physical implementation of interior packages including gypsum partitions, modular ceilings, specialist flooring, wall paneling, and architectural glass works.",
+      capabilities: [
+        "Drywall, glazing, and modular partition installation",
+        "Acoustic and decorative suspended ceiling systems",
+        "Tile, hardwood, carpet, and specialized flooring finishes",
+        "Coordination of interior MEP services with design intent"
+      ],
+      icon: "Hammer"
+    },
+    {
+      id: "renovation-modernization",
+      title: "Renovation & Modernization",
+      tagline: "Transforming aging assets into contemporary spaces",
+      description: "Structured revamps for existing commercial properties, corporate offices, and residential spaces requiring structural retrofits, service upgrades, or contemporary aesthetic overhauls.",
+      capabilities: [
+        "Existing conditions assessment and structural feasibility",
+        "Phased renovation planning for minimal operational disruption",
+        "MEP services modernization (wiring, piping, HVAC revamping)",
+        "Interior aesthetic upgrades and architectural skin renewal"
+      ],
+      icon: "RefreshCw"
+    }
+  ],
+
+  // C. Turnkey Projects
+  turnkeySolutions: {
+    title: "Turnkey Projects",
+    tagline: "Single-point project delivery from brief to occupation",
+    overview: "Our turnkey project coordination brings total alignment between project planning, scope definition, consultant coordination, trade package execution, and final handover. By coordinating all technical, procurement, and site activities under a disciplined project management framework, we provide clients with single-point interface visibility and predictable milestones.",
+    keyPillars: [
+      {
+        title: "Single-Point Accountability",
+        desc: "One central project interface managing all consultants, trade contractors, vendors, and site teams throughout the project lifecycle."
+      },
+      {
+        title: "Integrated Scope Definition",
+        desc: "Clear boundary lines, detailed bill of quantities, and comprehensive packaging strategies established prior to contractor onboarding."
+      },
+      {
+        title: "Active Schedule & Cost Visibility",
+        desc: "Transparent master timelines and continuous budget monitoring to identify deviations early and maintain milestone adherence."
+      },
+      {
+        title: "Structured Snag Closure & Handover",
+        desc: "Systematic pre-handover snag identification, rectification audits, as-built documentation compiling, and statutory verification."
+      }
+    ]
+  },
+
+  // D. Project Management Consultancy (PMC) Services from PDF Page 4
   services: [
     {
       id: "planning-scheduling",
@@ -136,7 +275,7 @@ export const companyProfile = {
       id: "mep-coordination",
       title: "MEP & Specialist Coordination",
       shortDesc: "Electrical, HVAC, plumbing, fire protection, ELV, BMS, and specialist systems integration.",
-      fullDesc: "High-density commercial and IT developments demand seamless building services integration. We coordinate electrical infrastructure, central HVAC, public health engineering, firefighting systems, low-voltage communications, and BMS building automation systems.",
+      fullDesc: "Built-environment projects demand seamless building services integration. We coordinate electrical infrastructure, central HVAC, public health engineering, firefighting systems, low-voltage communications, and BMS building automation systems.",
       deliverables: ["Combined Services Drawings (CSD) Review", "Plant Room Spatial Coordination", "Riser & Shaft Interface Management", "Equipment Delivery & Rigging Plans", "Service Shaft Handoffs", "BMS Integration Architecture"],
       icon: "Cpu"
     },
@@ -152,7 +291,7 @@ export const companyProfile = {
       id: "hse-coordination",
       title: "HSE Coordination",
       shortDesc: "Safety planning, site observations, compliance tracking, risk identification, and corrective actions.",
-      fullDesc: "Safety without compromise. We establish site-wide HSE protocols, oversee high-risk activities including deep excavations and work-at-height, conduct safety walks, monitor contractor compliance, and maintain comprehensive incident and near-miss registers.",
+      fullDesc: "Safety without compromise. We establish site-wide HSE protocols, oversee high-risk activities including excavations and work-at-height, conduct safety walks, monitor contractor compliance, and maintain comprehensive incident and near-miss registers.",
       deliverables: ["Project HSE Execution Plan", "High-Risk Activity Permits & Controls", "Toolbox Talks & Induction Protocols", "Site Safety Observation Logs", "Incident & Near-Miss Investigation", "Emergency Preparedness Coordination"],
       icon: "ShieldAlert"
     },
@@ -166,87 +305,75 @@ export const companyProfile = {
     }
   ],
 
-  // 15,00,000 Sq. Ft. IT Software Park Reference Project Profile
-  referenceProject: {
-    title: "15,00,000 Sq. Ft. IT Software Park",
-    badge: "Reference Project Profile & Proposed PMC Framework",
-    disclaimer: "The project information below is presented as a professional project profile and proposed PMC framework based on the stated 15,00,000 Sq. Ft. requirement. Detailed building configuration, site particulars, timelines, and consultant/contractor packages can be incorporated once formally defined.",
-    scale: "15,00,000 Sq. Ft.",
-    category: "IT / Software Park / Commercial Development",
-    role: "Comprehensive Project Management Consultancy (PMC)",
-    primaryInterface: "Client / Developer, Consultants, Contractors, Vendors & Authorities",
-    deliveryModel: "Design Coordination → Procurement → Construction → Testing → Handover",
-    successMeasures: "Programme adherence, cost visibility, quality compliance, safe execution, and readiness for occupancy",
-    overview: "This project profile demonstrates Pavana Projects' intended PMC framework for a world-class IT / Software Park campus spanning 1.5 million square feet of built-up area. The PMC framework integrates design management, multi-package procurement, disciplined construction coordination, MEP services integration, quality assurance, and systematic commissioning under a unified control tower.",
-    
-    packages: [
+  // G. Real Estate Solutions
+  realEstateSolutions: {
+    title: "Real Estate Solutions",
+    tagline: "End-to-end advisory and delivery coordination for property developments",
+    overview: "Pavana Projects bridges property conceptualization and physical reality. We assist landowners, investors, and corporate occupiers in navigating development planning, feasibility evaluation, regulatory coordination, scope packaging, cost modeling, and execution governance.",
+    offerings: [
       {
-        id: "civil-structural",
-        title: "Civil & Structural",
-        scope: "Foundations, RCC/structural works, masonry, façade interfaces, waterproofing and associated civil packages.",
-        detail: "Supervision of substructure deep basement works, high-grade concrete pouring, post-tensioned slabs, structural steel elements, podium waterproofing, and exterior envelope civil interfaces.",
-        status: "Proposed Package Framework"
+        title: "Residential Development Solutions",
+        description: "Advisory, layout planning, and execution coordination for plotted developments, villa communities, and multi-story apartment projects."
       },
       {
-        id: "arch-interiors",
-        title: "Architecture & Interiors",
-        scope: "Architectural coordination, finishes, common areas, tenant interfaces and design implementation.",
-        detail: "Coordination of architectural floor layouts, grand entrance lobbies, lift lobbies, public circulation, high-performance exterior curtain walls, acoustic ceilings, and core-and-shell tenant interfaces.",
-        status: "Proposed Package Framework"
+        title: "Commercial Development Solutions",
+        description: "Coordination framework for office parks, retail centers, commercial complexes, and warehousing logistics facilities."
       },
       {
-        id: "electrical",
-        title: "Electrical Infrastructure",
-        scope: "HT/LT distribution, transformers, DG interface, panels, cabling, lighting, earthing and power-quality interfaces.",
-        detail: "Management of primary substation high-tension incomers, step-down transformers, synchronized diesel generators, main LT switchgear, busduct risers, lightning protection, and harmonic mitigation.",
-        status: "Proposed Package Framework"
+        title: "Construction-Related Planning",
+        description: "Constructability reviews, baseline scheduling, milestone mapping, and site logistics planning tailored to property scale."
       },
       {
-        id: "hvac",
-        title: "HVAC (Heating, Ventilation & AC)",
-        scope: "Central / distributed HVAC systems, ventilation, controls, testing and balancing coordination.",
-        detail: "Chilled-water central chiller plant coordination, cooling towers, primary/secondary pumping networks, air handling units (AHUs), variable air volume (VAV) systems, basement jet-fan ventilation, and air balancing.",
-        status: "Proposed Package Framework"
+        title: "Turnkey Project Coordination",
+        description: "Unified oversight integrating design consultants, main civil contractors, specialist MEP vendors, and statutory liaisons."
       },
       {
-        id: "plumbing-fire",
-        title: "Plumbing & Fire Protection",
-        scope: "Water supply, drainage, firefighting systems, pumps, tanks, hydrant/sprinkler interfaces and statutory coordination.",
-        detail: "Underground water reservoirs, domestic and flushing booster pump systems, rainwater harvesting, sewage treatment plant (STP) interfaces, dedicated fire pumps, wet riser/sprinkler networks, and fire NOC compliance.",
-        status: "Proposed Package Framework"
+        title: "Development Planning & Feasibility",
+        description: "Initial zoning review, land potential assessment, FAR/FSI optimization coordination, and high-level project budget modeling."
       },
       {
-        id: "elv-ict",
-        title: "ELV & ICT Infrastructure",
-        scope: "Structured cabling, data/voice infrastructure, CCTV, access control, public address and low-voltage systems.",
-        detail: "High-speed optical backbone, data center server room interfaces, IP video surveillance, biometric turnstile access control, campus public address and emergency voice evacuation.",
-        status: "Proposed Package Framework"
-      },
-      {
-        id: "bms-controls",
-        title: "BMS & Automation Controls",
-        scope: "Building automation, monitoring, integration and interface management across MEP systems.",
-        detail: "Campus-wide smart Building Management System interfacing chillers, energy meters, lighting automation, fire alarms, and lift monitoring for energy optimization and proactive facility operations.",
-        status: "Proposed Package Framework"
-      },
-      {
-        id: "external-dev",
-        title: "External Development",
-        scope: "Roads, drainage, utilities, landscaping, site services and external infrastructure interfaces.",
-        detail: "Heavy-duty vehicular pavements, storm water drainage network, external site lighting, campus perimeter security, hard/soft landscaping, water bodies, and municipal utility connections.",
-        status: "Proposed Package Framework"
-      },
-      {
-        id: "testing-commissioning-pkg",
-        title: "Testing & Commissioning",
-        scope: "System-wise readiness, integrated testing, commissioning documentation and handover support.",
-        detail: "Integrated systems commissioning across power, HVAC, fire alarm, life safety, and BMS; punch-list closeout, as-built sign-offs, and final statutory occupancy handover.",
-        status: "Proposed Package Framework"
+        title: "Handover & Occupancy Readiness",
+        description: "Systematic commissioning verification, snag clearance, as-built documentation audit, and tenant interface facilitation."
       }
     ]
   },
 
-  // 8-Stage Delivery Methodology from Page 7
+  // H. Joint Venture & Development Partnerships
+  jointVenture: {
+    title: "Joint Venture & Development Partnerships",
+    tagline: "Unlocking Land Potential Through Transparent Development Collaboration",
+    overview: "Pavana Projects welcomes exploratory discussions with landowners, property owners, and strategic investors seeking professional development collaboration. We provide the technical planning, project coordination, execution management, and commercial clarity needed to evaluate and structure viable development initiatives.",
+    collaborationSteps: [
+      {
+        step: "01",
+        title: "Initial Enquiry & Opportunity Review",
+        description: "Landowners share initial property details, location, zoning characteristics, and overarching development aspirations in complete confidence."
+      },
+      {
+        step: "02",
+        title: "Preliminary Discussions & Objective Setting",
+        description: "A collaborative session to understand property parameters, regulatory frameworks, potential asset types (residential, commercial, or mixed-use), and developer-landowner goals."
+      },
+      {
+        step: "03",
+        title: "Feasibility & Development Planning",
+        description: "Detailed evaluation covering zoning guidelines, infrastructure access, site orientation, high-level project scheduling, and conceptual layout options."
+      },
+      {
+        step: "04",
+        title: "Scope, Roles & Coordination Framework",
+        description: "Delineating responsibilities across design management, procurement, regulatory tracking, construction oversight, and commercial visibility."
+      },
+      {
+        step: "05",
+        title: "Development Planning & Delivery Execution",
+        description: "Transitioning agreed parameters into an actionable project execution plan (PEP) with structured milestones, quality benchmarks, and delivery controls."
+      }
+    ],
+    transparencyNote: "All joint venture discussions are conducted confidentially on a preliminary feasibility basis. Pavana Projects structures coordination and delivery frameworks to ensure complete transparency and milestone predictability."
+  },
+
+  // 8-Stage Delivery Methodology from Page 7 of PDF
   lifecycleStages: [
     {
       step: "01",
@@ -314,7 +441,7 @@ export const companyProfile = {
     }
   ],
 
-  // Control Tower & Reporting Matrix from Page 8
+  // Control Tower & Reporting Matrix from Page 8 of PDF
   controlAreas: [
     {
       area: "Programme Control",
@@ -374,7 +501,7 @@ export const companyProfile = {
     }
   ],
 
-  // Stakeholder Coordination Ecosystem from Page 9
+  // Stakeholder Coordination Ecosystem from Page 9 of PDF
   stakeholders: [
     {
       stakeholder: "Client / Developer",
@@ -419,14 +546,14 @@ export const companyProfile = {
   ],
 
   governancePrinciples: [
-    "Clear ownership across all packages and trades",
-    "Documented decisions with unambiguous audit trails",
-    "Defined escalation matrices for critical bottlenecks",
+    "Clear ownership across all packages, trades, and deliverables",
+    "Documented decisions with unambiguous audit trails and minutes",
+    "Defined escalation matrices for critical bottlenecks and approvals",
     "Measurable milestones tied to contractual verification",
-    "Transparent reporting giving real project clarity"
+    "Transparent reporting giving real, unvarnished project clarity"
   ],
 
-  // Quality & Safety Matrix from Page 10
+  // Quality & Safety Matrix from Page 10 of PDF
   qualitySafetyMatrix: {
     quality: [
       { item: "Inspection & Test Plans (ITPs)", desc: "Tailored inspection protocols established before starting each trade package." },
@@ -448,7 +575,7 @@ export const companyProfile = {
     ]
   },
 
-  // Commercial & Procurement from Page 11
+  // Commercial & Procurement from Page 11 of PDF
   procurementStages: [
     { stage: "Package Strategy", focus: "Define scopes, interfaces, deliverables and procurement priorities." },
     { stage: "Tender Coordination", focus: "Coordinate tender documents, bidder queries, technical clarifications and comparisons." },
@@ -459,7 +586,7 @@ export const companyProfile = {
     { stage: "Change Management", focus: "Document scope changes, impact assessment, approval and implementation status." }
   ],
 
-  // Organisation Structure from Page 12
+  // Organisation Structure from Page 12 of PDF
   organisationRoles: [
     { role: "Project Director / PMC Head", responsibility: "Client leadership, governance, strategic decisions and major escalations." },
     { role: "Project Manager", responsibility: "Overall project coordination, programme, interfaces and delivery management." },
@@ -472,7 +599,7 @@ export const companyProfile = {
     { role: "Procurement / Coordination Team", responsibility: "Vendor follow-up, approvals, logistics and long-lead tracking." }
   ],
 
-  // 14 Key PMC Deliverables from Page 13
+  // 14 Key PMC Deliverables from Page 13 of PDF
   deliverablesList: [
     "Project Execution Plan / PMC procedures",
     "Master Project Schedule and baseline programme",
@@ -491,7 +618,7 @@ export const companyProfile = {
     "As-built, O&M and handover documentation tracker"
   ],
 
-  // Value Proposition from Page 14
+  // Value Proposition from Page 14 of PDF
   valueProps: [
     {
       title: "Integrated Management",

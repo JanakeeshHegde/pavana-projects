@@ -4,7 +4,8 @@ import {
   ShieldCheck, Compass, Network, Sliders, CheckCircle2, Building2, 
   ArrowRight, Layers, FileCheck, HardHat, Cpu, Truck, Info, CheckSquare,
   Flag, Calendar, Hammer, Activity, CheckCircle, ChevronRight, Sparkles,
-  Users, DraftingCompass, Wrench, Award, CalendarDays, Coins, ClipboardCheck, ShieldAlert
+  Users, DraftingCompass, Wrench, Award, CalendarDays, Coins, ClipboardCheck, ShieldAlert,
+  Target, FileSpreadsheet, PackageCheck, KeyRound
 } from 'lucide-react';
 import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
@@ -21,14 +22,14 @@ const valueIcons = {
 };
 
 const stageIcons = {
-  '01': Flag,
-  '02': Calendar,
-  '03': Layers,
-  '04': FileCheck,
-  '05': Truck,
-  '06': Hammer,
-  '07': Activity,
-  '08': CheckCircle,
+  '01': Flag,              // Initiate
+  '02': CalendarDays,      // Plan
+  '03': DraftingCompass,   // Design
+  '04': FileSpreadsheet,   // Tender
+  '05': PackageCheck,      // Procure
+  '06': HardHat,           // Execute
+  '07': Sliders,           // Commission
+  '08': KeyRound,          // Handover
 };
 
 const stakeholderIconsMap = {
@@ -89,12 +90,39 @@ export default function AboutPage() {
         description="About Pavana Projects: Professional Project Management Consultancy (PMC) founded on integrity, planning, coordination, control, quality, and delivery."
       />
 
-      {/* Page Hero */}
+      {/* 1. ARCHITECTURAL HERO SECTION (UNIFIED WITH SERVICES & CONTACT) */}
       <PageHero
-        title="About"
-        subtitle="Bringing clarity, control, and accountability to complex projects from project initiation through commissioning and handover. "
-        badge="About Pavana Projects"
+        title="About Pavana Projects"
+        subtitle="Bringing clarity, control, and accountability to real estate developments, construction solutions, and multidisciplinary Project Management Consultancy from project initiation through commissioning and handover."
+        badge="Company Profile & Methodology"
+        breadcrumbName="About"
+        technicalNote="GOVERNANCE & METHODOLOGY"
       />
+
+      {/* STICKY SUB-NAVIGATION BAR FOR SECTION DISCOVERY */}
+      <div className="sticky top-[58px] sm:top-[68px] z-30 bg-[#0E1B15] border-b border-[#284439] py-1.5 sm:py-2 px-4 sm:px-6 shadow-md overflow-x-auto">
+        <div className="max-w-7xl mx-auto flex items-center space-x-2 sm:space-x-3 min-w-max">
+          <span className="text-[10px] font-mono-tech uppercase font-bold text-[#DFBE65] pr-2 border-r border-[#284439]">
+            DISCOVERY INDEX:
+          </span>
+          {[
+            { label: 'Overview', href: '#overview' },
+            { label: 'Core Values', href: '#values' },
+            { label: '8-Stage Lifecycle', href: '#lifecycle' },
+            { label: 'Stakeholders', href: '#governance' },
+            { label: 'PMC Structure', href: '#organisation' },
+            { label: 'Value Proposition', href: '#value-propositions' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-[11px] sm:text-xs font-mono-tech text-[#CBD8D2] hover:text-[#DFBE65] px-2 py-0.5 rounded transition-colors whitespace-nowrap"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
 
       {/* 1. COMPANY OVERVIEW & PROFESSIONAL POSITIONING */}
       <section id="overview" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
@@ -110,7 +138,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-base text-[#2C3E36] leading-relaxed">
-                Pavana Projects is positioned as a professional <strong>Project Management Consultancy (PMC)</strong> focused on structured planning, multidisciplinary coordination, project controls and delivery management for large-scale built-environment projects.
+                Pavana Projects is positioned as a trusted partner for <strong>real estate and construction-related solutions</strong>, structured project coordination, disciplined planning, and professional <strong>Project Management Consultancy (PMC)</strong> across commercial, residential, and built-environment developments.
               </p>
 
               <p className="text-sm text-[#4C5D56] leading-relaxed">
@@ -118,7 +146,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-sm text-[#4C5D56] leading-relaxed">
-                Pavana Projects is designed to act as the client’s project-management interface across consultants, contractors, vendors, statutory stakeholders and specialist agencies—ensuring that the developer’s interests in Time, Cost, Quality, and Safety are protected at every stage.
+                Pavana Projects is designed to act as the client’s project-management interface across consultants, contractors, vendors, statutory stakeholders and specialist agencies—ensuring that developer and client priorities in Time, Cost, Quality, and Safety are protected at every stage.
               </p>
 
               <div className="p-4 bg-[#F8F6ED] border-l-4 border-[#C69A36] text-xs text-[#064A32] font-semibold leading-relaxed">
@@ -140,8 +168,8 @@ export default function AboutPage() {
 
                 <div className="space-y-4 relative text-xs">
                   <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
-                    <span className="text-[#A3B8B0]">Reference Scale</span>
-                    <span className="text-[#DFBE65] font-bold font-mono-tech text-sm">15,00,000 Sq. Ft.</span>
+                    <span className="text-[#A3B8B0]">Asset Scope</span>
+                    <span className="text-[#DFBE65] font-bold font-mono-tech text-sm">Commercial & Residential</span>
                   </div>
                   <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
                     <span className="text-[#A3B8B0]">PMC Approach</span>
@@ -152,7 +180,7 @@ export default function AboutPage() {
                     <span className="text-[#DFBE65] font-semibold">Time, Cost, Quality, Safety & Risk</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[#A3B8B0]">Registered HQ</span>
+                    <span className="text-[#A3B8B0]">Registered Office</span>
                     <span className="text-[#FFFFFF]">Mathikere, Bangalore – 560054</span>
                   </div>
                 </div>
@@ -188,9 +216,14 @@ export default function AboutPage() {
             {/* Vision Card */}
             <div className="group bg-[#FFFFFF] p-8 sm:p-10 border border-[#D5CDBE] border-t-4 border-t-[#C69A36] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono-tech font-bold uppercase tracking-widest text-[#C69A36]">
-                  OUR VISION
-                </span>
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-9 h-9 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] flex items-center justify-center shrink-0">
+                    <Compass className="w-4 h-4 text-[#C69A36]" />
+                  </div>
+                  <span className="text-xs font-mono-tech font-bold uppercase tracking-widest text-[#C69A36]">
+                    OUR VISION
+                  </span>
+                </div>
                 <span className="text-[10px] font-mono-tech text-[#5C6E66] uppercase tracking-wider bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
                   STRATEGIC DIRECTION
                 </span>
@@ -206,9 +239,14 @@ export default function AboutPage() {
             {/* Mission Card */}
             <div className="group bg-[#064A32] text-[#F8F6ED] p-8 sm:p-10 border border-[#C69A36]/50 border-t-4 border-t-[#DFBE65] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300 cad-grid-dark">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono-tech font-bold uppercase tracking-widest text-[#DFBE65]">
-                  OUR MISSION
-                </span>
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-9 h-9 rounded-full bg-[#14251E] border border-[#284439] flex items-center justify-center shrink-0">
+                    <Target className="w-4 h-4 text-[#DFBE65]" />
+                  </div>
+                  <span className="text-xs font-mono-tech font-bold uppercase tracking-widest text-[#DFBE65]">
+                    OUR MISSION
+                  </span>
+                </div>
                 <span className="text-[10px] font-mono-tech text-[#DFBE65] uppercase tracking-wider bg-[#14251E] px-2 py-0.5 border border-[#284439]">
                   EXECUTION CHARTER
                 </span>
@@ -225,6 +263,7 @@ export default function AboutPage() {
           {/* 6 CORE VALUES */}
           <div>
             <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase mb-3">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#C69A36]" />
               <span>CORE VALUES & WHAT THEY MEAN</span>
             </div>
             <h3 className="text-2xl font-bold text-[#064A32] mb-8">
@@ -232,7 +271,7 @@ export default function AboutPage() {
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {foundation.values.map((val, idx) => {
+              {foundation.values.map((val) => {
                 const IconComp = valueIcons[val.name] || ShieldCheck;
                 return (
                   <div
@@ -240,8 +279,8 @@ export default function AboutPage() {
                     className="group relative p-7 bg-[#FFFFFF] border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-4 shadow-sm hover:shadow-xl hover:border-[#C69A36] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                   >
                     <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
-                      <div className="w-8 h-8 bg-[#064A32] text-[#DFBE65] flex items-center justify-center group-hover:scale-105 transition-transform">
-                        <IconComp className="w-4 h-4" />
+                      <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <IconComp className="w-4 h-4 text-[#064A32]" />
                       </div>
                       <span className="text-[10px] uppercase font-bold text-[#064A32] bg-[#F8F6ED] px-2 py-0.5 border border-[#E5E0CE]">
                         Core Tenet
@@ -303,6 +342,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
                 {lifecycleStages.map((stg, idx) => {
                   const isSelected = idx === activeStageTab;
+                  const TabStageIcon = stageIcons[stg.step] || Flag;
                   return (
                     <button
                       key={stg.step}
@@ -313,8 +353,11 @@ export default function AboutPage() {
                           : 'bg-[#FFFFFF] text-[#2C3E36] border-[#E2DDD0] hover:border-[#C69A36]/60 hover:bg-[#F3EFE3]'
                       }`}
                     >
-                      <div className={`text-[11px] font-mono-tech font-bold ${isSelected ? 'text-[#DFBE65]' : 'text-[#C69A36]'}`}>
-                        {stg.step}
+                      <div className="flex items-center justify-between">
+                        <span className={`text-[11px] font-mono-tech font-bold ${isSelected ? 'text-[#DFBE65]' : 'text-[#C69A36]'}`}>
+                          {stg.step}
+                        </span>
+                        <TabStageIcon className={`w-3.5 h-3.5 ${isSelected ? 'text-[#DFBE65]' : 'text-[#064A32]'}`} />
                       </div>
                       <div className="text-xs font-bold uppercase tracking-wider truncate mt-0.5">
                         {stg.name}
@@ -332,8 +375,8 @@ export default function AboutPage() {
                 {/* Stage Narrative (7 Cols) */}
                 <div className="lg:col-span-7 space-y-5">
                   <div className="flex items-center space-x-3.5">
-                    <div className="w-12 h-12 bg-[#064A32] text-[#DFBE65] flex items-center justify-center font-mono-tech text-lg font-bold shrink-0 shadow-sm">
-                      {selectedStage.step}
+                    <div className="w-12 h-12 bg-[#064A32] text-[#DFBE65] flex items-center justify-center shrink-0 shadow-sm">
+                      <StageIcon className="w-6 h-6 text-[#DFBE65]" />
                     </div>
                     <div>
                       <span className="text-[11px] font-mono-tech font-bold uppercase tracking-widest text-[#064A32] block">

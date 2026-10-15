@@ -6,11 +6,10 @@ import {
 import { companyProfile } from '@/data/company-profile';
 
 const navItems = [
-  { name: 'Home', path: '/', subtitle: 'Command & Landmark Developments' },
+  { name: 'Home', path: '/', subtitle: 'Real Estate & Project Management' },
   { name: 'About', path: '/about', subtitle: 'Company Profile, Vision & Values' },
-  { name: 'Services', path: '/services', subtitle: 'Comprehensive PMC Delivery' },
-  { name: 'Projects', path: '/projects', subtitle: '15,00,000+ Sq. Ft. Portfolio' },
-  { name: 'Contact', path: '/contact', subtitle: 'Direct Consultation & BLR HQ' },
+  { name: 'Services', path: '/services', subtitle: 'Construction, Real Estate, JV & PMC' },
+  { name: 'Contact', path: '/contact', subtitle: 'Direct Consultation & Office' },
 ];
 
 export default function Navbar() {
@@ -83,7 +82,7 @@ export default function Navbar() {
             >
               <img
                 src="/logo-white.png"
-                alt="Pavana Projects — Creating Landmarks, Shaping Futures"
+                alt="Pavana Projects logo"
                 className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
@@ -171,7 +170,7 @@ export default function Navbar() {
                   PAVANA PMC // NAVIGATION
                 </span>
               </div>
-              <span>BLR HQ · 560054</span>
+              <span>Bangalore · 560054</span>
             </div>
 
             {/* Navigation Links List */}

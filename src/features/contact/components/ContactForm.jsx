@@ -10,9 +10,9 @@ export default function ContactForm() {
     organization: '',
     email: '',
     phone: '',
-    category: 'IT / Software Park',
-    scale: '10,00,000 – 20,00,000 Sq. Ft.',
-    stage: 'Design & Planning',
+    category: 'Real Estate Solutions',
+    scale: '50,000 – 2,00,000 Sq. Ft.',
+    stage: 'Initial Brief & Planning',
     message: ''
   });
 
@@ -23,7 +23,7 @@ export default function ContactForm() {
   const validate = () => {
     const errs = {};
     if (!formData.name.trim()) errs.name = 'Full name is required';
-    if (!formData.organization.trim()) errs.organization = 'Company / Developer name is required';
+    if (!formData.organization.trim()) errs.organization = 'Company / Landowner / Developer name is required';
     if (!formData.email.trim()) {
       errs.email = 'Email address is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -71,9 +71,9 @@ export default function ContactForm() {
       organization: '',
       email: '',
       phone: '',
-      category: 'IT / Software Park',
-      scale: '10,00,000 – 20,00,000 Sq. Ft.',
-      stage: 'Design & Planning',
+      category: 'Real Estate Solutions',
+      scale: '50,000 – 2,00,000 Sq. Ft.',
+      stage: 'Initial Brief & Planning',
       message: ''
     });
     setSubmitted(false);
@@ -82,24 +82,24 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-[#FFFFFF] border border-[#C69A36] p-8 sm:p-12 text-center shadow-lg animate-fadeIn">
+      <div className="bg-[#FFFFFF] border border-[#C69A36] p-8 sm:p-12 text-center shadow-lg">
         <div className="w-16 h-16 bg-[#064A32] text-[#DFBE65] mx-auto flex items-center justify-center mb-6">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <div className="text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase mb-1">
+        <div className="text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase mb-1">
           CONSULTATION REQUEST REGISTERED
         </div>
         <h3 className="text-2xl sm:text-3xl font-bold text-[#064A32] mb-3">
           Thank You, {formData.name}
         </h3>
         <p className="text-sm text-[#4C5D56] max-w-lg mx-auto leading-relaxed mb-6">
-          Your project inquiry for <strong className="text-[#14251E]">{formData.organization}</strong> ({formData.category}, {formData.scale}) has been routed to our Project Management leadership. Our team will review your project brief and connect with you shortly.
+          Your inquiry for <strong className="text-[#14251E]">{formData.organization}</strong> ({formData.category}, {formData.scale}) has been routed to our project leadership. Our team will review your brief and connect with you shortly.
         </p>
 
         <div className="bg-[#F8F6ED] p-4 max-w-md mx-auto text-left text-xs border border-[#E5E0CE] mb-6 space-y-1.5 text-[#2C3E36]">
           <div><strong className="text-[#064A32]">Registered Contact:</strong> {formData.email} | {formData.phone}</div>
           <div><strong className="text-[#064A32]">Current Stage:</strong> {formData.stage}</div>
-          <div><strong className="text-[#064A32]">Location of Office:</strong> Mathikere, Bangalore – 560054</div>
+          <div><strong className="text-[#064A32]">Office Location:</strong> Mathikere, Bangalore – 560054</div>
         </div>
 
         <CTAButton
@@ -115,14 +115,14 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="bg-[#FFFFFF] border border-[#E5E0CE] p-6 sm:p-8 lg:p-10 shadow-sm space-y-6">
       <div className="border-b border-[#E5E0CE] pb-4">
-        <span className="text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase block mb-1">
-          CONFIDENTIAL PMC ENQUIRY
+        <span className="text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase block mb-1">
+          CONFIDENTIAL INQUIRY & CONSULTATION
         </span>
         <h3 className="text-xl sm:text-2xl font-bold text-[#064A32]">
-          Discuss Your Development With Our PMC Directors
+          Discuss Your Project With Our Directors
         </h3>
         <p className="text-xs text-[#5C6E66] mt-1">
-          Please provide details about your commercial, IT/ITES, or infrastructure project to initiate consultation.
+          Inquire about construction, real estate solutions, interior space planning, turnkey coordination, or Joint Venture opportunities.
         </p>
       </div>
 
@@ -147,17 +147,17 @@ export default function ContactForm() {
           {errors.name && <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.name}</p>}
         </div>
 
-        {/* Organization / Developer */}
+        {/* Organization / Developer / Landowner */}
         <div>
           <label htmlFor="organization" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
-            Developer / Entity Name <span className="text-red-600">*</span>
+            Entity / Developer / Landowner <span className="text-red-600">*</span>
           </label>
           <input
             id="organization"
             type="text"
             value={formData.organization}
             onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-            placeholder="e.g. Apex Tech Parks Pvt Ltd"
+            placeholder="e.g. Apex Realty / Individual Owner"
             className={`w-full px-3.5 py-2.5 text-sm bg-[#F8F6ED] border rounded-none transition-colors focus:bg-[#FFFFFF] ${
               errors.organization ? 'border-red-500' : 'border-[#E5E0CE] focus:border-[#064A32]'
             }`}
@@ -204,7 +204,7 @@ export default function ContactForm() {
         {/* Project Category */}
         <div>
           <label htmlFor="category" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
-            Project Category
+            Inquiry Category
           </label>
           <select
             id="category"
@@ -212,18 +212,20 @@ export default function ContactForm() {
             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-[#F8F6ED] border border-[#E5E0CE] rounded-none focus:border-[#064A32] focus:bg-[#FFFFFF]"
           >
-            <option>IT / Software Park</option>
-            <option>Commercial Office Building</option>
-            <option>Mixed-Use Commercial & Retail</option>
-            <option>Industrial & Logistics Campus</option>
-            <option>Infrastructure Development</option>
+            <option>Real Estate Solutions</option>
+            <option>Joint Venture & Development Partnerships</option>
+            <option>Construction Solutions (Residential / Commercial / Civil)</option>
+            <option>Interior Design & Space Planning</option>
+            <option>Turnkey Projects</option>
+            <option>Project Management Consultancy (PMC)</option>
+            <option>General / Strategic Consultation</option>
           </select>
         </div>
 
         {/* Estimated Scale */}
         <div>
           <label htmlFor="scale" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
-            Estimated Scale (Built-Up Area)
+            Estimated Scale / Built-Up Area
           </label>
           <select
             id="scale"
@@ -231,10 +233,11 @@ export default function ContactForm() {
             onChange={(e) => setFormData({ ...formData, scale: e.target.value })}
             className="w-full px-3.5 py-2.5 text-sm bg-[#F8F6ED] border border-[#E5E0CE] rounded-none focus:border-[#064A32] focus:bg-[#FFFFFF]"
           >
-            <option>Up to 5,00,000 Sq. Ft.</option>
-            <option>5,00,000 – 10,00,000 Sq. Ft.</option>
-            <option>10,00,000 – 20,00,000 Sq. Ft. (e.g. 15 Lakh Sq. Ft.)</option>
-            <option>Above 20,00,000 Sq. Ft.</option>
+            <option>Under 50,000 Sq. Ft.</option>
+            <option>50,000 – 2,00,000 Sq. Ft.</option>
+            <option>2,00,000 – 5,00,000 Sq. Ft.</option>
+            <option>5,00,000+ Sq. Ft.</option>
+            <option>Land Parcel / Joint Venture Feasibility</option>
           </select>
         </div>
       </div>
@@ -250,12 +253,12 @@ export default function ContactForm() {
           onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
           className="w-full px-3.5 py-2.5 text-sm bg-[#F8F6ED] border border-[#E5E0CE] rounded-none focus:border-[#064A32] focus:bg-[#FFFFFF]"
         >
-          <option>Initiation & Brief Development (Phase 01)</option>
-          <option>Planning & Scheduling (Phase 02)</option>
-          <option>Design Coordination & Constructability (Phase 03)</option>
-          <option>Tender Packaging & Procurement (Phases 04-05)</option>
-          <option>Construction Execution Management (Phase 06)</option>
-          <option>Testing, Commissioning & Handover (Phases 07-08)</option>
+          <option>Initial Brief & Planning</option>
+          <option>Design & Architectural Coordination</option>
+          <option>Tender Packaging & Procurement</option>
+          <option>Active Construction Execution</option>
+          <option>Testing, Commissioning & Handover</option>
+          <option>Joint Venture Feasibility Discussion</option>
         </select>
       </div>
 
@@ -269,7 +272,7 @@ export default function ContactForm() {
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          placeholder="Please describe the development location, expected timelines, key PMC scopes required (Civil, MEP, Controls, QA/QC, HSE), and consultant setup."
+          placeholder="Please describe the project location, property or land particulars, required services (Construction, Real Estate, JV, Interiors, PMC), and expected timelines."
           className={`w-full px-3.5 py-2.5 text-sm bg-[#F8F6ED] border rounded-none transition-colors focus:bg-[#FFFFFF] ${
             errors.message ? 'border-red-500' : 'border-[#E5E0CE] focus:border-[#064A32]'
           }`}

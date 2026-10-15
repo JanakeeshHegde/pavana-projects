@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Mail, Clock, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, ExternalLink, Navigation } from 'lucide-react';
 import SEOHead from '@/components/shared/SEOHead';
 import PageHero from '@/components/shared/PageHero';
 import ContactForm from '@/features/contact/components/ContactForm';
@@ -19,6 +19,7 @@ export default function ContactPage() {
         title="Contact"
         subtitle="We invite developers, corporate occupiers, and infrastructure project owners to initiate confidential discussions on their upcoming capital developments."
         badge="Direct Consultation"
+        technicalNote="REGISTERED OFFICE & INQUIRIES"
       />
 
       {/* MAIN CONTACT & CONSULTATION SECTION */}
@@ -40,15 +41,16 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* 1. Official Inquiries & Consultation Hours Card */}
+              {/* 1. Official Inquiries, Phone & Consultation Hours Card */}
               <div className="bg-[#FFFFFF] p-6 border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                {/* Email */}
                 <div className="flex items-center space-x-3.5">
-                  <div className="w-8 h-8 bg-[#F8F6ED] text-[#064A32] border border-[#E5E0CE] flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4 text-[#C69A36]" />
+                  <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 text-[#064A32]" />
                   </div>
                   <div>
                     <span className="text-[11px] font-mono-tech font-bold uppercase tracking-wider text-[#5C6E66] block">
-                      Official Inquiries
+                      Official Email
                     </span>
                     <a
                       href={`mailto:${contact.email}`}
@@ -59,9 +61,30 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                {/* Telephone */}
+                {contact.phone && (
+                  <div className="flex items-center space-x-3.5 pt-3 border-t border-[#E5E0CE]">
+                    <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center shrink-0">
+                      <Phone className="w-4 h-4 text-[#064A32]" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-mono-tech font-bold uppercase tracking-wider text-[#5C6E66] block">
+                        Telephone
+                      </span>
+                      <a
+                        href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+                        className="text-sm font-semibold text-[#064A32] hover:text-[#C69A36] transition-colors"
+                      >
+                        {contact.phone}
+                      </a>
+                    </div>
+                  </div>
+                )}
+
+                {/* Hours */}
                 <div className="flex items-center space-x-3.5 pt-3 border-t border-[#E5E0CE]">
-                  <div className="w-8 h-8 bg-[#F8F6ED] text-[#064A32] border border-[#E5E0CE] flex items-center justify-center shrink-0">
-                    <Clock className="w-4 h-4 text-[#C69A36]" />
+                  <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center shrink-0">
+                    <Clock className="w-4 h-4 text-[#064A32]" />
                   </div>
                   <div>
                     <span className="text-[11px] font-mono-tech font-bold uppercase tracking-wider text-[#5C6E66] block">
@@ -77,7 +100,7 @@ export default function ContactPage() {
               {/* 2. Registered Office Exact Address Card */}
               <div className="bg-[#FFFFFF] p-6 border-l-4 border-l-[#064A32] border-t-2 border-t-[#C69A36] border-r border-b border-[#E5E0CE] space-y-4 shadow-sm hover:shadow-md transition-shadow relative group">
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-8 h-8 bg-[#064A32] text-[#DFBE65] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                  <div className="w-8 h-8 rounded-full bg-[#064A32] text-[#DFBE65] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>

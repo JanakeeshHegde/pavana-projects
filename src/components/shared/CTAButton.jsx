@@ -34,9 +34,12 @@ export default function CTAButton({
   ...rest
 }) {
   const isGold = variant === 'gold';
+  const isOutline = variant === 'outline';
 
   const variantClasses = isGold
     ? 'bg-[#C69A36] hover:bg-[#DFBE65] active:bg-[#B3892B] text-[#14251E] border border-[#C69A36] hover:border-[#DFBE65] shadow-sm hover:shadow-[0_0_18px_rgba(198,154,54,0.35)]'
+    : isOutline
+    ? 'bg-[#14251E]/85 backdrop-blur-sm hover:bg-[#064A32] active:bg-[#0B3B28] text-[#F8F6ED] border border-[#C69A36]/80 hover:border-[#DFBE65] shadow-sm hover:shadow-[0_0_18px_rgba(198,154,54,0.25)]'
     : 'bg-[#064A32] hover:bg-[#14251E] active:bg-[#0B3B28] text-[#FFFFFF] border border-[#064A32] hover:border-[#C69A36]/60 shadow-sm hover:shadow-md';
 
   const baseClasses = `

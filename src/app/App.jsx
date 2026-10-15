@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
+import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
 import AppRoutes from './AppRoutes.jsx';
 
 function ScrollManager() {
@@ -34,6 +35,7 @@ export default function App() {
           <AppRoutes />
         </main>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </BrowserRouter>
   );

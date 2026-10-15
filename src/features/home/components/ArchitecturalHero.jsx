@@ -9,7 +9,7 @@ export default function ArchitecturalHero() {
     <section className="relative bg-[#F8F6ED] text-[#14251E] cad-grid-light border-b border-[#E2DDD0] overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24">
       {/* Drafting Crosshairs & Measurement Annotations */}
       <div className="absolute top-4 left-6 font-mono-tech text-[10px] text-[#064A32]/60 hidden sm:block">
-        + [REF: 13°01'58"N / 77°33'18"E] // BANGALORE HQ
+        + [REF: 13°01'58"N / 77°33'18"E] // BANGALORE
       </div>
       <div className="absolute top-4 right-6 font-mono-tech text-[10px] text-[#064A32]/60 hidden sm:block">
         + [SCALE 1:500] // DWG-PMC-01
@@ -78,8 +78,8 @@ export default function ArchitecturalHero() {
             <div className="pt-6 border-t border-[#E2DDD0] grid grid-cols-3 gap-4 max-w-xl font-mono-tech text-xs">
               <div>
                 <span className="text-[10px] text-[#7A8C84] uppercase block">SCALE</span>
-                <span className="text-base font-bold text-[#064A32]">1.5M SQ. FT.</span>
-                <span className="text-[9.5px] text-[#A3B8B0] block">Reference Benchmark</span>
+                <span className="text-base font-bold text-[#064A32]">BUILT ASSETS</span>
+                <span className="text-[9.5px] text-[#A3B8B0] block">Commercial & Residential</span>
               </div>
               <div>
                 <span className="text-[10px] text-[#7A8C84] uppercase block">OVERSIGHT</span>
@@ -104,19 +104,19 @@ export default function ArchitecturalHero() {
               <div className="relative overflow-hidden aspect-[4/5] bg-[#14251E]">
                 <img
                   src="/images/hero-campus.jpg"
-                  alt="15,00,000 Sq. Ft. IT Software Park Campus Reference Architecture"
+                  alt="Pavana Projects Architectural Campus Overview"
                   className="w-full h-full object-cover object-center filter contrast-[1.08] hover:scale-105 transition-transform duration-700"
                 />
 
                 {/* Technical Drawing Elevation Overlay */}
                 <div className="absolute top-3 left-3 bg-[#14251E]/90 text-[#DFBE65] font-mono-tech text-[10px] px-2.5 py-1 border border-[#284439] backdrop-blur-sm">
-                  DWG // 04.1 — IT SOFTWARE PARK
+                  DWG // 01 — COMMERCIAL DEVELOPMENT
                 </div>
 
                 <div className="absolute bottom-3 left-3 right-3 bg-[#14251E]/95 text-[#F8F6ED] p-3.5 border border-[#284439] backdrop-blur-sm space-y-1">
                   <div className="flex items-center justify-between text-[10px] font-mono-tech text-[#C69A36]">
-                    <span>PROPOSED PMC FRAMEWORK</span>
-                    <span>15,00,000 SQ. FT.</span>
+                    <span>INTEGRATED PMC FRAMEWORK</span>
+                    <span>BUILT ASSETS</span>
                   </div>
                   <p className="text-xs text-[#CBD8D2] font-medium leading-snug">
                     Integrated civil, structural, MEP, façade, BMS automation and commissioning oversight.

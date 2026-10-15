@@ -1,107 +1,76 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Compass, Shield, Layers, ArrowDown } from 'lucide-react';
-import { companyProfile } from '@/data/company-profile';
+import React from 'react';
 import CTAButton from '@/components/shared/CTAButton';
 
 export default function CinematicHero() {
-  const containerRef = useRef(null);
-
   return (
     <section 
-      ref={containerRef}
-      className="relative min-h-[95vh] lg:min-h-screen bg-[#14251E] text-[#F8F6ED] overflow-hidden flex items-center pt-24 pb-16 lg:pt-28 lg:pb-20"
+      className="relative min-h-[76vh] sm:min-h-[84vh] lg:min-h-[88vh] xl:min-h-[92vh] bg-[#14251E] text-[#F8F6ED] overflow-hidden flex items-center pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28 border-b border-[#284439]"
+      aria-label="Pavana Projects Homepage Hero"
     >
-      {/* Background Architectural Canvas & Dramatic Lighting */}
-      <div className="absolute inset-0 z-0">
+      {/* 1. CINEMATIC FULL-BLEED ARCHITECTURAL BACKGROUND IMAGE */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
-          src="/images/hero-campus.jpg"
-          alt="15,00,000 Sq. Ft. IT Software Park Architecture"
-          className="w-full h-full object-cover object-center brightness-[0.58] contrast-[1.08] scale-105 filter blur-[0.3px]"
+          src="/images/pavana-hero-masterpiece.jpg"
+          alt="Pavana Projects — Architectural Project Management, Real Estate and Construction Solutions"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          className="w-full h-full object-cover object-[center_right] sm:object-center brightness-[0.85] contrast-[1.06]"
         />
-        {/* Cinematic Architectural Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#14251E]/85 via-[#14251E]/45 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#14251E]/75 via-transparent to-[#14251E]/30" />
-        <div className="absolute inset-0 cad-grid-dark opacity-15 pointer-events-none" />
+
+        {/* Balanced Architectural Gradients for Flawless Text Readability & High Visual Vibrancy */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#14251E]/90 via-[#14251E]/65 via-45% to-[#14251E]/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#14251E]/80 via-transparent to-[#14251E]/30" />
+
+        {/* Subtle Ambient Lighting Accents */}
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#064A32]/30 rounded-full blur-3xl" />
+        <div className="absolute -bottom-32 right-1/4 w-[30rem] h-[30rem] bg-[#C69A36]/15 rounded-full blur-3xl" />
+
+        {/* Precision CAD Drafting Grid Overlay */}
+        <div className="absolute inset-0 cad-grid-dark opacity-10" />
       </div>
 
+      {/* 2. MAIN HERO CONTENT CONTAINER */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
-        {/* Asymmetrical Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="max-w-3xl space-y-4 sm:space-y-6">
           
-          {/* Left Hero Column: Oversized Typography & Choreographed Narrative (7 Cols) */}
-          <div className="lg:col-span-12 space-y-7">
-            
-            {/* Top Architectural Metadata Badge */}
-            {/* <div className="inline-flex items-center space-x-3 px-3.5 py-1.5 bg-[#064A32]/90 border border-[#C69A36]/60 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#DFBE65] animate-pulse" />
-              <span className="text-[11px] font-mono-tech text-[#DFBE65] uppercase tracking-[0.18em]">
-                PMC DOSSIER // BANGALORE HQ
+          {/* Main Headline */}
+          <div className="space-y-2.5 sm:space-y-3.5">
+            <h1 className="text-3xl sm:text-4.5xl lg:text-[3.5rem] xl:text-[4rem] font-bold tracking-tight text-[#FFFFFF] leading-[1.08] drop-shadow-sm">
+              Building Possibilities. <br />
+              <span className="gold-gradient-text font-bold">
+                Creating Lasting Value.
               </span>
-              <span className="text-[#C69A36]">|</span>
-              <span className="text-[11px] font-mono-tech text-[#A3B8B0]">
-                15,00,000 SQ. FT. REFERENCE
-              </span>
-            </div> */}
+            </h1>
 
-            {/* Main Headline */}
-            <div className="space-y-3">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] leading-[1.12]">
-                Built on Vision. <br />
-                <span className="gold-gradient-text font-bold">
-                  Driven by Precision.
-                </span>
-              </h1>
+            {/* Supporting Description */}
+            <p className="text-sm sm:text-base lg:text-lg text-[#CBD8D2] font-normal leading-relaxed max-w-2xl drop-shadow-sm">
+              Integrated real estate solutions, construction services and project management — shaped around your vision.
+            </p>
+          </div>
 
-              <p className="text-sm sm:text-base text-[#CBD8D2] font-normal leading-relaxed max-w-lg pt-1">
-                Integrated project management for ambitious commercial, IT/ITES and infrastructure developments.
-              </p>
-            </div>
+          {/* Dual Action CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-2 sm:pt-3">
+            <CTAButton 
+              to="/services" 
+              variant="green"
+              className="w-full sm:w-auto h-11 sm:h-12 px-6 sm:px-8 text-xs sm:text-sm font-semibold tracking-wide"
+              ariaLabel="Explore Pavana Projects Services"
+            >
+              Explore Services
+            </CTAButton>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
-              <CTAButton to="/services" variant="gold">
-                Explore Our Services
-              </CTAButton>
-            </div>
-
-            {/* Gold Hairline Divider & Value Pillars */}
-            <div className="pt-4 border-t border-[#284439] max-w-xl">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono-tech text-xs">
-                <div>
-                  <span className="text-xs sm:text-sm font-bold text-[#DFBE65] block">Ambitious Vision</span>
-                  <span className="text-[11px] text-[#A3B8B0] leading-snug block mt-0.5">Future-proof commercial & IT/ITES realities.</span>
-                </div>
-                <div>
-                  <span className="text-xs sm:text-sm font-bold text-[#DFBE65] block">Precision Execution</span>
-                  <span className="text-[11px] text-[#A3B8B0] leading-snug block mt-0.5">Rigorous control, strict timelines & quality.</span>
-                </div>
-                <div>
-                  <span className="text-xs sm:text-sm font-bold text-[#DFBE65] block">Seamless Integration</span>
-                  <span className="text-[11px] text-[#A3B8B0] leading-snug block mt-0.5">Unified workflows, teams & governance.</span>
-                </div>
-              </div>
-            </div>
+            <CTAButton 
+              to="/contact" 
+              variant="outline"
+              className="w-full sm:w-auto h-11 sm:h-12 px-6 sm:px-8 text-xs sm:text-sm font-semibold tracking-wide"
+              ariaLabel="Contact Pavana Projects"
+            >
+              Contact Us
+            </CTAButton>
           </div>
 
         </div>
-
-        {/* Sophisticated Architectural Scroll Indicator */}
-        {/* <div className="mt-12 pt-6 border-t border-[#284439] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tech text-[#8EA49A]">
-          <div className="flex items-center space-x-2">
-            <ArrowDown className="w-3.5 h-3.5 text-[#C69A36] animate-bounce" />
-            <span>[SCROLL TO DISCOVER ARCHITECTURE IN MOTION ↓]</span>
-          </div>
-
-          <div className="flex items-center space-x-4 text-[11px] text-[#A3B8B0]">
-            <span>BANGALORE HQ</span>
-            <span>•</span>
-            <span>MATHIKERE – 560054</span>
-            <span>•</span>
-            <span className="text-[#DFBE65]">“CREATING LANDMARKS, SHAPING FUTURES.”</span>
-          </div>
-        </div> */}
       </div>
     </section>
   );
