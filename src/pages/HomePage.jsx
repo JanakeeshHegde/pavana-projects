@@ -377,19 +377,19 @@ export default function HomePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                 <div className="p-4 bg-[#1A2E26] border border-[#284439] space-y-1">
-                  <span className="text-xs font-mono-tech text-[#DFBE65] font-bold block">01 // FEASIBILITY</span>
+                  <span className="text-xs font-mono-tech text-[#DFBE65] font-bold block">FEASIBILITY</span>
                   <span className="text-xs text-[#FFFFFF] font-semibold block">Zoning & Planning</span>
                   <span className="text-[11px] text-[#A3B8B0] block">Preliminary potential review</span>
                 </div>
 
                 <div className="p-4 bg-[#1A2E26] border border-[#284439] space-y-1">
-                  <span className="text-xs font-mono-tech text-[#DFBE65] font-bold block">02 // TRANSPARENCY</span>
+                  <span className="text-xs font-mono-tech text-[#DFBE65] font-bold block">TRANSPARENCY</span>
                   <span className="text-xs text-[#FFFFFF] font-semibold block">Defined Roles</span>
                   <span className="text-[11px] text-[#A3B8B0] block">Clear stakeholder alignment</span>
                 </div>
 
                 <div className="p-4 bg-[#1A2E26] border border-[#284439] space-y-1">
-                  <span className="text-xs font-mono-tech text-[#DFBE65] font-bold block">03 // EXECUTION</span>
+                  <span className="text-xs font-mono-tech text-[#DFBE65] font-bold block">EXECUTION</span>
                   <span className="text-xs text-[#FFFFFF] font-semibold block">Delivery Controls</span>
                   <span className="text-[11px] text-[#A3B8B0] block">Time, cost & quality rigor</span>
                 </div>
