@@ -3,6 +3,7 @@ import { BrowserRouter, useLocation } from 'react-router-dom';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
+import NavigationTransitionManager from '@/components/shared/NavigationTransitionManager';
 import AppRoutes from './AppRoutes.jsx';
 
 function ScrollManager() {
@@ -19,6 +20,7 @@ function ScrollManager() {
         return;
       }
     }
+    // Only scroll to top if there is no hash targeting an anchor
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname, hash]);
 
@@ -28,15 +30,17 @@ function ScrollManager() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollManager />
-      <div className="flex min-h-screen flex-col bg-[#F8F6ED] text-[#14251E] selection:bg-[#064A32] selection:text-[#DFBE65]">
-        <Navbar />
-        <main className="flex-grow">
-          <AppRoutes />
-        </main>
-        <Footer />
-        <ScrollToTopButton />
-      </div>
+      <NavigationTransitionManager>
+        <ScrollManager />
+        <div className="flex min-h-screen flex-col bg-[#F8F6ED] text-[#14251E] selection:bg-[#064A32] selection:text-[#DFBE65]">
+          <Navbar />
+          <main className="flex-grow">
+            <AppRoutes />
+          </main>
+          <Footer />
+          <ScrollToTopButton />
+        </div>
+      </NavigationTransitionManager>
     </BrowserRouter>
   );
 }
