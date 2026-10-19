@@ -15,6 +15,7 @@ import { ArrowRight, Loader2 } from 'lucide-react';
 
 
 
+// Render the CTA as an anchor, router link, or button based on the supplied destination props.
 export default function CTAButton({
   children,
   to,

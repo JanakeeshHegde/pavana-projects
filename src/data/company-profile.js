@@ -5,6 +5,7 @@
 
 
 
+// Shared company content for page sections, navigation, and interactive project views.
 export const companyProfile = {
   name: "Pavana Projects",
   tagline: "CREATING LANDMARKS, SHAPING FUTURES.",
@@ -93,6 +94,7 @@ export const companyProfile = {
   ],
 
 
+  // Service catalogue grouped by delivery type for reuse across the services and home pages.
   constructionSolutions: [
     {
       id: "residential-construction",
@@ -374,6 +376,7 @@ export const companyProfile = {
   },
 
 
+  // Ordered lifecycle data powers the stage selectors and delivery methodology panels.
   lifecycleStages: [
     {
       step: "01",
@@ -442,6 +445,7 @@ export const companyProfile = {
   ],
 
 
+  // Operational controls and governance reference data used by the PMC dashboards.
   controlAreas: [
     {
       area: "Programme Control",

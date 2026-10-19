@@ -14,6 +14,7 @@ function ScrollManager() {
       const targetId = hash.replace('#', '');
       const element = document.getElementById(targetId);
       if (element) {
+        // Wait for the destination route to finish mounting before scrolling to its anchor.
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);

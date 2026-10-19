@@ -20,6 +20,7 @@ export default function SEOHead({ title, description }) {
     const cleanPath = location.pathname.replace(/\/$/, '') || '/';
 
 
+    // Prefer a page-provided title; otherwise use the route defaults.
     if (title) {
       if (title.endsWith(' | Pavana Projects') || title.endsWith(' |Pavana Projects')) {
         document.title = title;
@@ -36,6 +37,7 @@ export default function SEOHead({ title, description }) {
 
 
     if (description) {
+      // Keep the browser description and social preview description in sync.
       let metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.setAttribute('content', description);

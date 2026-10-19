@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @layer theme {
+  /* Brand tokens shared by page components and utility classes. */
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -28,6 +29,7 @@
 }
 
 
+/* Global type and page defaults. */
 html {
   font-family: var(--font-body);
   color: var(--charcoal);
@@ -53,6 +55,7 @@ body {
 }
 
 
+/* Reusable drafting details for the architectural visual language. */
 .cad-grid-light {
   background-image:
     linear-gradient(to right, rgba(6, 74, 50, 0.05) 1px, transparent 1px),

@@ -94,6 +94,7 @@ function FloorLevel({ level, activeLevel, selectedRoom, onSelect }) {
 
   useFrame((_, delta) => {
     if (!group.current) return;
+    // Reveal each floor as the user scrolls, while damping motion to keep it smooth.
     const scrollProgress = MathUtils.clamp(window.scrollY / Math.max(1, window.innerHeight * 0.62), 0, 1);
     const revealStart = [0, 0.14, 0.45][level];
     const reveal = MathUtils.clamp((scrollProgress - revealStart) / 0.42, 0, 1);
@@ -103,6 +104,7 @@ function FloorLevel({ level, activeLevel, selectedRoom, onSelect }) {
     group.current.scale.setScalar(1);
 
     if (Math.abs(lastProgress.current - reveal) > 0.003 || lastActiveLevel.current !== activeLevel) {
+      // Recompute material opacity only when reveal or selection state changes.
       const revealFactor = level === 0 || activeLevel === level ? 1 : 0.16 + reveal * 0.84;
       const selectionFactor = activeLevel === null || activeLevel === level ? 1 : 0.12;
       const materialFactor = revealFactor * selectionFactor;

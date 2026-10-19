@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import BrandedLoadingScreen from '@/components/shared/BrandedLoadingScreen';
 
 
+// Load page bundles only when their routes are visited.
 const HomePage = lazy(() => import('@/pages/HomePage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
@@ -19,6 +20,7 @@ export default function AppRoutes() {
         <Route path="/contact" element={<ContactPage />} />
 
 
+        {/* Keep older public URLs working by redirecting them to the consolidated pages. */}
         <Route path="/projects" element={<Navigate to="/services" replace />} />
         <Route path="/work" element={<Navigate to="/services" replace />} />
         <Route path="/process" element={<Navigate to="/about#lifecycle" replace />} />

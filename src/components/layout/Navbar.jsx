@@ -34,6 +34,7 @@ export default function Navbar() {
 
 
   useEffect(() => {
+    // Prevent the page behind the open mobile drawer from scrolling; cleanup restores it.
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';

@@ -21,6 +21,7 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
+    // Keep validation local so errors can be shown beside their corresponding fields.
     const errs = {};
     if (!formData.name.trim()) errs.name = 'Full name is required';
     if (!formData.organization.trim()) errs.organization = 'Company / Landowner / Developer name is required';
@@ -48,6 +49,7 @@ export default function ContactForm() {
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmitting(true);
 
+      // Demo confirmation only; replace this timer with the inquiry API when available.
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitted(true);
@@ -59,7 +61,7 @@ export default function ContactForm() {
             colors: ['#064A32', '#C69A36', '#DFBE65']
           });
         } catch (e) {
-
+          // A blocked confetti effect should not prevent the confirmation state.
         }
       }, 800);
     }

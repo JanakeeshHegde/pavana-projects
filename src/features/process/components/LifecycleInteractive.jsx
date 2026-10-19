@@ -5,6 +5,7 @@ import { companyProfile } from '@/data/company-profile';
 export default function LifecycleInteractive() {
   const [selectedStageIndex, setSelectedStageIndex] = useState(0);
   const stages = companyProfile.lifecycleStages;
+  // The selected index drives both the stage details and its deliverables.
   const currentStage = stages[selectedStageIndex];
 
   return (
@@ -86,6 +87,7 @@ export default function LifecycleInteractive() {
 
 
             <div className="flex items-center space-x-3 pt-4">
+              {/* Disable the previous action at the first stage; its handler also clamps the index. */}
               <button
                 disabled={selectedStageIndex === 0}
                 onClick={() => setSelectedStageIndex((prev) => Math.max(0, prev - 1))}

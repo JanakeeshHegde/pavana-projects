@@ -11,6 +11,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      // Let application imports use stable paths rooted at src/.
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },

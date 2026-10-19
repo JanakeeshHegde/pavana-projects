@@ -12,6 +12,7 @@ import PageHero from '@/components/shared/PageHero';
 import CTAButton from '@/components/shared/CTAButton';
 import { companyProfile } from '@/data/company-profile';
 
+// Keep presentation icons separate from company profile data, which stores stable icon names.
 const valueIcons = {
   Integrity: ShieldCheck,
   Planning: Compass,

@@ -17,7 +17,7 @@ export default function NavigationTransitionManager({ children }) {
   const location = useLocation();
   const [isNavigating, setIsNavigating] = useState(false);
 
-
+  // Refs retain navigation history and timer IDs without triggering extra renders.
   const prevPathRef = useRef(location.pathname);
   const isInitialMount = useRef(true);
   const transitionTimerRef = useRef(null);
@@ -25,6 +25,7 @@ export default function NavigationTransitionManager({ children }) {
 
 
   useEffect(() => {
+    // Give the static HTML loader time to present before React dismisses it.
     const initialTimer = setTimeout(() => {
       if (typeof window !== 'undefined' && typeof window.__dismissPavanaInitialLoader === 'function') {
         window.__dismissPavanaInitialLoader();
@@ -47,6 +48,7 @@ export default function NavigationTransitionManager({ children }) {
     const previousPath = prevPathRef.current;
 
 
+    // Hash-only navigation stays on the current page and should not show the route overlay.
     if (currentPath !== previousPath) {
       prevPathRef.current = currentPath;
 
@@ -67,6 +69,7 @@ export default function NavigationTransitionManager({ children }) {
 
 
 
+      // Use a short transition, with a longer failsafe in case a route stalls.
       transitionTimerRef.current = setTimeout(() => {
         setIsNavigating(false);
       }, 280);

@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { companyProfile } from '@/data/company-profile';
 
+// Tab metadata drives the selector; each ID also selects its matching dashboard panel below.
 const controlTabs = [
   { id: 'programme', label: 'Programme Control', icon: Clock, frequency: 'Weekly / Monthly' },
   { id: 'cost', label: 'Cost Control', icon: DollarSign, frequency: 'Monthly / As Required' },

@@ -80,6 +80,7 @@ const primaryServiceCategories = [
   },
 ];
 
+// These maps connect stable service IDs from the profile data to Lucide components.
 const pmcIcons = {
   'planning-scheduling': CalendarDays,
   'design-management': DraftingCompass,
