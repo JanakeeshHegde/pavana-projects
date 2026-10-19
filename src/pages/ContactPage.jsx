@@ -22,16 +22,16 @@ export default function ContactPage() {
         technicalNote="REGISTERED OFFICE & INQUIRIES"
       />
 
-      {/* MAIN CONTACT & CONSULTATION SECTION */}
+
       <section className="py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-            {/* Left Column: Office Inquiries, Address & Map (5 Cols) */}
+
             <div className="lg:col-span-5 space-y-6">
 
-              {/* Header */}
+
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#064A32] tracking-tight">
                   Pavana Projects
@@ -41,9 +41,9 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* 1. Official Inquiries, Phone & Consultation Hours Card */}
+
               <div className="bg-[#FFFFFF] p-6 border border-[#E5E0CE] border-t-2 border-t-[#C69A36] space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                {/* Email */}
+
                 <div className="flex items-center space-x-3.5">
                   <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-[#064A32]" />
@@ -61,7 +61,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Telephone */}
+
                 {contact.phone && (
                   <div className="flex items-center space-x-3.5 pt-3 border-t border-[#E5E0CE]">
                     <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center shrink-0">
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                {/* Hours */}
+
                 <div className="flex items-center space-x-3.5 pt-3 border-t border-[#E5E0CE]">
                   <div className="w-8 h-8 rounded-full bg-[#F8F6ED] border border-[#E5E0CE] text-[#064A32] flex items-center justify-center shrink-0">
                     <Clock className="w-4 h-4 text-[#064A32]" />
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* 2. Registered Office Exact Address Card */}
+
               <div className="bg-[#FFFFFF] p-6 border-l-4 border-l-[#064A32] border-t-2 border-t-[#C69A36] border-r border-b border-[#E5E0CE] space-y-4 shadow-sm hover:shadow-md transition-shadow relative group">
                 <div className="flex items-start space-x-3.5">
                   <div className="w-8 h-8 rounded-full bg-[#064A32] text-[#DFBE65] flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* 3. Interactive Office Map (in place of PMC Appointment Protocol) */}
+
               <div className="bg-[#FFFFFF] border border-[#E5E0CE] border-t-2 border-t-[#064A32] shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                 <div className="px-4 py-2.5 bg-[#F8F6ED] border-b border-[#E5E0CE] flex items-center justify-between">
                   <div className="flex items-center space-x-2">
@@ -176,7 +176,7 @@ export default function ContactPage() {
 
             </div>
 
-            {/* Right Column: Interactive Consultation Form (7 Cols) */}
+
             <div className="lg:col-span-7">
               <ContactForm />
             </div>

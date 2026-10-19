@@ -20,7 +20,7 @@ function ScrollManager() {
         return;
       }
     }
-    // Only scroll to top if there is no hash targeting an anchor
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname, hash]);
 

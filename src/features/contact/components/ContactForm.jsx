@@ -47,7 +47,7 @@ export default function ContactForm() {
 
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmitting(true);
-      // Simulate enterprise submission
+
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitted(true);
@@ -59,7 +59,7 @@ export default function ContactForm() {
             colors: ['#064A32', '#C69A36', '#DFBE65']
           });
         } catch (e) {
-          // ignore confetti if blocked
+
         }
       }, 800);
     }
@@ -127,7 +127,7 @@ export default function ContactForm() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {/* Full Name */}
+
         <div>
           <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
             Full Name <span className="text-red-600">*</span>
@@ -147,7 +147,7 @@ export default function ContactForm() {
           {errors.name && <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.name}</p>}
         </div>
 
-        {/* Organization / Developer / Landowner */}
+
         <div>
           <label htmlFor="organization" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
             Entity / Developer / Landowner <span className="text-red-600">*</span>
@@ -165,7 +165,7 @@ export default function ContactForm() {
           {errors.organization && <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.organization}</p>}
         </div>
 
-        {/* Email Address */}
+
         <div>
           <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
             Official Email <span className="text-red-600">*</span>
@@ -183,7 +183,7 @@ export default function ContactForm() {
           {errors.email && <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.email}</p>}
         </div>
 
-        {/* Phone Number */}
+
         <div>
           <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
             Phone / Mobile <span className="text-red-600">*</span>
@@ -201,7 +201,7 @@ export default function ContactForm() {
           {errors.phone && <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.phone}</p>}
         </div>
 
-        {/* Project Category */}
+
         <div>
           <label htmlFor="category" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
             Inquiry Category
@@ -222,7 +222,7 @@ export default function ContactForm() {
           </select>
         </div>
 
-        {/* Estimated Scale */}
+
         <div>
           <label htmlFor="scale" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
             Estimated Scale / Built-Up Area
@@ -242,7 +242,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Project Stage */}
+
       <div>
         <label htmlFor="stage" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
           Current Project Phase
@@ -262,7 +262,7 @@ export default function ContactForm() {
         </select>
       </div>
 
-      {/* Message / Scope */}
+
       <div>
         <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-[#14251E] mb-1.5">
           Project Requirements & Brief Details <span className="text-red-600">*</span>
@@ -280,7 +280,7 @@ export default function ContactForm() {
         {errors.message && <p className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message}</p>}
       </div>
 
-      {/* Submit Button */}
+
       <div className="pt-2">
         <CTAButton
           type="submit"

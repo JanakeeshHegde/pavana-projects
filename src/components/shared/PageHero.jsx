@@ -24,13 +24,13 @@ export default function PageHero({
   const cleanPath = location.pathname.replace(/\/$/, '') || '/';
   const isHomePage = cleanPath === '/';
 
-  // Compute clean breadcrumb: Home > <PageName>
+
   const currentBreadcrumb =
     breadcrumbName ||
     ROUTE_BREADCRUMBS[cleanPath] ||
     title;
 
-  // All inner pages use the dark premium architectural blueprint design by default
+
   const isDarkTheme = dark || !isHomePage;
 
   return (
@@ -41,17 +41,17 @@ export default function PageHero({
           : 'bg-[#F8F6ED] text-[#14251E] border-[#E5E0CE]'
       }`}
     >
-      {/* 1. ARCHITECTURAL DRAFTING BLUEPRINT BACKGROUND (IMAGE-FREE) */}
+
       {isDarkTheme ? (
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-          {/* Subtle Ambient Brand Glow */}
+
           <div className="absolute -top-32 -right-32 w-80 h-80 bg-[#C69A36]/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-[#064A32]/30 rounded-full blur-3xl" />
 
-          {/* Precision CAD Grid Lines */}
+
           <div className="absolute inset-0 cad-grid-dark opacity-30" />
 
-          {/* Blueprint SVG Linework: Structural Elevation & Geometry */}
+
           <svg
             className="absolute inset-0 w-full h-full opacity-20 stroke-[#C69A36]"
             xmlns="http://www.w3.org/2000/svg"
@@ -66,17 +66,17 @@ export default function PageHero({
             </defs>
             <rect width="100%" height="100%" fill="url(#archGrid)" />
 
-            {/* Architectural concentric radial drafting rings */}
+
             <circle cx="85%" cy="50%" r="130" stroke="currentColor" strokeWidth="0.75" strokeDasharray="4 6" opacity="0.4" />
             <circle cx="85%" cy="50%" r="210" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 8" opacity="0.3" />
             <circle cx="85%" cy="50%" r="290" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
 
-            {/* Diagonal perspective drafting guidelines */}
+
             <line x1="60%" y1="0" x2="100%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 6" opacity="0.3" />
             <line x1="75%" y1="0" x2="100%" y2="60%" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
           </svg>
 
-          {/* Corner Crosshair Drafting Markers */}
+
           <div className="absolute top-3 left-6 text-[#C69A36]/40 font-mono-tech text-[10px] pointer-events-none">
             + 13.03° N // 77.55° E
           </div>
@@ -88,14 +88,14 @@ export default function PageHero({
           </div>
         </div>
       ) : (
-        /* Preserved Light Hero Background Pattern */
+
         <div className="absolute inset-0 pointer-events-none opacity-30 arch-grid-bg" aria-hidden="true" />
       )}
 
-      {/* 2. MAIN CONTENT CONTAINER */}
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Simple Breadcrumb: Only Home > <PageName> */}
+
+
         {!isHomePage && (
           <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-[11px] sm:text-xs font-medium tracking-wider mb-2 sm:mb-2.5">
             <Link
@@ -113,10 +113,10 @@ export default function PageHero({
           </nav>
         )}
 
-        {/* Hero Title & Information Hierarchy */}
+
         <div className="max-w-3xl space-y-2 sm:space-y-2.5">
-          
-          {/* Architectural Badge */}
+
+
           {badge && (
             <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 text-[10px] sm:text-[11px] font-bold font-mono-tech uppercase tracking-[0.14em] bg-[#C69A36]/15 text-[#DFBE65] border border-[#C69A36]/40 backdrop-blur-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#DFBE65] animate-pulse" />
@@ -124,7 +124,7 @@ export default function PageHero({
             </div>
           )}
 
-          {/* Heading */}
+
           <h1
             className={`text-2xl sm:text-3xl lg:text-[2rem] font-bold tracking-tight leading-tight ${
               isDarkTheme ? 'text-[#FFFFFF]' : 'text-[#064A32]'
@@ -133,7 +133,7 @@ export default function PageHero({
             {title}
           </h1>
 
-          {/* Subtitle */}
+
           {subtitle && (
             <p
               className={`text-xs sm:text-sm leading-relaxed max-w-2xl ${
@@ -144,7 +144,7 @@ export default function PageHero({
             </p>
           )}
 
-          {/* Fine gold divider accent */}
+
           <div className="pt-1 flex items-center space-x-3">
             <div className="w-16 h-0.5 bg-gradient-to-r from-[#DFBE65] to-transparent" />
             <div className="w-1 h-1 rotate-45 bg-[#C69A36]" />

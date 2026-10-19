@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Menu, X, ArrowRight, ChevronRight, Phone, Mail, MapPin 
+import {
+  Menu, X, ArrowRight, ChevronRight, Phone, Mail, MapPin
 } from 'lucide-react';
 import { companyProfile } from '@/data/company-profile';
 
@@ -18,7 +18,7 @@ export default function Navbar() {
   const location = useLocation();
   const { contact } = companyProfile;
 
-  // Track window scroll for transparent-to-solid transition
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
@@ -27,12 +27,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile drawer on route change
+
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Lock body scroll when mobile menu is open
+
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -47,7 +47,7 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  // Keyboard accessibility: Close on Escape key
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') setMobileMenuOpen(false);
@@ -60,7 +60,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* MAIN TOP HEADER BAR */}
+
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || mobileMenuOpen
@@ -72,8 +72,8 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between relative">
-            
-            {/* 1. BRAND LOGO (LEFT) */}
+
+
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
@@ -87,7 +87,7 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* 2. DESKTOP NAVIGATION MENU BUTTONS (CENTER) */}
+
             <nav className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 space-x-1 xl:space-x-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
@@ -103,7 +103,7 @@ export default function Navbar() {
                   >
                     <span>{item.name}</span>
 
-                    {/* Subtle animated gold underline for active item */}
+
                     {isActive ? (
                       <span className="absolute bottom-0 left-4 right-4 xl:left-5 xl:right-5 h-[2px] bg-[#C69A36] rounded-full shadow-[0_0_8px_rgba(198,154,54,0.6)]" />
                     ) : (
@@ -114,10 +114,10 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* 3. RIGHT ACTIONS (DESKTOP ENQUIRE & MOBILE TOGGLE) */}
+
             <div className="flex items-center space-x-2.5 z-10">
-              
-              {/* Desktop Enquire Button */}
+
+
               <Link
                 to="/contact"
                 className="hidden lg:inline-flex items-center justify-center space-x-2 h-10 px-5 bg-[#064A32] hover:bg-[#14251E] active:bg-[#0B3B28] text-[#FFFFFF] text-xs font-bold uppercase tracking-[0.14em] rounded-[4px] border border-[#064A32] hover:border-[#C69A36]/60 shadow-sm transition-all duration-300 group"
@@ -126,7 +126,7 @@ export default function Navbar() {
                 <ArrowRight className="w-3.5 h-3.5 text-[#C69A36] group-hover:text-[#DFBE65] group-hover:translate-x-0.5 transition-transform duration-300" />
               </Link>
 
-              {/* Mobile Menu Toggle Button */}
+
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="lg:hidden w-10 h-10 flex items-center justify-center bg-[#0E1B15] text-[#DFBE65] hover:text-[#FFFFFF] border border-[#284439] hover:border-[#C69A36]/60 rounded focus:outline-none focus:ring-2 focus:ring-[#C69A36] transition-all cursor-pointer"
@@ -145,24 +145,24 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* MOBILE NAVIGATION DRAWER & BACKDROP */}
+
       {mobileMenuOpen && (
         <>
-          {/* Backdrop Overlay */}
+
           <div
             className="fixed inset-0 bg-[#0B1612]/80 backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Slide-Down Mobile Navigation Container */}
+
           <div
             className="fixed inset-x-0 top-[58px] sm:top-[68px] bottom-0 z-40 overflow-y-auto bg-[#14251E] border-b-2 border-[#C69A36] text-[#F8F6ED] shadow-2xl flex flex-col justify-between lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
           >
-            {/* Top Telemetry Strip */}
+
             <div className="bg-[#0E1B15] border-b border-[#284439] px-6 py-2.5 flex items-center justify-between text-[11px] font-mono-tech text-[#A3B8B0]">
               <div className="flex items-center space-x-2">
                 <span className="w-2 h-2 rounded-full bg-[#DFBE65] animate-pulse" />
@@ -173,7 +173,7 @@ export default function Navbar() {
               <span>Bangalore · 560054</span>
             </div>
 
-            {/* Navigation Links List */}
+
             <div className="px-6 py-4 flex-1">
               <nav aria-label="Mobile navigation links" className="divide-y divide-[#284439]">
                 {navItems.map((item) => {
@@ -209,7 +209,7 @@ export default function Navbar() {
                 })}
               </nav>
 
-              {/* Quick Communication Hub */}
+
               <div className="mt-4 grid grid-cols-2 gap-2">
                 <a
                   href={`tel:${contact.phone.replace(/\s+/g, '')}`}
@@ -229,7 +229,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Footer & Registered Address */}
+
             <div className="bg-[#0E1B15] p-5 border-t border-[#284439] space-y-2 mt-auto">
               <div className="flex items-center justify-between text-[11px] text-[#A3B8B0]">
                 <div className="flex items-center space-x-1.5">

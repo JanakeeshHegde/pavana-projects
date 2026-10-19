@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ShieldCheck, Compass, Network, Sliders, CheckCircle2, Building2, 
+import {
+  ShieldCheck, Compass, Network, Sliders, CheckCircle2, Building2,
   ArrowRight, Layers, FileCheck, HardHat, Cpu, Truck, Info, CheckSquare,
   Flag, Calendar, Hammer, Activity, CheckCircle, ChevronRight, Sparkles,
   Users, DraftingCompass, Wrench, Award, CalendarDays, Coins, ClipboardCheck, ShieldAlert,
@@ -22,14 +22,14 @@ const valueIcons = {
 };
 
 const stageIcons = {
-  '01': Flag,              // Initiate
-  '02': CalendarDays,      // Plan
-  '03': DraftingCompass,   // Design
-  '04': FileSpreadsheet,   // Tender
-  '05': PackageCheck,      // Procure
-  '06': HardHat,           // Execute
-  '07': Sliders,           // Commission
-  '08': KeyRound,          // Handover
+  '01': Flag,
+  '02': CalendarDays,
+  '03': DraftingCompass,
+  '04': FileSpreadsheet,
+  '05': PackageCheck,
+  '06': HardHat,
+  '07': Sliders,
+  '08': KeyRound,
 };
 
 const stakeholderIconsMap = {
@@ -64,7 +64,7 @@ const valuePropsIconsMap = {
   'Handover Readiness': CheckCircle2,
 };
 
-// Stage-to-Stage Continuity Connections
+
 const stageTransitions = {
   '01': 'Feeds into Stage 02: Approved project charter and stakeholder matrix form the foundation for Work Breakdown Structure (WBS) baseline scheduling.',
   '02': 'Feeds into Stage 03: Master baseline schedule and procurement packaging strategy guide design deliverable schedules and consultant release dates.',
@@ -90,7 +90,7 @@ export default function AboutPage() {
         description="About Pavana Projects: Professional Project Management Consultancy (PMC) founded on integrity, planning, coordination, control, quality, and delivery."
       />
 
-      {/* 1. ARCHITECTURAL HERO SECTION (UNIFIED WITH SERVICES & CONTACT) */}
+
       <PageHero
         title="About Pavana Projects"
         subtitle="Bringing clarity, control, and accountability to real estate developments, construction solutions, and multidisciplinary Project Management Consultancy from project initiation through commissioning and handover."
@@ -99,7 +99,7 @@ export default function AboutPage() {
         technicalNote="GOVERNANCE & METHODOLOGY"
       />
 
-      {/* STICKY SUB-NAVIGATION BAR FOR SECTION DISCOVERY */}
+
       <div className="sticky top-[58px] sm:top-[68px] z-30 bg-[#0E1B15] border-b border-[#284439] py-1.5 sm:py-2 px-4 sm:px-6 shadow-md overflow-x-auto">
         <div className="max-w-7xl mx-auto flex items-center space-x-2 sm:space-x-3 min-w-max">
           <span className="text-[10px] font-mono-tech uppercase font-bold text-[#DFBE65] pr-2 border-r border-[#284439]">
@@ -124,10 +124,10 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* 1. COMPANY OVERVIEW & PROFESSIONAL POSITIONING */}
+
       <section id="overview" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
@@ -196,10 +196,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. VISION, MISSION & 6 CORE VALUES */}
+
       <section id="values" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>OUR FOUNDATION</span>
@@ -213,7 +213,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {/* Vision Card */}
+
             <div className="group bg-[#FFFFFF] p-8 sm:p-10 border border-[#D5CDBE] border-t-4 border-t-[#C69A36] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2.5">
@@ -236,7 +236,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Mission Card */}
+
             <div className="group bg-[#064A32] text-[#F8F6ED] p-8 sm:p-10 border border-[#C69A36]/50 border-t-4 border-t-[#DFBE65] space-y-4 relative shadow-md hover:shadow-xl transition-all duration-300 cad-grid-dark">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2.5">
@@ -260,7 +260,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* 6 CORE VALUES */}
+
           <div>
             <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase mb-3">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -302,10 +302,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. EIGHT-STAGE PROJECT LIFECYCLE */}
+
       <section id="lifecycle" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="inline-flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>DELIVERY METHODOLOGY</span>
@@ -320,25 +320,25 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Interactive Progressive Lifecycle Visual Narrative */}
+
           <div className="bg-[#F8F6ED] border border-[#E2DDD0] p-6 sm:p-10 shadow-sm relative">
-            
-            {/* 8-Stage Progress Step Bar */}
+
+
             <div className="pb-8 border-b border-[#E2DDD0]">
               <div className="flex items-center justify-between pb-3 text-xs font-mono-tech text-[#5C6E66]">
                 <span>PROGRESSIVE TIMELINE : INITIATE TO HANDOVER</span>
                 <span className="text-[#064A32] font-bold">PHASE {selectedStage.step} / 08</span>
               </div>
 
-              {/* Progress Fill Bar */}
+
               <div className="w-full h-1.5 bg-[#E2DDD0] rounded-full overflow-hidden mb-6">
-                <div 
+                <div
                   className="h-full bg-gradient-to-r from-[#064A32] via-[#C69A36] to-[#DFBE65] transition-all duration-500 ease-out"
                   style={{ width: `${((activeStageTab + 1) / 8) * 100}%` }}
                 />
               </div>
 
-              {/* 8 Clickable Stage Tabs */}
+
               <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
                 {lifecycleStages.map((stg, idx) => {
                   const isSelected = idx === activeStageTab;
@@ -368,11 +368,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Active Stage Detailed Panel */}
+
             <div className="pt-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                {/* Stage Narrative (7 Cols) */}
+
+
                 <div className="lg:col-span-7 space-y-5">
                   <div className="flex items-center space-x-3.5">
                     <div className="w-12 h-12 bg-[#064A32] text-[#DFBE65] flex items-center justify-center shrink-0 shadow-sm">
@@ -392,7 +392,7 @@ export default function AboutPage() {
                     {selectedStage.description}
                   </p>
 
-                  {/* Stage-to-Stage Continuity Box */}
+
                   <div className="p-4 bg-[#FFFFFF] border-l-4 border-[#C69A36] text-xs text-[#2C3E36] leading-relaxed shadow-xs">
                     <strong className="text-[#064A32] uppercase tracking-wide block mb-1">
                       Sequential Connection to Next Milestone:
@@ -405,7 +405,7 @@ export default function AboutPage() {
                     Formal sign-off between developer leadership, PMC Project Director, and lead consultants is required before releasing subsequent package commitments.
                   </div>
 
-                  {/* Stage Navigation Buttons */}
+
                   <div className="flex items-center space-x-3 pt-3">
                     <button
                       onClick={() => setActiveStageTab(Math.max(0, activeStageTab - 1))}
@@ -424,7 +424,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                {/* Key Activities & Deliverables Box (5 Cols) */}
+
                 <div className="lg:col-span-5 bg-[#FFFFFF] p-6 border border-[#E2DDD0] space-y-4 shadow-sm">
                   <div className="flex items-center justify-between pb-3 border-b border-[#E2DDD0]">
                     <span className="text-xs font-mono-tech text-[#C69A36] uppercase tracking-wider font-bold">
@@ -456,10 +456,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. STAKEHOLDER COORDINATION & GOVERNANCE */}
+
       <section id="governance" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>INTEGRATED TEAM</span>
@@ -501,7 +501,7 @@ export default function AboutPage() {
             })}
           </div>
 
-          {/* 5 Core Governance Principles */}
+
           <div className="p-6 sm:p-8 bg-[#14251E] text-[#F8F6ED] border border-[#284439] space-y-4 shadow-lg">
             <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
               <span className="text-xs font-mono-tech text-[#DFBE65] uppercase tracking-wider font-bold">
@@ -527,10 +527,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. PROPOSED PMC ORGANISATION STRUCTURE */}
+
       <section id="organisation" className="scroll-mt-36 py-12 lg:py-16 bg-[#FFFFFF] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>PEOPLE & ACCOUNTABILITY</span>
@@ -584,10 +584,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. VALUE PROPOSITION */}
+
       <section id="value-propositions" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E5E0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="flex items-center space-x-2 text-xs font-mono-tech text-[#C69A36] tracking-widest uppercase">
               <span>OUR VALUE PROPOSITION</span>
@@ -628,7 +628,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 7. CALL TO ACTION */}
+
       <section className="py-12 bg-[#14251E] text-[#F8F6ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2">

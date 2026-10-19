@@ -2,26 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Loader2 } from 'lucide-react';
 
-/**
- * Standard Unified CTA Button for Pavana Projects
- * 
- * Design Specifications:
- * - Background: Forest green #064A32
- * - Hover Background: Deep green-black #14251E
- * - Text: White #FFFFFF
- * - Accent Arrow: Architectural gold #C69A36
- * - Border radius: 4px (architectural crisp finish)
- * - Dimensions: Height 48px (h-12), padding px-6 sm:px-7
- * - Typography: text-xs sm:text-[13px] font-bold uppercase tracking-[0.14em]
- * - Accessibility: Contrast AAA, clear focus ring, reduced-motion friendly
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function CTAButton({
   children,
   to,
   href,
   onClick,
   type = 'button',
-  variant = 'green', // 'green' | 'gold'
+  variant = 'green',
   icon: Icon = ArrowRight,
   showIcon = true,
   iconPosition = 'right',
@@ -76,7 +76,7 @@ export default function CTAButton({
     </>
   );
 
-  // External / Anchor link
+
   if (href) {
     return (
       <a
@@ -92,7 +92,7 @@ export default function CTAButton({
     );
   }
 
-  // React Router Internal Link
+
   if (to) {
     return (
       <Link
@@ -106,7 +106,7 @@ export default function CTAButton({
     );
   }
 
-  // Standard Button
+
   return (
     <button
       type={type}

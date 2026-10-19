@@ -1,9 +1,9 @@
-/**
- * PAVANA PROJECTS — Company Profile & Capability Data
- * Sourced directly from verified company documentation (PMC Company Profile)
- * and expanded to encompass comprehensive Real Estate Solutions, Construction Services,
- * Turnkey Project Coordination, and Joint Venture & Development Partnerships.
- */
+
+
+
+
+
+
 
 export const companyProfile = {
   name: "Pavana Projects",
@@ -92,7 +92,7 @@ export const companyProfile = {
     }
   ],
 
-  // A. Construction Solutions
+
   constructionSolutions: [
     {
       id: "residential-construction",
@@ -148,7 +148,7 @@ export const companyProfile = {
     }
   ],
 
-  // B. Interior Design & Space Planning
+
   interiorSolutions: [
     {
       id: "interior-design",
@@ -204,7 +204,7 @@ export const companyProfile = {
     }
   ],
 
-  // C. Turnkey Projects
+
   turnkeySolutions: {
     title: "Turnkey Projects",
     tagline: "Single-point project delivery from brief to occupation",
@@ -229,7 +229,7 @@ export const companyProfile = {
     ]
   },
 
-  // D. Project Management Consultancy (PMC) Services from PDF Page 4
+
   services: [
     {
       id: "planning-scheduling",
@@ -305,7 +305,7 @@ export const companyProfile = {
     }
   ],
 
-  // G. Real Estate Solutions
+
   realEstateSolutions: {
     title: "Real Estate Solutions",
     tagline: "End-to-end advisory and delivery coordination for property developments",
@@ -338,7 +338,7 @@ export const companyProfile = {
     ]
   },
 
-  // H. Joint Venture & Development Partnerships
+
   jointVenture: {
     title: "Joint Venture & Development Partnerships",
     tagline: "Unlocking Land Potential Through Transparent Development Collaboration",
@@ -373,7 +373,7 @@ export const companyProfile = {
     transparencyNote: "All joint venture discussions are conducted confidentially on a preliminary feasibility basis. Pavana Projects structures coordination and delivery frameworks to ensure complete transparency and milestone predictability."
   },
 
-  // 8-Stage Delivery Methodology from Page 7 of PDF
+
   lifecycleStages: [
     {
       step: "01",
@@ -441,7 +441,7 @@ export const companyProfile = {
     }
   ],
 
-  // Control Tower & Reporting Matrix from Page 8 of PDF
+
   controlAreas: [
     {
       area: "Programme Control",
@@ -501,7 +501,7 @@ export const companyProfile = {
     }
   ],
 
-  // Stakeholder Coordination Ecosystem from Page 9 of PDF
+
   stakeholders: [
     {
       stakeholder: "Client / Developer",
@@ -553,7 +553,7 @@ export const companyProfile = {
     "Transparent reporting giving real, unvarnished project clarity"
   ],
 
-  // Quality & Safety Matrix from Page 10 of PDF
+
   qualitySafetyMatrix: {
     quality: [
       { item: "Inspection & Test Plans (ITPs)", desc: "Tailored inspection protocols established before starting each trade package." },
@@ -575,7 +575,7 @@ export const companyProfile = {
     ]
   },
 
-  // Commercial & Procurement from Page 11 of PDF
+
   procurementStages: [
     { stage: "Package Strategy", focus: "Define scopes, interfaces, deliverables and procurement priorities." },
     { stage: "Tender Coordination", focus: "Coordinate tender documents, bidder queries, technical clarifications and comparisons." },
@@ -586,7 +586,7 @@ export const companyProfile = {
     { stage: "Change Management", focus: "Document scope changes, impact assessment, approval and implementation status." }
   ],
 
-  // Organisation Structure from Page 12 of PDF
+
   organisationRoles: [
     { role: "Project Director / PMC Head", responsibility: "Client leadership, governance, strategic decisions and major escalations." },
     { role: "Project Manager", responsibility: "Overall project coordination, programme, interfaces and delivery management." },
@@ -599,7 +599,7 @@ export const companyProfile = {
     { role: "Procurement / Coordination Team", responsibility: "Vendor follow-up, approvals, logistics and long-lead tracking." }
   ],
 
-  // 14 Key PMC Deliverables from Page 13 of PDF
+
   deliverablesList: [
     "Project Execution Plan / PMC procedures",
     "Master Project Schedule and baseline programme",
@@ -618,7 +618,7 @@ export const companyProfile = {
     "As-built, O&M and handover documentation tracker"
   ],
 
-  // Value Proposition from Page 14 of PDF
+
   valueProps: [
     {
       title: "Integrated Management",

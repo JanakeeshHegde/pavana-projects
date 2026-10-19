@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { 
-  Building2, Building, HardHat, Layers, DraftingCompass, Compass, Hammer, 
-  RefreshCw, CheckSquare, CalendarDays, FileSpreadsheet, Coins, Cpu, 
+import {
+  Building2, Building, HardHat, Layers, DraftingCompass, Compass, Hammer,
+  RefreshCw, CheckSquare, CalendarDays, FileSpreadsheet, Coins, Cpu,
   ClipboardCheck, ShieldAlert, CheckCircle2, Handshake, Search, AlertOctagon,
   Wrench, Clock, Truck, Sliders, TrendingUp, BarChart3, AlertTriangle, FileText,
   FileCheck, ShieldCheck, ChevronRight, Award, LayoutGrid, KeyRound, PackageCheck
@@ -117,21 +117,21 @@ const procurementStageIcons = {
 };
 
 const deliverableIcons = [
-  FileText,        // Project Execution Plan / PMC procedures
-  CalendarDays,    // Master Project Schedule and baseline programme
-  Layers,          // Detailed work breakdown structure and milestone plan
-  DraftingCompass, // Design / drawing / submittal registers
-  FileSpreadsheet, // Tender and procurement trackers
-  Clock,           // Long-lead item and material approval tracker
-  TrendingUp,      // Weekly progress reports and look-ahead schedules
-  BarChart3,       // Monthly management dashboard
-  Coins,           // Cost, commitment and variation tracking
-  AlertTriangle,   // Risk and issue registers with mitigation actions
-  ClipboardCheck,  // QA/QC inspection and NCR tracking
-  ShieldCheck,     // HSE observations and compliance reporting
-  Sliders,         // Testing & commissioning readiness tracker
-  CheckSquare,     // Snag / punch-list management
-  FileCheck,       // As-built, O&M and handover documentation tracker
+  FileText,
+  CalendarDays,
+  Layers,
+  DraftingCompass,
+  FileSpreadsheet,
+  Clock,
+  TrendingUp,
+  BarChart3,
+  Coins,
+  AlertTriangle,
+  ClipboardCheck,
+  ShieldCheck,
+  Sliders,
+  CheckSquare,
+  FileCheck,
 ];
 
 const subNavItems = [
@@ -147,16 +147,16 @@ const subNavItems = [
 ];
 
 export default function ServicesPage() {
-  const { 
-    services, 
-    constructionSolutions, 
-    interiorSolutions, 
-    turnkeySolutions, 
-    realEstateSolutions, 
-    jointVenture, 
-    qualitySafetyMatrix, 
-    procurementStages, 
-    deliverablesList 
+  const {
+    services,
+    constructionSolutions,
+    interiorSolutions,
+    turnkeySolutions,
+    realEstateSolutions,
+    jointVenture,
+    qualitySafetyMatrix,
+    procurementStages,
+    deliverablesList
   } = companyProfile;
 
   const [selectedPmcId, setSelectedPmcId] = useState(services[0].id);
@@ -170,7 +170,7 @@ export default function ServicesPage() {
         description="Comprehensive real estate solutions, construction services, interior design, turnkey project coordination, Joint Venture partnerships, and Project Management Consultancy (PMC) in Bangalore."
       />
 
-      {/* 1. IMAGE-FREE ARCHITECTURAL HERO SECTION */}
+
       <PageHero
         title="Services & Solutions"
         subtitle="A multidisciplinary delivery framework integrating real estate solutions, construction management, interior space planning, turnkey coordination, and rigorous Project Management Consultancy."
@@ -178,7 +178,7 @@ export default function ServicesPage() {
         technicalNote="PMC & REAL ESTATE SOLUTIONS"
       />
 
-      {/* STICKY SUB-NAVIGATION BAR FOR RAPID DISCOVERY */}
+
       <div className="sticky top-[58px] sm:top-[68px] z-30 bg-[#0E1B15] border-b border-[#284439] py-1.5 sm:py-2 px-4 sm:px-6 shadow-md overflow-x-auto">
         <div className="max-w-7xl mx-auto flex items-center space-x-2 sm:space-x-3 min-w-max">
           <span className="text-[10px] font-mono-tech uppercase font-bold text-[#DFBE65] pr-2 border-r border-[#284439]">
@@ -196,9 +196,9 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* ========================================================
-          1. PRIMARY SERVICE CATEGORIES (SELECTIVE ICON SHOWCASE)
-      ======================================================== */}
+
+
+
       <section id="primary-categories" className="scroll-mt-36 py-12 lg:py-16 bg-[#F8F6ED] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-10 space-y-2.5">
@@ -254,12 +254,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          A. CONSTRUCTION SOLUTIONS
-      ======================================================== */}
+
+
+
       <section id="construction-solutions" className="scroll-mt-36 py-14 lg:py-20 bg-[#FFFFFF] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <Building2 className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -323,12 +323,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          B. INTERIOR DESIGN AND SPACE PLANNING
-      ======================================================== */}
+
+
+
       <section id="interior-solutions" className="scroll-mt-36 py-14 lg:py-20 bg-[#F8F6ED] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <LayoutGrid className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -392,14 +392,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          C. TURNKEY PROJECTS
-      ======================================================== */}
+
+
+
       <section id="turnkey-projects" className="scroll-mt-36 py-14 lg:py-20 bg-[#FFFFFF] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-6 space-y-5">
               <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
                 <KeyRound className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -454,12 +454,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          D. PROJECT MANAGEMENT CONSULTANCY (PMC)
-      ======================================================== */}
+
+
+
       <section id="pmc-services" className="scroll-mt-36 py-14 lg:py-20 bg-[#F8F6ED] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <ClipboardCheck className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -474,8 +474,8 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            {/* Left Nav List (4 Cols) */}
+
+
             <div className="lg:col-span-4 space-y-6">
               <div className="bg-[#FFFFFF] border border-[#E2DDD0] divide-y divide-[#E2DDD0] shadow-xs">
                 {services.map((svc) => {
@@ -511,9 +511,9 @@ export default function ServicesPage() {
               <BuildingBlueprint />
             </div>
 
-            {/* Right Interactive Detail Card (8 Cols) */}
+
             <div className="lg:col-span-8 bg-[#FFFFFF] border border-[#E2DDD0] p-6 sm:p-8 lg:p-10 space-y-6 shadow-md relative overflow-hidden">
-              
+
               <div className="flex items-start justify-between pb-4 border-b border-[#E2DDD0]">
                 <div>
                   <div className="text-[10px] font-mono-tech text-[#C69A36] uppercase font-bold tracking-wider mb-1">
@@ -528,7 +528,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* Specific PMC Responsibility */}
+
               <div className="space-y-2">
                 <div className="text-xs font-mono-tech font-bold uppercase tracking-wider text-[#C69A36]">
                   SPECIFIC PMC RESPONSIBILITY
@@ -538,7 +538,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* Detailed Execution Scope */}
+
               <div className="space-y-2">
                 <div className="text-xs font-mono-tech font-bold uppercase tracking-wider text-[#064A32]">
                   DETAILED EXECUTION SCOPE & COORDINATION
@@ -548,7 +548,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              {/* Key Deliverables for this Service */}
+
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="text-xs font-mono-tech font-bold uppercase tracking-wider text-[#064A32]">
@@ -586,12 +586,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          E. PROCUREMENT AND COMMERCIAL MANAGEMENT
-      ======================================================== */}
+
+
+
       <section id="procurement-commercial" className="scroll-mt-36 py-14 lg:py-20 bg-[#FFFFFF] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <PackageCheck className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -638,12 +638,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          F. QUALITY, SAFETY AND COMPLIANCE COORDINATION
-      ======================================================== */}
+
+
+
       <section id="quality-safety" className="scroll-mt-36 py-14 lg:py-20 bg-[#F8F6ED] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -658,8 +658,8 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            
-            {/* QUALITY MANAGEMENT */}
+
+
             <div className="bg-[#FFFFFF] border-2 border-[#064A32] p-6 sm:p-8 space-y-5 shadow-xs">
               <div className="flex items-center justify-between pb-4 border-b border-[#E2DDD0]">
                 <div className="flex items-center space-x-3">
@@ -698,7 +698,7 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* HSE MANAGEMENT */}
+
             <div className="bg-[#FFFFFF] border-2 border-[#C69A36] p-6 sm:p-8 space-y-5 shadow-xs">
               <div className="flex items-center justify-between pb-4 border-b border-[#E2DDD0]">
                 <div className="flex items-center space-x-3">
@@ -739,7 +739,7 @@ export default function ServicesPage() {
 
           </div>
 
-          {/* 4-GATE NCR RESOLUTION */}
+
           <div className="bg-[#14251E] text-[#F8F6ED] p-8 sm:p-10 border border-[#284439] space-y-6 shadow-xl">
             <div className="flex items-center justify-between pb-4 border-b border-[#284439]">
               <div>
@@ -805,12 +805,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          G. REAL ESTATE SOLUTIONS (DEDICATED SECTION)
-      ======================================================== */}
+
+
+
       <section id="real-estate-solutions" className="scroll-mt-36 py-14 lg:py-20 bg-[#FFFFFF] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <Building className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -863,15 +863,15 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          H. JOINT VENTURE & DEVELOPMENT PARTNERSHIPS
-      ======================================================== */}
+
+
+
       <section id="joint-venture" className="scroll-mt-36 py-16 lg:py-24 bg-[#14251E] text-[#F8F6ED] cad-grid-dark border-b border-[#284439] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C69A36]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#064A32]/40 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-14 space-y-4">
             <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#C69A36]/20 border border-[#C69A36]/40 text-[#DFBE65] text-[11px] font-mono-tech font-bold uppercase tracking-[0.18em]">
               <Handshake className="w-3.5 h-3.5" />
@@ -888,7 +888,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* 5-STEP COLLABORATION ROADMAP */}
+
           <div className="border border-[#284439] bg-[#1A2E26]/90 p-6 sm:p-10 mb-10 shadow-2xl">
             <div className="flex items-center justify-between pb-4 border-b border-[#284439] mb-8">
               <div>
@@ -934,9 +934,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          PROJECT CONTROLS TOWER SIMULATOR PRESERVED
-      ======================================================== */}
+
+
+
       <section id="project-controls" className="scroll-mt-36 py-14 lg:py-20 bg-[#14251E] text-[#F8F6ED] border-b border-[#284439]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="max-w-3xl space-y-3">
@@ -955,12 +955,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          STANDARDIZED KEY PMC DELIVERABLES (PDF PAGE 13)
-      ======================================================== */}
+
+
+
       <section id="deliverables" className="scroll-mt-36 py-14 lg:py-20 bg-[#FFFFFF] border-b border-[#E2DDD0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               DOCUMENTATION & DECISION SUPPORT
@@ -1004,9 +1004,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ========================================================
-          FINAL CALL TO ACTION
-      ======================================================== */}
+
+
+
       <section className="py-14 bg-[#064A32] text-[#F8F6ED]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 max-w-2xl">

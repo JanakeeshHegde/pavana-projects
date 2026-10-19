@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { 
-  Clock, DollarSign, PackageCheck, Award, ShieldAlert, BarChart3, 
-  TrendingUp, AlertCircle, CheckCircle2, ChevronRight, FileText, ArrowRight 
+import {
+  Clock, DollarSign, PackageCheck, Award, ShieldAlert, BarChart3,
+  TrendingUp, AlertCircle, CheckCircle2, ChevronRight, FileText, ArrowRight
 } from 'lucide-react';
 import { companyProfile } from '@/data/company-profile';
 
@@ -19,10 +19,10 @@ export default function ControlsDashboardInteractive() {
 
   return (
     <div className="bg-[#14251E] text-[#F8F6ED] border border-[#284439] p-4 sm:p-6 lg:p-8 relative overflow-hidden">
-      {/* Background architectural pattern */}
+
       <div className="absolute inset-0 arch-grid-dark opacity-30 pointer-events-none" />
 
-      {/* Header bar */}
+
       <div className="relative flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[#284439] gap-4">
         <div>
           <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#DFBE65] tracking-widest uppercase mb-1">
@@ -44,7 +44,7 @@ export default function ControlsDashboardInteractive() {
         </div>
       </div>
 
-      {/* Tabs Row */}
+
       <div className="relative flex overflow-x-auto space-x-2 py-4 no-scrollbar border-b border-[#284439]">
         {controlTabs.map((tab) => {
           const Icon = tab.icon;
@@ -66,7 +66,7 @@ export default function ControlsDashboardInteractive() {
         })}
       </div>
 
-      {/* Active Tab Panel */}
+
       <div className="relative pt-6">
         {activeTab === 'programme' && (
           <div className="space-y-6">

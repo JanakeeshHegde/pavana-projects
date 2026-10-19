@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import BrandedLoadingScreen from '@/components/shared/BrandedLoadingScreen';
 
-// Lazy-loaded routes for code splitting and optimal delivery
+
 const HomePage = lazy(() => import('@/pages/HomePage'));
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ServicesPage = lazy(() => import('@/pages/ServicesPage'));
@@ -12,13 +12,13 @@ export default function AppRoutes() {
   return (
     <Suspense fallback={<BrandedLoadingScreen active={true} variant="route" />}>
       <Routes>
-        {/* 4 Public Core Pages */}
+
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
 
-        {/* Backward-compatible redirects for consolidated routes */}
+
         <Route path="/projects" element={<Navigate to="/services" replace />} />
         <Route path="/work" element={<Navigate to="/services" replace />} />
         <Route path="/process" element={<Navigate to="/about#lifecycle" replace />} />

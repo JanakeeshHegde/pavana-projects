@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Clock, Award, ShieldAlert, Coins, 
+import {
+  Clock, Award, ShieldAlert, Coins,
   Compass, Layers, ShieldCheck, CheckCircle2, Building2,
   CalendarDays, DraftingCompass,
   CheckSquare, ChevronRight, Handshake, Building, Flag,
@@ -42,15 +42,15 @@ export default function HomePage() {
         description="Pavana Projects: Integrated Real Estate Solutions, Construction Services, Joint Venture Partnerships, and Project Management Consultancy (PMC) in Bangalore, India."
       />
 
-      {/* 1. CINEMATIC HERO (APPROVED & PRESERVED) */}
+
       <CinematicHero />
 
-      {/* 2. COMPANY OVERVIEW & 4 CORE DELIVERY PRIORITIES */}
+
       <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-14 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Narrative (7 Cols) */}
+
+
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
                 <Compass className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -72,7 +72,7 @@ export default function HomePage() {
                 Our objective is clear: bringing clarity, control, and accountability to projects from initial brief and feasibility through procurement, execution, testing, and handover. We serve as the client’s trusted project-management interface across consultants, contractors, vendors, authorities, and specialist agencies.
               </p>
 
-              {/* The 4 Core Delivery Priorities */}
+
               <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-3.5">
                 <div className="p-4 bg-[#F8F6ED] border border-[#E2DDD0] border-t-2 border-t-[#C69A36] space-y-1 shadow-xs hover:shadow-md hover:border-[#C69A36]/60 transition-all group">
                   <div className="flex items-center space-x-1.5 text-[#C69A36] font-bold text-xs uppercase tracking-wider">
@@ -118,7 +118,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Architectural Vignette: PRESERVED CONTROL TOWER ARCHITECTURE IMAGE */}
+
             <div className="lg:col-span-5 relative">
               <div className="relative border border-[#D5CDBE] bg-[#F8F6ED] p-3 shadow-2xl">
                 <div className="relative overflow-hidden aspect-[4/5] bg-[#14251E] group">
@@ -146,10 +146,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. OVERVIEW OF MAJOR SERVICES */}
+
       <section className="bg-[#F8F6ED] border-b border-[#E2DDD0] py-14 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
             <div className="max-w-2xl space-y-3">
               <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
@@ -169,10 +169,10 @@ export default function HomePage() {
             </CTAButton>
           </div>
 
-          {/* 4 Primary Service Spectrum Pillars */}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            {/* 1. Construction Solutions */}
+
+
             <div className="p-6 bg-[#FFFFFF] border border-[#E2DDD0] border-t-4 border-t-[#064A32] space-y-4 shadow-xs hover:shadow-lg transition-all group flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-[#064A32] text-[#DFBE65] flex items-center justify-center rounded-[3px] group-hover:scale-105 transition-transform">
@@ -194,7 +194,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2. Interior Design & Space Planning */}
+
             <div className="p-6 bg-[#FFFFFF] border border-[#E2DDD0] border-t-4 border-t-[#C69A36] space-y-4 shadow-xs hover:shadow-lg transition-all group flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-[#C69A36] text-[#FFFFFF] flex items-center justify-center rounded-[3px] group-hover:scale-105 transition-transform">
@@ -216,7 +216,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 3. Turnkey Projects */}
+
             <div className="p-6 bg-[#FFFFFF] border border-[#E2DDD0] border-t-4 border-t-[#064A32] space-y-4 shadow-xs hover:shadow-lg transition-all group flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-[#064A32] text-[#DFBE65] flex items-center justify-center rounded-[3px] group-hover:scale-105 transition-transform">
@@ -238,7 +238,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 4. Project Management Consultancy (PMC) */}
+
             <div className="p-6 bg-[#FFFFFF] border border-[#E2DDD0] border-t-4 border-t-[#C69A36] space-y-4 shadow-xs hover:shadow-lg transition-all group flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-[#14251E] text-[#DFBE65] flex items-center justify-center rounded-[3px] group-hover:scale-105 transition-transform">
@@ -264,11 +264,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. REAL ESTATE SOLUTIONS OVERVIEW */}
+
       <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-14 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-6 space-y-5">
               <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
                 <Building className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -347,16 +347,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. PROMINENT JOINT VENTURE & DEVELOPMENT PARTNERSHIPS SECTION */}
+
       <section className="bg-[#14251E] text-[#F8F6ED] cad-grid-dark border-b border-[#284439] py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#C69A36]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#064A32]/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Narrative */}
+
+
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#C69A36]/20 border border-[#C69A36]/40 text-[#DFBE65] text-[11px] font-mono-tech font-bold uppercase tracking-[0.18em]">
                 <Handshake className="w-3.5 h-3.5" />
@@ -405,7 +405,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Interactive Highlights Card */}
+
             <div className="lg:col-span-5">
               <div className="bg-[#1A2E26] border-2 border-[#C69A36]/50 p-6 sm:p-8 space-y-5 shadow-2xl relative">
                 <div className="flex items-center justify-between pb-3 border-b border-[#284439]">
@@ -467,10 +467,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. PROJECT DELIVERY LIFECYCLE (8 STAGES FROM PDF) */}
+
       <section className="bg-[#F8F6ED] border-b border-[#E2DDD0] py-14 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <Workflow className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -484,7 +484,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Compact 8-Stage Grid */}
+
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-8">
             {lifecycleStages.map((stg) => {
               const StageIcon = stageIconsMap[stg.step] || Flag;
@@ -521,10 +521,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. COMPANY VALUES & DIFFERENTIATORS FROM PDF */}
+
       <section className="bg-[#FFFFFF] border-b border-[#E2DDD0] py-14 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="max-w-3xl mb-12 space-y-3">
             <div className="inline-flex items-center space-x-2 text-[11px] font-mono-tech text-[#C69A36] uppercase tracking-[0.2em]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#C69A36]" />
@@ -567,7 +567,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. ENQUIRY CALL TO ACTION */}
+
       <section className="py-14 bg-[#064A32] text-[#F8F6ED] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">

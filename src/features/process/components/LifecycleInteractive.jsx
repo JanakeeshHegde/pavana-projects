@@ -9,10 +9,10 @@ export default function LifecycleInteractive() {
 
   return (
     <div className="bg-[#FFFFFF] border border-[#E5E0CE] p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
-      {/* Background Subtle Accent */}
+
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#C69A36]/5 rounded-bl-full pointer-events-none" />
 
-      {/* Header */}
+
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E5E0CE]">
         <div>
           <div className="flex items-center space-x-2 text-xs font-serif-arch text-[#C69A36] tracking-widest uppercase mb-1">
@@ -33,7 +33,7 @@ export default function LifecycleInteractive() {
         </div>
       </div>
 
-      {/* Step Selector Horizontal Bar */}
+
       <div className="py-6 border-b border-[#E5E0CE]">
         <div className="grid grid-cols-4 lg:grid-cols-8 gap-2">
           {stages.map((stg, idx) => {
@@ -60,11 +60,11 @@ export default function LifecycleInteractive() {
         </div>
       </div>
 
-      {/* Active Stage Detail Showcase */}
+
       <div className="pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Main Description (7 Cols) */}
+
+
           <div className="lg:col-span-7 space-y-5">
             <div className="flex items-center space-x-3">
               <span className="text-4xl font-serif-arch font-bold text-[#C69A36]">
@@ -84,7 +84,7 @@ export default function LifecycleInteractive() {
               {currentStage.description}
             </p>
 
-            {/* Stage Progress Navigation */}
+
             <div className="flex items-center space-x-3 pt-4">
               <button
                 disabled={selectedStageIndex === 0}
@@ -113,7 +113,7 @@ export default function LifecycleInteractive() {
             </div>
           </div>
 
-          {/* Key Deliverables Card (5 Cols) */}
+
           <div className="lg:col-span-5 bg-[#F8F6ED] p-6 border border-[#E5E0CE] space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-[#E5E0CE]">
               <span className="text-xs font-bold uppercase tracking-wider text-[#064A32]">

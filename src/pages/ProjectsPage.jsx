@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/**
- * ProjectsPage: Consolidated into ServicesPage per client directive.
- * Automatically redirects to /services.
- */
+
+
+
+
 export default function ProjectsPage() {
   const navigate = useNavigate();
 

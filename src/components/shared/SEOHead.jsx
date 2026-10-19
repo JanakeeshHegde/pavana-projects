@@ -12,14 +12,14 @@ export default function SEOHead({ title, description }) {
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change if no anchor hash is present
+
     if (!location.hash) {
       window.scrollTo(0, 0);
     }
 
     const cleanPath = location.pathname.replace(/\/$/, '') || '/';
 
-    // Set document title according to standard format
+
     if (title) {
       if (title.endsWith(' | Pavana Projects') || title.endsWith(' |Pavana Projects')) {
         document.title = title;
@@ -34,7 +34,7 @@ export default function SEOHead({ title, description }) {
       document.title = 'Home | Pavana Projects';
     }
 
-    // Update meta description
+
     if (description) {
       let metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {

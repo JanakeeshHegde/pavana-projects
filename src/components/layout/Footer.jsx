@@ -10,11 +10,11 @@ export default function Footer() {
   return (
     <footer className="bg-[#14251E] text-[#F8F6ED] border-t border-[#284439] cad-grid-dark relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        
-        {/* Top Header Grid */}
+
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#284439]">
-          
-          {/* Brand Info (4 Cols) */}
+
+
           <div className="lg:col-span-4 space-y-5">
             <Link to="/" aria-label="Pavana Projects Homepage" className="inline-block group">
               <img
@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 1: SERVICES (3 Cols) */}
+
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
             <Link
               to="/services"
@@ -94,7 +94,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: ABOUT & METHODOLOGY (3 Cols) */}
+
           <div className="lg:col-span-3 space-y-3 font-mono-tech text-xs">
             <Link
               to="/about"
@@ -136,7 +136,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3: QUICK CONSULTATION (2 Cols) */}
+
           <div className="lg:col-span-2 space-y-3 font-mono-tech text-xs">
             <Link
               to="/contact"
@@ -162,7 +162,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
+
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono-tech text-[#6F867C] gap-3">
           <div>
             © {currentYear} Pavana Projects. All rights reserved.

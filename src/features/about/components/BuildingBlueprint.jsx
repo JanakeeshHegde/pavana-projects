@@ -123,21 +123,21 @@ function FloorLevel({ level, activeLevel, selectedRoom, onSelect }) {
 
   return (
     <group ref={group}>
-      {/* Each floor plate and its partition walls form a compact BIM layer. */}
+
       <mesh position={[0, 0, 0]}>
         <boxGeometry args={[5.1, 0.075, 4.1]} />
         <meshBasicMaterial color={BLUE} transparent opacity={0.38} depthWrite={false} />
       </mesh>
       <group position={[0, 0, 0]}><BoxOutline size={[5.1, 0.075, 4.1]} /></group>
 
-      {/* Perimeter walls leave broad openings so the floor plan reads clearly. */}
+
       <Wall position={[0, 0.72, -1.98]} size={[5.1, 1.42, 0.09]} />
       <Wall position={[-2.5, 0.72, 0]} size={[0.09, 1.42, 4.05]} />
       <Wall position={[2.5, 0.72, -1.15]} size={[0.09, 1.42, 1.75]} />
       <Wall position={[2.5, 0.72, 1.35]} size={[0.09, 1.42, 1.3]} />
       <Wall position={[-0.48, 0.72, 2.02]} size={[3.9, 1.42, 0.09]} />
 
-      {/* Distinct partitions keep each level legible when it is isolated. */}
+
       {[
         [
           [[0.48, 0.48, 0], [0.07, 0.96, 3.9]],
@@ -162,7 +162,7 @@ function FloorLevel({ level, activeLevel, selectedRoom, onSelect }) {
         <Wall key={`partition-${level}-${index}`} position={[x, y, z]} size={size} />
       ))}
 
-      {/* Cyan glazing and a light balcony rail sharpen the villa silhouette. */}
+
       {[-1.35, -0.2, 0.95].map((x) => (
         <mesh key={`glazing-${x}`} position={[x, 0.78, 2.055]}>
           <boxGeometry args={[0.72, 0.82, 0.025]} />
@@ -181,7 +181,7 @@ function FloorLevel({ level, activeLevel, selectedRoom, onSelect }) {
         </group>
       )}
 
-      {/* Light structural columns and a thin, floating roof reveal the massing. */}
+
       {[[-2.38, -1.85], [2.38, -1.85], [-2.38, 1.85], [2.38, 1.85]].map(([x, z]) => (
         <mesh key={`${x}-${z}`} position={[x, 0.83, z]}>
           <boxGeometry args={[0.075, 1.65, 0.075]} />
@@ -218,7 +218,7 @@ function Villa({ activeLevel, selectedRoom, onSelect }) {
         />
       ))}
 
-      {/* Site datum */}
+
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.1, 0]}>
         <ringGeometry args={[3.35, 3.38, 64]} />
         <meshBasicMaterial color={BLUE} transparent opacity={0.38} side={2} />
