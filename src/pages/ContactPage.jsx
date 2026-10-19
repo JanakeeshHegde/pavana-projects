@@ -147,9 +147,10 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative w-full h-[280px] sm:h-[320px] bg-[#EAE6D6]">
+                  {/* The !5e1 embed setting selects satellite tiles by default. */}
                   <iframe
                     title="Pavana Projects Office Location - 543, 14th ‘A’ Main, HMT Layout, Gokula 1st Stage, 1st Phase, Mathikere, Bangalore – 560054"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.978450169674!2d77.5524326!3d13.0313987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d60cf514f89%3A0x24b497344ffd115b!2sPavana%20Powers%20Technologies!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2786.978450169674!2d77.5524326!3d13.0313987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d60cf514f89%3A0x24b497344ffd115b!2sPavana%20Powers%20Technologies!5e1!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                     className="w-full h-full border-0"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

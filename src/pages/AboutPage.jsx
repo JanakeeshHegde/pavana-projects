@@ -95,7 +95,6 @@ export default function AboutPage() {
       <PageHero
         title="About Pavana Projects"
         subtitle="Bringing clarity, control, and accountability to real estate developments, construction solutions, and multidisciplinary Project Management Consultancy from project initiation through commissioning and handover."
-        badge="Company Profile & Methodology"
         breadcrumbName="About"
         technicalNote="GOVERNANCE & METHODOLOGY"
       />

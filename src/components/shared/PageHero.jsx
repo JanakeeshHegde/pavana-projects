@@ -83,9 +83,6 @@ export default function PageHero({
           <div className="absolute top-3 right-6 text-[#C69A36]/40 font-mono-tech text-[10px] pointer-events-none hidden sm:block">
             + BANGALORE // 560054
           </div>
-          <div className="absolute bottom-2 right-6 text-[#C69A36]/30 font-mono-tech text-[9px] pointer-events-none hidden md:block">
-            SPEC // CAD-GEO-REV-04
-          </div>
         </div>
       ) : (
 

@@ -175,7 +175,6 @@ export default function ServicesPage() {
       <PageHero
         title="Services & Solutions"
         subtitle="A multidisciplinary delivery framework integrating real estate solutions, construction management, interior space planning, turnkey coordination, and rigorous Project Management Consultancy."
-        badge="Integrated Services Spectrum"
         technicalNote="PMC & REAL ESTATE SOLUTIONS"
       />
 
